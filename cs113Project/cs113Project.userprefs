@@ -1,12 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../Sorry_Updated/Sorry/Assets/GameProcess.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player.cs">
     <Files>
-      <File FileName="../../Sorry_Updated/Sorry/Assets/Sockets.cs" Line="15" Column="2" />
-      <File FileName="../../Sorry_Updated/Sorry/Assets/GameProcess.cs" Line="186" Column="54" />
-      <File FileName="../../Sorry_Updated/Sorry/Assets/Player1.cs" Line="49" Column="27" />
-      <File FileName="../../Sorry_Updated/Sorry/Assets/Player2.cs" Line="1" Column="1" />
-      <File FileName="../../Sorry_Updated/Sorry/Assets/Green1.cs" Line="57" Column="21" />
+      <File FileName="Assets/Player.cs" Line="100" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
