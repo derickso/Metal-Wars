@@ -5,7 +5,8 @@ using System.Net;
 
 public class Player : MonoBehaviour {
 	
-	
+	public GameObject target = null;//Camera
+
 	//public float field1 = 3.0f;
 	//public bool field2 = true;
 	
@@ -99,13 +100,20 @@ public class Player : MonoBehaviour {
 
 
 		//pitch
-		if(Input.GetKey ("up"))
-		{
-			transform.Rotate (rotateAmount, 0, 0);
-		}
-		if(Input.GetKey ("down"))
+		if(Input.GetKey ("w"))
 		{
 			transform.Rotate (-rotateAmount, 0, 0);
+			//target.transform.localPosition = transform.position + new Vector3(0,0,-7);
+			//camera rotate down along x
+			target.transform.Rotate(transform.rotation.x,0,0);
+		}
+		if(Input.GetKey ("s"))
+		{
+			transform.Rotate (rotateAmount, 0, 0);
+			//target.transform.localPosition = transform.position + new Vector3(0,0,-7);
+			//camera rotate up along x
+			target.transform.Rotate (-transform.rotation.x,0,0);
+
 		}
 
 		//yaw
@@ -122,25 +130,25 @@ public class Player : MonoBehaviour {
 		//barrel roll left
 		if(Input.GetKey ("x"))
 		{
-			transform.Rotate (0, 0, rotateAmount);
+			transform.Rotate (0, 0, -rotateAmount);
 		}
 
 		//barrel roll right
 		if(Input.GetKey ("z"))
 		{
-			transform.Rotate (0, 0, -rotateAmount);
+			transform.Rotate (0, 0, rotateAmount);
 		}
 
 		//boost
 		if(Input.GetKey ("a"))
 		{
-			transform.Translate (0, 0, transAmount);
+			transform.Translate (0, 0, -transAmount);
 		}
 
-		//slow down
+		//reverse
 		if(Input.GetKey ("q"))
 		{
-			transform.Translate (0, 0, (transAmount * 2));
+			transform.Translate (0, 0, transAmount );
 		}
 		
 
