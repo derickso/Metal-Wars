@@ -46,8 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Camera.cs" />
+     <Compile Include="Assets\LevelLight.cs" />
      <Compile Include="Assets\Player.cs" />
+     <Compile Include="Assets\PlayerFrontLight.cs" />
+     <Compile Include="Assets\PlayerView.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <ItemGroup>

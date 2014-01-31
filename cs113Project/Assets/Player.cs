@@ -31,65 +31,15 @@ public class Player : MonoBehaviour {
 
 		//Move object into scene
 		//player.position = new Vector3(0, 5, 0);
-		
+		transform.position = new Vector3(0,15,0);
+		transform.Rotate(0,0,0);
+		transform.localScale.Scale(new Vector3(1,1,1));
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-		//Things that keep running in a loop and constant checking of scene's state, goes HERE.  
-		//Code that executes while scene is already active.  
-		
-		
-		//if(field2)
-		//	transform.Rotate(new Vector3(field1,0,0));
-
-		//Clock (The Real Time);  NECESSARY.  Run based on real time instead of game's speed
-		//* modifies, so * this to whatever movement, shooting, etc, you are doing.  
-
-
-		//HOW to move attached object around:  
-
-		//Move player left and right
-
-		//player.Translate (Vector3.right * Input.GetAxis ("Horizontal"));//Found "Horizontal" by going to File, Project Settings, Input
-		//player.Translate(Vector3.right * Input.GetAxis ("Horizontal") * playerSpeed * Time.deltaTime);
-		//Under project settings is a func/class you can call. 
-
-		//Move player up and down
-
-		//player.Translate (Vector3.up * Input.GetAxis ("Vertical"));
-		//player.Translate(Vector3.up * Input.GetAxis ("Vertical") * playerSpeed * Time.deltaTime);
-
-		//Just use linear algebra and CS stuff instead of this (This is backup):
-		//* means at the same time//* is to modify the _____ on far left (ex) ____ * modification )
-		//... * modification <----'modification' modifies entire thing before previously.  Recursion. 
-		//+ means "also do this"; ____ +____+_____ ..... :
-		// _____ after that do _______ after that do ______ .... Calc and Linear Algebra, remember?
-
-
-		//Input.   <----Input manager// SEE?!?!? Assign to built in objects, Just like C++.  
-		//Input i = Input; ....
-
-		/*
-		//Make the player wrap:
-		//ex)  If the player positions at end of screen (ex) +7, 0, 0), then the player shows up at other side (ex) -7, 0, 0)
-		//y and z do not change for this game.  
-		//if(player.position.x > camera.aspect * 2)
-		//	player.position.x = -camera.collider * 2;
-		//else if(player.position.x < -camera.aspect * 2)
-		//	player.position.x = camera.aspect * 2;
-		//Just hard code it.  See the height and width of your camera object by simply inspecting it. 
-		//Use the int values given to the height and width of the view box
-		//and then use that number here!  
-		*/
-
-		//Make the player wrap:
-		//ex)  If the player positions at end of screen (ex) +7, 0, 0), then the player shows up at other side (ex) -7, 0, 0)
-		//y and z do not change for this game.  
-
-		//if(player.position.x > 
 
 
 		//__________Ace Combat_______
@@ -100,14 +50,14 @@ public class Player : MonoBehaviour {
 
 
 		//pitch
-		if(Input.GetKey ("w"))
+		if(Input.GetKey ("up"))
 		{
 			transform.Rotate (-rotateAmount, 0, 0);
 			//target.transform.localPosition = transform.position + new Vector3(0,0,-7);
 			//camera rotate down along x
 			target.transform.Rotate(transform.rotation.x,0,0);
 		}
-		if(Input.GetKey ("s"))
+		if(Input.GetKey ("down"))
 		{
 			transform.Rotate (rotateAmount, 0, 0);
 			//target.transform.localPosition = transform.position + new Vector3(0,0,-7);
@@ -128,27 +78,27 @@ public class Player : MonoBehaviour {
 
 
 		//barrel roll left
-		if(Input.GetKey ("x"))
-		{
-			transform.Rotate (0, 0, -rotateAmount);
-		}
-
-		//barrel roll right
-		if(Input.GetKey ("z"))
+		if(Input.GetKey ("a"))
 		{
 			transform.Rotate (0, 0, rotateAmount);
 		}
 
-		//boost
-		if(Input.GetKey ("a"))
+		//barrel roll right
+		if(Input.GetKey ("d"))
 		{
-			transform.Translate (0, 0, -transAmount);
+			transform.Rotate (0, 0, -rotateAmount);
 		}
 
-		//reverse
-		if(Input.GetKey ("q"))
+		//forward
+		if(Input.GetKey ("w"))
 		{
-			transform.Translate (0, 0, transAmount );
+			transform.Translate (0, 0, transAmount);
+		}
+
+		//backward
+		if(Input.GetKey ("s"))
+		{
+			transform.Translate (0, 0, -transAmount );
 		}
 		
 
