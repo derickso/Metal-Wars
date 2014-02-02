@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
 
 	public float rotateSpeed = 25.0f;
 	public float speed = 50.0f;
+	//public float speed = 10.0f;
 
 	//private float landingSpeed = 
 	
@@ -48,7 +49,7 @@ public class Player : MonoBehaviour {
 		float rotateAmount = rotateSpeed * Time.deltaTime;
 
 
-		transform.Translate(0,0,transAmount);
+		//transform.Translate(0,0,transAmount);
 
 
 		//pitch
