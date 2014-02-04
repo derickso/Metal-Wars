@@ -20,7 +20,11 @@ public class Player : MonoBehaviour {
 	//public float speed = 10.0f;
 
 	//private float landingSpeed = 
-	
+
+	private int armor, lives;
+
+	private bool isPaused;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -35,7 +39,8 @@ public class Player : MonoBehaviour {
 		transform.position = new Vector3(0,15,0);
 		transform.Rotate(0,0,0);
 		transform.localScale.Scale(new Vector3(1,1,1));
-		
+
+		isPaused = false;
 	}
 	
 	// Update is called once per frame
@@ -53,7 +58,7 @@ public class Player : MonoBehaviour {
 
 
 		//pitch
-		if(Input.GetKey ("up"))
+		if(Input.GetKey (KeyCode.UpArrow))
 		{
 			transform.Rotate (rotateAmount, 0, 0);
 			//target.transform.localPosition = transform.position + new Vector3(0,0,-7);
@@ -67,7 +72,7 @@ public class Player : MonoBehaviour {
 
 
 		}
-		if(Input.GetKey ("down"))
+		if(Input.GetKey (KeyCode.DownArrow))
 		{
 			transform.Rotate (-rotateAmount, 0, 0);
 			//target.transform.localPosition = transform.position + new Vector3(0,0,-7);
@@ -83,38 +88,38 @@ public class Player : MonoBehaviour {
 		}
 
 		//yaw
-		if(Input.GetKey ("left"))
+		if(Input.GetKey (KeyCode.LeftArrow))
 		{
 			transform.Rotate (0, -rotateAmount, 0);
 		}
-		if(Input.GetKey ("right"))
+		if(Input.GetKey (KeyCode.RightArrow))
 		{
 			transform.Rotate (0, rotateAmount, 0);
 		}
 
 
 		//barrel roll left
-		if(Input.GetKey ("a"))
+		if(Input.GetKey (KeyCode.A))
 		{
 			transform.Rotate (0, 0, (rotateAmount * 2));
 		}
 
 		//barrel roll right
-		if(Input.GetKey ("d"))
+		if(Input.GetKey (KeyCode.D))
 		{
 			transform.Rotate (0, 0, (-rotateAmount * 2));
 		}
 
 		//forward
-		if(Input.GetKey ("w"))
+		if(Input.GetKey (KeyCode.W))
 		{
 			transform.Translate (0, 0, transAmount * 2);
 		}
 
 		//backward
-		if(Input.GetKey ("s"))
+		if(Input.GetKey (KeyCode.S))
 		{
-			transform.Translate (0, 0, (transAmount * 0.003f) );//Does not slow down...
+			transform.Translate (0, 0, (transAmount * 0.03f) );//Does not slow down...
 		}
 		
 
@@ -125,12 +130,36 @@ public class Player : MonoBehaviour {
 			transform.Translate(0, transform.position.y - 1,transAmount);
 		}*/
 
-
-
-
-
-
-
+		//If the player hits the keyCode.P, it will change the pause state of the game
+		if(Input.GetKeyDown (KeyCode.P))
+		{
+			ChangePause();
+		}
 		
+	}
+
+	//Pause function: changes between states (paused and unpaused)
+	protected void ChangePause() {
+		//Pause the game
+		if(isPaused)
+			Time.timeScale = 1;
+		//Unpause the game
+		else
+			Time.timeScale = 0;
+		//Change the boolean variable accordingly
+		isPaused = !isPaused;
+	}
+
+	void OnGUI (){
+		if(isPaused)
+		{
+			GUI.Box(new Rect(550,100,200,70),"Paused");
+			
+			//Create the Start button
+			if(GUI.Button(new Rect(600,120,100,40),"Resume")) {
+				Debug.Log("Resume");
+				ChangePause();
+			}
+		}
 	}
 }
