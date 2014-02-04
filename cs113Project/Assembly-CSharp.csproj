@@ -46,6 +46,15 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ArrayFlightPaths.cs" />
+     <Compile Include="Assets\Enemy1.cs" />
+     <Compile Include="Assets\Enemy2.cs" />
+     <Compile Include="Assets\Enemy3.cs" />
+     <Compile Include="Assets\Enemy4.cs" />
+     <Compile Include="Assets\Enemy5.cs" />
+     <Compile Include="Assets\Enemy6.cs" />
+     <Compile Include="Assets\Friendly1.cs" />
+     <Compile Include="Assets\Friendly2.cs" />
      <Compile Include="Assets\LaserShoot.cs" />
      <Compile Include="Assets\LevelLight.cs" />
      <Compile Include="Assets\Player.cs" />
