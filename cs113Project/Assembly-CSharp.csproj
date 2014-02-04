@@ -51,6 +51,7 @@
      <Compile Include="Assets\Player.cs" />
      <Compile Include="Assets\PlayerFrontLight.cs" />
      <Compile Include="Assets\PlayerView.cs" />
+     <Compile Include="Assets\SpawnManager.cs" />
      <Compile Include="Assets\menu\Menu.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>

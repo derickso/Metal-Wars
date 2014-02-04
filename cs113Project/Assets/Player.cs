@@ -119,7 +119,7 @@ public class Player : MonoBehaviour {
 		//backward
 		if(Input.GetKey (KeyCode.S))
 		{
-			transform.Translate (0, 0, (transAmount * 0.03f) );//Does not slow down...
+			transform.Translate (0, 0, -(transAmount * 0.03f) );//Does not slow down...
 		}
 		
 
