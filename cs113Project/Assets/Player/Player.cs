@@ -17,10 +17,25 @@ public class Player : MonoBehaviour {
 
 	public float rotateSpeed = 25.0f;
 	public float speed = 50.0f;
+
+	public float menuX = 0.0f;
+	public float menuY = 0.0f;
 	//public float speed = 10.0f;
 
 	//private float landingSpeed = 
-	
+
+	private int armor, lives;
+
+	private bool isPaused;
+	private bool inOptions;
+
+	public float hSliderValue = 15.0f;
+
+	int selGridInt  = 0;
+	string[] selStrings = new string[] {"Easy", "Medium", "Hard"};
+
+
+
 	// Use this for initialization
 	void Start () {
 		
@@ -35,7 +50,8 @@ public class Player : MonoBehaviour {
 		transform.position = new Vector3(0,15,0);
 		transform.Rotate(0,0,0);
 		transform.localScale.Scale(new Vector3(1,1,1));
-		
+
+		isPaused = false;
 	}
 	
 	// Update is called once per frame
@@ -53,7 +69,7 @@ public class Player : MonoBehaviour {
 
 
 		//pitch
-		if(Input.GetKey ("up"))
+		if(Input.GetKey (KeyCode.UpArrow))
 		{
 			transform.Rotate (rotateAmount, 0, 0);
 			//target.transform.localPosition = transform.position + new Vector3(0,0,-7);
@@ -67,7 +83,7 @@ public class Player : MonoBehaviour {
 
 
 		}
-		if(Input.GetKey ("down"))
+		if(Input.GetKey (KeyCode.DownArrow))
 		{
 			transform.Rotate (-rotateAmount, 0, 0);
 			//target.transform.localPosition = transform.position + new Vector3(0,0,-7);
@@ -83,38 +99,38 @@ public class Player : MonoBehaviour {
 		}
 
 		//yaw
-		if(Input.GetKey ("left"))
+		if(Input.GetKey (KeyCode.LeftArrow))
 		{
 			transform.Rotate (0, -rotateAmount, 0);
 		}
-		if(Input.GetKey ("right"))
+		if(Input.GetKey (KeyCode.RightArrow))
 		{
 			transform.Rotate (0, rotateAmount, 0);
 		}
 
 
 		//barrel roll left
-		if(Input.GetKey ("a"))
+		if(Input.GetKey (KeyCode.A))
 		{
 			transform.Rotate (0, 0, (rotateAmount * 2));
 		}
 
 		//barrel roll right
-		if(Input.GetKey ("d"))
+		if(Input.GetKey (KeyCode.D))
 		{
 			transform.Rotate (0, 0, (-rotateAmount * 2));
 		}
 
 		//forward
-		if(Input.GetKey ("w"))
+		if(Input.GetKey (KeyCode.W))
 		{
 			transform.Translate (0, 0, transAmount * 2);
 		}
 
 		//backward
-		if(Input.GetKey ("s"))
+		if(Input.GetKey (KeyCode.S))
 		{
-			transform.Translate (0, 0, (transAmount * 0.003f) );//Does not slow down...
+			transform.Translate (0, 0, -(transAmount * 0.03f) );//Does not slow down...
 		}
 		
 
@@ -125,12 +141,67 @@ public class Player : MonoBehaviour {
 			transform.Translate(0, transform.position.y - 1,transAmount);
 		}*/
 
-
-
-
-
-
-
+		//If the player hits the keyCode.P, it will change the pause state of the game
+		if(Input.GetKeyDown (KeyCode.P))
+		{
+			ChangePause();
+		}
 		
+	}
+
+	//Pause function: changes between states (paused and unpaused)
+	protected void ChangePause() {
+		//Pause the game
+		if(isPaused)
+			Time.timeScale = 1;
+		//Unpause the game
+		else
+			Time.timeScale = 0;
+		//Change the boolean variable accordingly
+		isPaused = !isPaused;
+	}
+
+	void OnGUI (){
+		if(isPaused && !inOptions)
+		{
+			menuX = Screen.width/2.5f;
+			menuY = Screen.height/2.5f;
+			GUI.Box(new Rect(menuX,menuY,220,180),"Paused");
+			
+			//Create the Start button
+			if(GUI.Button(new Rect(menuX + 60,menuY + 30,100,40),"Resume")) {
+				Debug.Log("Resume");
+				ChangePause();
+			}
+			if(GUI.Button(new Rect(menuX + 60,menuY + 80,100,40),"Options")) {
+				inOptions = true;
+				Debug.Log ("Options");
+				//OnGUI();
+			}
+			if(GUI.Button(new Rect(menuX + 60,menuY + 130,100,40),"Exit")) {
+				Debug.Log("Quit");
+				ChangePause();
+			}
+		}
+		if(inOptions && isPaused)
+		{
+			menuX = Screen.width / 2.5f;
+			menuY = Screen.height / 2.5f;
+
+			GUI.Box(new Rect(menuX,menuY, 220, 200),"Options");
+
+			GUI.Label (new Rect (menuX +8,menuY + 40, 100, 20), "Volume Control");
+			hSliderValue = GUI.HorizontalSlider (new Rect (menuX + 110,menuY + 45, 100, 30), hSliderValue, 0.0f, 30.0f);
+
+			GUI.Label (new Rect (menuX +8,menuY + 70, 100, 20), "Difficulty");
+			selStrings = new string[] {"Easy", "Medium", "Hard"};
+			selGridInt = GUI.SelectionGrid (new Rect (menuX + 110,menuY + 73, 65, 60), selGridInt, selStrings, 1);
+
+			if(GUI.Button(new Rect(menuX + 60,menuY + 150,100,40),"Back")) {
+				Debug.Log("Exit Options");
+				inOptions = false;
+				//OnGUI();
+			}
+		}
 	}
 }
