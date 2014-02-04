@@ -10,7 +10,7 @@ public class LaserShoot : MonoBehaviour {
 
 	//_________VERSION 2_____________
 	public GameObject goProjectilePrefab;
-	private GameObject[] argoProjectiles = new GameObject[900];
+	private GameObject[] argoProjectiles = new GameObject[900]; 
 	private int iNext = 0;
 	private float fMag = 50000.0f;//1 Frame = 1000.  So bulletspeed = playerSpeed * 1000 to keep up
 	
