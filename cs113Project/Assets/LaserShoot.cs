@@ -49,35 +49,15 @@ public class LaserShoot : MonoBehaviour {
 
 		//______________VERSION 2_________________________
 
-		if (Input.GetKeyDown(KeyCode.Space)) 
-		{
+		if (Input.GetKeyDown(KeyCode.Space)) {
 			GameObject go = argoProjectiles[iNext++];
-
 			if (iNext >= argoProjectiles.Length) iNext = 0;
-
 			go.SetActive (true);
 			go.rigidbody.velocity = Vector3.zero;
 			go.transform.position = transform.position;
 			go.transform.rotation = transform.rotation;
 			go.rigidbody.AddForce (transform.forward * fMag);
-
-
-
-			Destroy (go, 3.0f);//GameObject inherits from Object.  So this works.   
-
 		}
-
-		//If bullet exceeds this distance, destroy it.  
-		//Destroy(go);
-
-
-
-
-		if(true)//if bullet hits an enemy, decrease it's health counter field by 1
-		{
-
-
-		}
-
+		
 	}
 }

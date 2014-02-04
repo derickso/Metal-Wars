@@ -1,20 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/SpawnManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LaserShoot.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="Assets/Player.cs" Line="1" Column="1" />
       <File FileName="Assets/PlayerFrontLight.cs" Line="1" Column="1" />
       <File FileName="Assets/PlayerView.cs" Line="1" Column="1" />
       <File FileName="Assets/LevelLight.cs" Line="1" Column="1" />
-      <File FileName="Assets/LaserShoot.cs" Line="66" Column="76" />
-      <File FileName="Assets/Player.cs" Line="1" Column="1" />
-      <File FileName="Assets/Enemy1.cs" Line="1" Column="1" />
-=======
-      <File FileName="Assets/LevelLight.cs" Line="1" Column="1" />
-      <File FileName="Assets/menu/Menu.cs" Line="24" Column="4" />
-      <File FileName="Assets/SpawnManager.cs" Line="6" Column="26" />
->>>>>>> f1eb62e5aac7655a97cb4739986f2dc3afa7218e
+      <File FileName="Assets/LaserShoot.cs" Line="15" Column="23" />
+      <File FileName="Assets/Player.cs" Line="52" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
