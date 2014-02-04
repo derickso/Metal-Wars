@@ -1,11 +1,20 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player.cs">
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LaserShoot.cs">
+>>>>>>> c3e43f59361c9b6535d588a98bbd3f287298fa1b
     <Files>
       <File FileName="Assets/PlayerFrontLight.cs" Line="1" Column="1" />
       <File FileName="Assets/PlayerView.cs" Line="1" Column="1" />
       <File FileName="Assets/LevelLight.cs" Line="1" Column="1" />
+<<<<<<< HEAD
       <File FileName="Assets/LaserShoot.cs" Line="1" Column="1" />
+=======
+      <File FileName="Assets/LaserShoot.cs" Line="15" Column="23" />
+>>>>>>> c3e43f59361c9b6535d588a98bbd3f287298fa1b
       <File FileName="Assets/Player.cs" Line="52" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
