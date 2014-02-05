@@ -14,7 +14,10 @@ public class LaserShoot : MonoBehaviour {
 	private int iNext = 0;
 	private float fMag = 50000.0f;//1 Frame = 1000.  So bulletspeed = playerSpeed * 1000 to keep up
 	
-	
+
+	//private GameObject temp;
+
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -49,15 +52,23 @@ public class LaserShoot : MonoBehaviour {
 
 		//______________VERSION 2_________________________
 
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		//if (Input.GetKeyDown(KeyCode.Space)) //Must press it every time to shoot
+		if (Input.GetKey(KeyCode.Space)) //Just hold down to shoot
+		{
 			GameObject go = argoProjectiles[iNext++];
+
 			if (iNext >= argoProjectiles.Length) iNext = 0;
+
 			go.SetActive (true);
 			go.rigidbody.velocity = Vector3.zero;
 			go.transform.position = transform.position;
 			go.transform.rotation = transform.rotation;
 			go.rigidbody.AddForce (transform.forward * fMag);
+
+			//temp = go;
 		}
+
+		//Destroy(temp);
 		
 	}
 }
