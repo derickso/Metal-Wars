@@ -67,7 +67,7 @@ public class Player : MonoBehaviour {
 
 
 		//pitch
-		if(Input.GetKey ("up"))
+		if(Input.GetKey (KeyCode.UpArrow))
 		{
 			transform.Rotate (rotateAmount, 0, 0);
 			//target.transform.localPosition = transform.position + new Vector3(0,0,-7);
@@ -81,7 +81,7 @@ public class Player : MonoBehaviour {
 
 
 		}
-		if(Input.GetKey ("down"))
+		if(Input.GetKey (KeyCode.DownArrow))
 		{
 			transform.Rotate (-rotateAmount, 0, 0);
 			//target.transform.localPosition = transform.position + new Vector3(0,0,-7);
@@ -97,38 +97,38 @@ public class Player : MonoBehaviour {
 		}
 
 		//yaw
-		if(Input.GetKey ("a"))
+		if(Input.GetKey (KeyCode.A))
 		{
 			transform.Rotate (0, -rotateAmount, 0);
 		}
-		if(Input.GetKey ("d"))
+		if(Input.GetKey (KeyCode.D))
 		{
 			transform.Rotate (0, rotateAmount, 0);
 		}
 
 
 		//barrel roll left
-		if(Input.GetKey ("left"))
+		if(Input.GetKey (KeyCode.LeftArrow))
 		{
 			transform.Rotate (0, 0, (rotateAmount * 2));
 		}
 
 		//barrel roll right
-		if(Input.GetKey ("right"))
+		if(Input.GetKey (KeyCode.RightArrow))
 		{
 			transform.Rotate (0, 0, (-rotateAmount * 2));
 		}
 
 		//forward
-		if(Input.GetKey ("w"))
+		if(Input.GetKey (KeyCode.W))
 		{
 			transform.Translate (0, 0, transAmount * 2);
 		}
 
 		//backward
-		if(Input.GetKey ("s"))
+		if(Input.GetKey (KeyCode.S))
 		{
-			transform.Translate (0, 0, (transAmount * 0.003f) );//Does not slow down...
+			transform.Translate (0, 0, (-transAmount * 0.03f) );//Does not slow down...
 		}
 		
 
