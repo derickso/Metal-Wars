@@ -49,7 +49,7 @@ public class Player : MonoBehaviour {
 		float rotateAmount = rotateSpeed * Time.deltaTime;
 
 
-		//transform.Translate(0,0,transAmount);
+		transform.Translate(0,0,transAmount);
 
 
 		//pitch
@@ -83,24 +83,28 @@ public class Player : MonoBehaviour {
 		}
 
 		//yaw
-		if(Input.GetKey ("left"))
+		//if(Input.GetKey ("left"))
+		if(Input.GetKey ("a"))
 		{
 			transform.Rotate (0, -rotateAmount, 0);
 		}
-		if(Input.GetKey ("right"))
+		//if(Input.GetKey ("right"))
+		if(Input.GetKey ("d"))
 		{
 			transform.Rotate (0, rotateAmount, 0);
 		}
 
 
 		//barrel roll left
-		if(Input.GetKey ("a"))
+		if(Input.GetKey ("left"))
+		//if(Input.GetKey ("a"))
 		{
 			transform.Rotate (0, 0, (rotateAmount * 2));
 		}
 
 		//barrel roll right
-		if(Input.GetKey ("d"))
+		if(Input.GetKey ("right"))
+		//if(Input.GetKey ("d"))
 		{
 			transform.Rotate (0, 0, (-rotateAmount * 2));
 		}
