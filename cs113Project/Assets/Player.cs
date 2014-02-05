@@ -20,7 +20,21 @@ public class Player : MonoBehaviour {
 	//public float speed = 10.0f;
 
 	//private float landingSpeed = 
+
 	
+	private int armor, lives;
+
+	public float menuX = 0.0f;
+	public float menuY = 0.0f;
+
+	private bool isPaused;
+	private bool inOptions;
+	
+	public float hSliderValue = 15.0f;
+	
+	int selGridInt  = 0;
+	string[] selStrings = new string[] {"Easy", "Medium", "Hard"};
+
 	// Use this for initialization
 	void Start () {
 		
@@ -125,12 +139,66 @@ public class Player : MonoBehaviour {
 			transform.Translate(0, transform.position.y - 1,transAmount);
 		}*/
 
-
-
-
-
-
-
-		
+		//If the player hits the keyCode.P, it will change the pause state of the game
+		if(Input.GetKeyDown (KeyCode.P))
+		{
+			ChangePause();
+		}
+	}
+	
+	//Pause function: changes between states (paused and unpaused)
+	protected void ChangePause() {
+		//Pause the game
+		if(isPaused)
+			Time.timeScale = 1;
+		//Unpause the game
+		else
+			Time.timeScale = 0;
+		//Change the boolean variable accordingly
+		isPaused = !isPaused;
+	}
+	
+	void OnGUI (){
+		if(isPaused && !inOptions)
+		{
+			menuX = Screen.width/2.5f;
+			menuY = Screen.height/2.5f;
+			GUI.Box(new Rect(menuX,menuY,220,180),"Paused");
+			
+			//Create the Start button
+			if(GUI.Button(new Rect(menuX + 60,menuY + 30,100,40),"Resume")) {
+				Debug.Log("Resume");
+				ChangePause();
+			}
+			if(GUI.Button(new Rect(menuX + 60,menuY + 80,100,40),"Options")) {
+				inOptions = true;
+				Debug.Log ("Options");
+				//OnGUI();
+			}
+			if(GUI.Button(new Rect(menuX + 60,menuY + 130,100,40),"Exit")) {
+				Debug.Log("Quit");
+				ChangePause();
+			}
+		}
+		if(inOptions && isPaused)
+		{
+			menuX = Screen.width / 2.5f;
+			menuY = Screen.height / 2.5f;
+			
+			GUI.Box(new Rect(menuX,menuY, 220, 200),"Options");
+			
+			GUI.Label (new Rect (menuX +8,menuY + 40, 100, 20), "Volume Control");
+			hSliderValue = GUI.HorizontalSlider (new Rect (menuX + 110,menuY + 45, 100, 30), hSliderValue, 0.0f, 30.0f);
+			
+			GUI.Label (new Rect (menuX +8,menuY + 70, 100, 20), "Difficulty");
+			selStrings = new string[] {"Easy", "Medium", "Hard"};
+			selGridInt = GUI.SelectionGrid (new Rect (menuX + 110,menuY + 73, 65, 60), selGridInt, selStrings, 1);
+			
+			if(GUI.Button(new Rect(menuX + 60,menuY + 150,100,40),"Back")) {
+				Debug.Log("Exit Options");
+				inOptions = false;
+				//OnGUI();
+			}
+		}
 	}
 }
