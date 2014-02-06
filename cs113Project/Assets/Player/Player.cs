@@ -37,7 +37,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		Time.timeScale = 1;
 		//Things to set up how the beginning of the scene should be, goes HERE.  
 		//What to do right at the beginning of the scene.  
 		//If attached, it is object instead of scene.  
@@ -175,9 +175,9 @@ public class Player : MonoBehaviour {
 				Debug.Log ("Options");
 				//OnGUI();
 			}
-			if(GUI.Button(new Rect(menuX + 60,menuY + 130,100,40),"Exit")) {
-				Debug.Log("Quit");
-				ChangePause();
+			if(GUI.Button(new Rect(menuX + 60,menuY + 130,100,40),"Main Menu")) {
+				Debug.Log("Quit to Main Menu");
+				Application.LoadLevel("Menu");
 			}
 		}
 		if(inOptions && isPaused)
@@ -197,7 +197,6 @@ public class Player : MonoBehaviour {
 			if(GUI.Button(new Rect(menuX + 60,menuY + 150,100,40),"Back")) {
 				Debug.Log("Exit Options");
 				inOptions = false;
-				//OnGUI();
 			}
 		}
 	}
