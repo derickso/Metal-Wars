@@ -6,6 +6,10 @@ public class LaserShoot : MonoBehaviour {
 	//public Rigidbody projectile;
 	//public float speed = 99999999999999999999999.0f;
 
+	public ParticleSystem initialLaserFlash;
+	public ParticleSystem laserMuzzle;
+
+
 	//public Transform projectile2;
 
 	//_________VERSION 2_____________
@@ -21,8 +25,15 @@ public class LaserShoot : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+
+		initialLaserFlash.enableEmission = false;
+		laserMuzzle.enableEmission = false;
 	
-		for (int i = 0; i < argoProjectiles.Length; i++) {
+
+
+
+		for (int i = 0; i < argoProjectiles.Length; i++) 
+		{
 			argoProjectiles[i] = (GameObject)Instantiate (goProjectilePrefab);
 			argoProjectiles[i].SetActive (false);
 		}
@@ -52,9 +63,22 @@ public class LaserShoot : MonoBehaviour {
 
 		//______________VERSION 2_________________________
 
+		initialLaserFlash.enableEmission = false;
+		laserMuzzle.enableEmission = false;
+
+
+
 		//if (Input.GetKeyDown(KeyCode.Space)) //Must press it every time to shoot
 		if (Input.GetKey(KeyCode.Space)) //Just hold down to shoot
 		{
+
+			initialLaserFlash.enableEmission = true;
+			laserMuzzle.enableEmission = true;
+
+
+
+
+
 			GameObject go = argoProjectiles[iNext++];
 
 			if (iNext >= argoProjectiles.Length) iNext = 0;
