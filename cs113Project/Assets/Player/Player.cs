@@ -4,7 +4,8 @@ using System.Collections;
 using System.Net;
 
 public class Player : MonoBehaviour {
-	
+
+
 	public GameObject target = null;//Camera
 
 	//public float field1 = 3.0f;
@@ -35,6 +36,22 @@ public class Player : MonoBehaviour {
 	int selGridInt  = 0;
 	string[] selStrings = new string[] {"Easy", "Medium", "Hard"};
 
+
+	//Default thrusters
+	public ParticleSystem defaultThrust1;
+	public ParticleSystem defaultThrust2;
+
+	//Afterburners
+	public ParticleSystem thruster1;
+	public ParticleSystem thruster2;
+
+	//Slow down thrusters
+	public ParticleSystem engineHeat1;
+	public ParticleSystem engineHeat2;
+
+
+
+
 	// Use this for initialization
 	void Start () {
 		Time.timeScale = 1;
@@ -49,6 +66,17 @@ public class Player : MonoBehaviour {
 		transform.position = new Vector3(0,15,0);
 		transform.Rotate(0,0,0);
 		transform.localScale.Scale(new Vector3(1,1,1));
+
+
+
+
+
+		defaultThrust1.enableEmission = false;
+		defaultThrust2.enableEmission = false;
+		thruster1.enableEmission = false;
+		thruster2.enableEmission = false;
+		engineHeat1.enableEmission = false;
+		engineHeat2.enableEmission = false;
 		
 	}
 	
@@ -64,6 +92,16 @@ public class Player : MonoBehaviour {
 
 
 		transform.Translate(0,0,transAmount);
+
+		defaultThrust1.enableEmission = true;
+		defaultThrust2.enableEmission = true;
+
+		thruster1.enableEmission = false;
+		thruster2.enableEmission = false;
+
+		engineHeat1.enableEmission = true;
+		engineHeat2.enableEmission = true;
+
 
 
 		//pitch
@@ -119,16 +157,33 @@ public class Player : MonoBehaviour {
 			transform.Rotate (0, 0, (-rotateAmount * 2));
 		}
 
-		//forward
+		//speed up
 		if(Input.GetKey (KeyCode.W))
 		{
 			transform.Translate (0, 0, transAmount * 2);
+
+
+			engineHeat1.enableEmission = false;
+			engineHeat2.enableEmission = false;
+
+			thruster1.enableEmission = true;
+			thruster2.enableEmission = true;
 		}
 
-		//backward
+		//slow down
 		if(Input.GetKey (KeyCode.S))
 		{
-			transform.Translate (0, 0, (-transAmount * 0.5f) );//Does not slow down...
+			transform.Translate (0, 0, (-transAmount * 0.5f) );//Does slow down
+
+
+			defaultThrust1.enableEmission = false;
+			defaultThrust2.enableEmission = false;
+
+			engineHeat1.enableEmission = true;
+			engineHeat2.enableEmission = true;
+
+			thruster1.enableEmission = false;
+			thruster2.enableEmission = false;
 		}
 		
 
