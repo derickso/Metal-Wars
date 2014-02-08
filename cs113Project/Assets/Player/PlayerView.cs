@@ -5,9 +5,6 @@ public class PlayerView : MonoBehaviour {
 
 	public Camera FirstPersonCam;
 	public Camera ThirdPersonCam;
-
-	public GameObject FirstCross;
-	public GameObject ThirdCross;
 	private bool viewActivated = false;
 
 
@@ -34,8 +31,6 @@ public class PlayerView : MonoBehaviour {
 		{
 			FirstPersonCam.enabled = true;
 			ThirdPersonCam.enabled = false;
-			FirstCross.renderer.enabled = true;
-			ThirdCross.renderer.enabled = false;
 
 			viewActivated = true;
 		}
@@ -43,8 +38,6 @@ public class PlayerView : MonoBehaviour {
 		{
 			FirstPersonCam.enabled = false;
 			ThirdPersonCam.enabled = true; 
-			FirstCross.renderer.enabled = false;
-			ThirdCross.renderer.enabled = true;
 
 			viewActivated = false;
 		}

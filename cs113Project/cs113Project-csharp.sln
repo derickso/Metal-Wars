@@ -23,10 +23,14 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 																																																													GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																									GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> f3b07766fd6a8b49f3cdc8c7ab4b5013d5f6df89
+=======
+																																																									GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> parent of f3b0776... third person crosshair
 =======
 																																																	GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> 27c08293953260e534c8c7f22e653dee3d8b56ad
