@@ -25,6 +25,11 @@ public class PlayerView : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+		viewActivated = false;
+
+
+
 		if(Input.GetKeyDown(KeyCode.LeftShift) && viewActivated == false)
 		{
 			FirstPersonCam.enabled = true;
