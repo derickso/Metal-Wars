@@ -23,10 +23,6 @@ public class PlayerView : MonoBehaviour {
 	void Update () {
 
 
-		viewActivated = false;
-
-
-
 		if(Input.GetKeyDown(KeyCode.LeftShift) && viewActivated == false)
 		{
 			FirstPersonCam.enabled = true;
