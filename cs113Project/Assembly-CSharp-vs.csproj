@@ -49,6 +49,7 @@
      <Compile Include="Assets\Enemies\Scout.cs" />
      <Compile Include="Assets\LevelLight.cs" />
      <Compile Include="Assets\Menu.cs" />
+     <Compile Include="Assets\MissileShoot.cs" />
      <Compile Include="Assets\Player\Player.cs" />
      <Compile Include="Assets\Player\PlayerFrontLight.cs" />
      <Compile Include="Assets\Player\PlayerView.cs" />
