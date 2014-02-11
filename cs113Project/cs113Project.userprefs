@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shoots/LaserShoot.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\PlayerView.cs">
     <Files>
-      <File FileName="Assets/Player/PlayerView.cs" Line="1" Column="1" />
-      <File FileName="Assets/Player/Player.cs" Line="1" Column="1" />
-      <File FileName="Assets/Shoots/LaserShoot.cs" Line="1" Column="1" />
-      <File FileName="Assets/MissileShoot.cs" Line="1" Column="1" />
+      <File FileName="Assets\Player\PlayerView.cs" Line="53" Column="1" />
+      <File FileName="Assets\Enemies\Scout.cs" Line="1" Column="1" />
+      <File FileName="Assets\Player\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Shoots\LaserShoot.cs" Line="1" Column="1" />
+      <File FileName="Assets\Enemies\EnemyShoots.cs" Line="30" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
