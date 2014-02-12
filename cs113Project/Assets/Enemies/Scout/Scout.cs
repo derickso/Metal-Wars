@@ -9,15 +9,20 @@ public class Scout : MonoBehaviour {
 
 	//Enemy armor
 	private int armor;
-
+	
 	// Use this for initialization
 	void Start () {
 
 		rotateSpeed = Random.Range(50,70);
 
-		armor = 60;
-
+		//Just to give a little turn
 		transform.Rotate (0, 0, 20);
+
+		if(Random.Range(0,1)==0)
+			//Makes it follows not straight paths
+			transform.Rotate (0, 0, Random.Range(0, 20));
+
+		armor = 60;
 	}
 	
 	// Update is called once per frame
