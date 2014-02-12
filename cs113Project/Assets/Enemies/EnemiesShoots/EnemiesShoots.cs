@@ -1,19 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyShoots : MonoBehaviour {
+public class EnemiesShoots : MonoBehaviour {
 
 	//GameObjects
 	public GameObject goProjectilePrefab;
 	private GameObject[] argoProjectiles = new GameObject[50];
 	private GameObject player;
-	
+
+	public ParticleSystem initialGunFlash;
+	public ParticleSystem gunFlash;
+
 	//Fire
 	private int iNext = 0;
-	private float fMag = 50000.0f;
+	private float fMag = 30000.0f;
 
 	// Use this for initialization
 	void Start () {
+		initialGunFlash.enableEmission = false;
+		gunFlash.enableEmission = false;
+
 		player = GameObject.FindGameObjectWithTag("Player");
 		
 		for (int i = 0; i < argoProjectiles.Length; i++) 
@@ -28,8 +34,15 @@ public class EnemyShoots : MonoBehaviour {
 		Vector3 direction = player.transform.position - transform.position;
 		float angle = Vector3.Angle(direction, transform.forward);
 		Debug.Log("Angle "+angle);
+
+		initialGunFlash.enableEmission = false;
+		gunFlash.enableEmission = false;
+
 		if(angle < 30.0f)
 		{
+			initialGunFlash.enableEmission = true;
+			gunFlash.enableEmission = true;
+
 			GameObject go = argoProjectiles[iNext++];
 			
 			if(iNext==49)

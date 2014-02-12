@@ -24,10 +24,6 @@ public class Player : MonoBehaviour {
 
 	public GameObject enemyTarget;//temporary enemy target for time being
 
-
-
-
-
 	
 	private int armor, lives;
 
@@ -72,9 +68,6 @@ public class Player : MonoBehaviour {
 		transform.position = new Vector3(0,15,0);
 		transform.Rotate(0,0,0);
 		transform.localScale.Scale(new Vector3(1,1,1));
-
-
-
 
 
 		defaultThrust1.enableEmission = false;
