@@ -45,7 +45,7 @@ public class EnemiesShoots : MonoBehaviour {
 
 			GameObject go = argoProjectiles[iNext++];
 			
-			if(iNext==49)
+			if(iNext == argoProjectiles.Length)
 				iNext = 0;
 			
 			go.SetActive (true);

@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Enemies\EnemiesShoots\EnemiesShoots.cs" />
      <Compile Include="Assets\Enemies\Scout\Scout.cs" />
+     <Compile Include="Assets\Level1\SpawnManager.cs" />
      <Compile Include="Assets\LevelLight.cs" />
      <Compile Include="Assets\Menu.cs" />
      <Compile Include="Assets\Player\Player.cs" />
