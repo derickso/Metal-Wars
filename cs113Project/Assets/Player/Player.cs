@@ -22,6 +22,12 @@ public class Player : MonoBehaviour {
 
 	//private float landingSpeed = 
 
+	public GameObject enemyTarget;//temporary enemy target for time being
+
+
+
+
+
 	
 	private int armor, lives;
 
@@ -185,6 +191,14 @@ public class Player : MonoBehaviour {
 			thruster1.enableEmission = false;
 			thruster2.enableEmission = false;
 		}
+
+		//Follow enemy plane
+		if(Input.GetKey (KeyCode.RightShift))
+		{
+			transform.LookAt (enemyTarget.transform.position);
+			//transform.Translate (
+		}
+
 		
 
 		//Finish later
