@@ -26,7 +26,7 @@ public class EnemyShoots : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector3 direction = player.transform.position - transform.position;
-		float angle = Vector3.Angle(-direction, transform.forward);
+		float angle = Vector3.Angle(direction, transform.forward);
 		Debug.Log("Angle "+angle);
 		if(angle < 30.0f)
 		{
@@ -39,7 +39,9 @@ public class EnemyShoots : MonoBehaviour {
 			go.rigidbody.velocity = Vector3.zero;
 			go.transform.position = transform.position;
 			go.transform.rotation = transform.rotation;
-			go.rigidbody.AddForce (-transform.forward * fMag);
+			//transform.Rotate(0, 180, 0);
+			go.rigidbody.AddForce (transform.forward * fMag);
+			//transform.Rotate(0, 180, 0);
 		}
 	}
 }
