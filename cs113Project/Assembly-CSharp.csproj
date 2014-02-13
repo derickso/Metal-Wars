@@ -57,7 +57,9 @@
      <Compile Include="Assets\Player\PlayerShoots\MissileShoot.cs" />
      <Compile Include="Assets\Player\PlayerView.cs" />
      <Compile Include="Assets\TargetSelection.cs" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
