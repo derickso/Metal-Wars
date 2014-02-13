@@ -90,7 +90,10 @@ public class Player : MonoBehaviour {
 		float rotateAmount = rotateSpeed * Time.deltaTime;
 
 
-		//transform.Translate(0,0,transAmount);
+
+		transform.Translate(0,0,transAmount);
+
+
 
 		defaultThrust1.enableEmission = true;
 		defaultThrust2.enableEmission = true;
