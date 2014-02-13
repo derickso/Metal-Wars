@@ -48,11 +48,11 @@ public class MissileShoot : MonoBehaviour {
 			go.SetActive (true);
 			go.rigidbody.velocity = Vector3.zero;
 			go.transform.position = transform.position;
-			//go.transform.rotation = transform.rotation;
-			//go.transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
-			//go.transform.LookAt (Vector3.zero);
-			//go.transform.rotation = transform.LookAt(transform.position + rigidbody.velocity);
-			//go.transform.Rotate (0,0,0);
+			go.transform.rotation = transform.rotation;
+			//go.transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);//
+			//go.transform.LookAt (Vector3.zero);//
+			//go.transform.rotation = transform.LookAt(transform.position + rigidbody.velocity);//
+			go.transform.Rotate (90,0,0);//
 			go.rigidbody.AddForce (transform.forward * fMag);
 			
 			//temp = go;
