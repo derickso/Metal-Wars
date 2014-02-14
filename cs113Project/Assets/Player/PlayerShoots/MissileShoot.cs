@@ -17,7 +17,7 @@ public class MissileShoot : MonoBehaviour {
 
 	//Heat-Seeking stuff
 	public GameObject target1;
-	private int totalNumOfSTUKAEnemies = 3;//Change this number when you add in more enemies
+	private int totalNumOfSCOUTEnemies = 3;//Change this number when you add in more enemies
 	private GameObject[] enemies1 = new GameObject[100];
 
 
@@ -39,9 +39,9 @@ public class MissileShoot : MonoBehaviour {
 		//goProjectilePrefab.SetActive (false);
 		for (int i = 0; i < argoProjectiles.Length; i++) 
 		{
-			//argoProjectiles[i] = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);//
+			argoProjectiles[i] = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);//
 			//argoProjectiles[i].transform.Rotate(0,0,90f);
-			//argoProjectiles[i].SetActive (false);//
+			argoProjectiles[i].SetActive (false);//
 		}
 
 
@@ -50,10 +50,10 @@ public class MissileShoot : MonoBehaviour {
 
 		//Make all the enemy planes in the game possible for selection
 
-		for(int i = 1; i <= totalNumOfSTUKAEnemies; i++)//Don't use enemy size array list otherwise you cause null reference objects.  
+		for(int i = 1; i <= totalNumOfSCOUTEnemies; i++)//Don't use enemy size array list otherwise you cause null reference objects.  
 		{
 			//Use i as the prefix of the name
-			enemies1[i-1] = GameObject.Find("STUKA"+i);
+			enemies1[i-1] = GameObject.Find("Scout"+i);
 
 
 		}
@@ -68,7 +68,8 @@ public class MissileShoot : MonoBehaviour {
 	void Update () {
 	
 		//float rotateAmount = 25f * Time.deltaTime;
-		if (Input.GetKeyDown(KeyCode.Q) && Player.numMissiles != 0) //Just hold down to shoot
+		//if (Input.GetKeyDown(KeyCode.Q) && Player.numMissiles != 0) //Just hold down to shoot
+		if (Input.GetKeyDown(KeyCode.Q))
 		{		
 			//GameObject go = argoProjectiles[iNext++];
 			GameObject go = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);
@@ -85,7 +86,7 @@ public class MissileShoot : MonoBehaviour {
 			//go.transform.rotation = transform.LookAt(transform.position + rigidbody.velocity);//
 			//go.transform.Rotate (90,0,0);//
 			go.rigidbody.AddForce (transform.forward * fMag);
-			Player.numMissiles = Player.numMissiles - 0.5;
+			//Player.numMissiles = Player.numMissiles - 0.5;//Unlimited ammo for now
 			//temp = go;
 
 
@@ -115,7 +116,7 @@ public class MissileShoot : MonoBehaviour {
 		//Trying out the heatseeking outside here first.  
 
 
-		for(int i = 0; i < totalNumOfSTUKAEnemies; i++)
+		for(int i = 0; i < totalNumOfSCOUTEnemies; i++)
 		{
 
 		}
