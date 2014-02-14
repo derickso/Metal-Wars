@@ -14,7 +14,24 @@ public class MissileShoot : MonoBehaviour {
 	
 
 
-	public GameObject target;
+
+	//Heat-Seeking stuff
+	public GameObject target1;
+	private int totalNumOfSTUKAEnemies = 3;//Change this number when you add in more enemies
+	private GameObject[] enemies1 = new GameObject[100];
+
+
+	public GameObject target2;
+	private int totalNumOfZEROSENEnemies = 3;//Change this number when you add in more enemies
+	private GameObject[] enemies2 = new GameObject[100];
+
+	public GameObject target3;
+	private int totalNumOfCLASS3Enemies = 3;//Change this number when you add in more enemies
+	private GameObject[] enemies3 = new GameObject[100];
+
+	public GameObject target4;
+	private int totalNumOfCLASS4Enemies = 3;//Change this number when you add in more enemies
+	private GameObject[] enemies4 = new GameObject[100];
 
 
 	// Use this for initialization
@@ -26,6 +43,24 @@ public class MissileShoot : MonoBehaviour {
 			//argoProjectiles[i].transform.Rotate(0,0,90f);
 			argoProjectiles[i].SetActive (false);//
 		}
+
+
+
+
+
+		//Make all the enemy planes in the game possible for selection
+
+		for(int i = 1; i <= totalNumOfSTUKAEnemies; i++)//Don't use enemy size array list otherwise you cause null reference objects.  
+		{
+			//Use i as the prefix of the name
+			enemies1[i-1] = GameObject.Find("STUKA"+i);
+
+
+		}
+
+
+
+
 
 	}
 	
@@ -55,14 +90,21 @@ public class MissileShoot : MonoBehaviour {
 			//temp = go;
 
 
+
+
+
+
+
 			//Heat Seeking Code:  
+
 			//Vector3 newTarget = target.transform.position - transform.position;
-			
 			//go.rigidbody.velocity =  newTarget.normalized * 800;
-			
 			//go.transform.LookAt (target.transform.position);
 
-			
+
+
+
+
 			//if()
 			//{
 			//}
@@ -71,7 +113,13 @@ public class MissileShoot : MonoBehaviour {
 
 
 
+		//Trying out the heatseeking outside here first.  
 
+
+		for(int i = 0; i < totalNumOfSTUKAEnemies; i++)
+		{
+
+		}
 
 
 
