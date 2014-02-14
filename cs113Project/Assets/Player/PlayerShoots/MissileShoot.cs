@@ -19,12 +19,12 @@ public class MissileShoot : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		goProjectilePrefab.SetActive (false);
+		//goProjectilePrefab.SetActive (false);
 		for (int i = 0; i < argoProjectiles.Length; i++) 
 		{
-			argoProjectiles[i] = (GameObject)Instantiate (goProjectilePrefab);
+			//argoProjectiles[i] = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);
 			//argoProjectiles[i].transform.Rotate(0,0,90f);
-			argoProjectiles[i].SetActive (false);
+			//argoProjectiles[i].SetActive (false);
 		}
 
 	}
@@ -32,27 +32,24 @@ public class MissileShoot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-
+		float rotateAmount = 25f * Time.deltaTime;
 
 		if (Input.GetKeyDown(KeyCode.Q)) //Just hold down to shoot
-		{
-
-
+		{			
+			//GameObject go = argoProjectiles[iNext++];
+			GameObject go = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);
 			
-			
-			
-			GameObject go = argoProjectiles[iNext++];
-			
-			if (iNext >= argoProjectiles.Length) iNext = 0;
+			//if (iNext >= argoProjectiles.Length) iNext = 0;
 			
 			go.SetActive (true);
 			go.rigidbody.velocity = Vector3.zero;
-			go.transform.position = transform.position;
-			go.transform.rotation = transform.rotation;
+			//go.transform.position = transform.position;
+			//go.transform.rotation = Quaternion.Euler(rotateAmount,0,0);
+			go.transform.Rotate (90, 90, 90);
 			//go.transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);//
 			//go.transform.LookAt (Vector3.zero);//
 			//go.transform.rotation = transform.LookAt(transform.position + rigidbody.velocity);//
-			go.transform.Rotate (90,0,0);//
+			//go.transform.Rotate (90,0,0);//
 			go.rigidbody.AddForce (transform.forward * fMag);
 			
 			//temp = go;
