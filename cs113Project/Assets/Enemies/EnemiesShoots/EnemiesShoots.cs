@@ -57,4 +57,5 @@ public class EnemiesShoots : MonoBehaviour {
 			//transform.Rotate(0, 180, 0);
 		}
 	}
+	
 }
