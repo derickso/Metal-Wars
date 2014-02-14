@@ -1,12 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player/Player.cs">
+=======
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\PlayerShoots\MissileShoot.cs">
+>>>>>>> 90375c96a6ee43c5130b57d8cdb95fb450e42f44
     <Files>
       <File FileName="Assets/Enemies/Enemy.cs" Line="1" Column="1" />
       <File FileName="Assets/Player/Player.cs" Line="94" Column="3" />
       <File FileName="Assets/Enemies/EnemiesShoots/EnemiesShoots.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+>>>>>>> 2fb0f336787d52018279974217b9cbfa01c8afe2
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
