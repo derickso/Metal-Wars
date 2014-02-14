@@ -9,7 +9,7 @@ public class MissileShoot : MonoBehaviour {
 
 	public GameObject goProjectilePrefab;
 	private GameObject[] argoProjectiles = new GameObject[900];
-	private int iNext = 0;
+	//private int iNext = 0;
 	private float fMag = 10000.0f;//1 Frame = 1000.  So bulletspeed = playerSpeed * 1000 to keep up
 	
 
@@ -22,9 +22,9 @@ public class MissileShoot : MonoBehaviour {
 		//goProjectilePrefab.SetActive (false);
 		for (int i = 0; i < argoProjectiles.Length; i++) 
 		{
-			argoProjectiles[i] = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);//
+			//argoProjectiles[i] = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);//
 			//argoProjectiles[i].transform.Rotate(0,0,90f);
-			argoProjectiles[i].SetActive (false);//
+			//argoProjectiles[i].SetActive (false);//
 		}
 
 	}
@@ -33,9 +33,8 @@ public class MissileShoot : MonoBehaviour {
 	void Update () {
 	
 		//float rotateAmount = 25f * Time.deltaTime;
-
-		if (Input.GetKeyDown(KeyCode.Q)) //Just hold down to shoot
-		{			
+		if (Input.GetKeyDown(KeyCode.Q) && Player.numMissiles != 0) //Just hold down to shoot
+		{		
 			//GameObject go = argoProjectiles[iNext++];
 			GameObject go = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);
 			
@@ -51,7 +50,7 @@ public class MissileShoot : MonoBehaviour {
 			//go.transform.rotation = transform.LookAt(transform.position + rigidbody.velocity);//
 			//go.transform.Rotate (90,0,0);//
 			go.rigidbody.AddForce (transform.forward * fMag);
-			
+			Player.numMissiles = Player.numMissiles - 0.5;
 			//temp = go;
 
 

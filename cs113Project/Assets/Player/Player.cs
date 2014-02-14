@@ -38,6 +38,14 @@ public class Player : MonoBehaviour {
 	int selGridInt  = 0;
 	string[] selStrings = new string[] {"Easy", "Medium", "Hard"};
 
+	public Vector2 healthBarPos = new Vector2(20,40);	
+	public Vector2 healthBarSize = new Vector2(90,20);
+	public Texture2D emptyTex;
+	public Texture2D fullTex;
+	public Texture2D missIcon;
+	public static double numMissiles = 5;
+	public float healthAmount;
+
 
 	//Default thrusters
 	public ParticleSystem defaultThrust1;
@@ -81,7 +89,8 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		healthAmount = .75f;
+
 
 
 		//__________Ace Combat_______
@@ -224,10 +233,32 @@ public class Player : MonoBehaviour {
 	}
 	
 	void OnGUI (){
+		//draw the background:
+		GUI.Label(new Rect (healthBarPos.x, healthBarPos.y - 23, 100, 20), "Health");
+		GUI.BeginGroup(new Rect(healthBarPos.x, healthBarPos.y, healthBarSize.x, healthBarSize.y));
+			GUI.Box(new Rect(0,0, healthBarSize.x, healthBarSize.y), emptyTex);
+		
+			//draw the filled-in part:
+			GUI.BeginGroup(new Rect(0,0, healthBarSize.x * healthAmount, healthBarSize.y));
+				GUI.DrawTexture(new Rect(0,0, healthBarSize.x * healthAmount, healthBarSize.y), fullTex);
+			GUI.EndGroup();
+		GUI.EndGroup();
+
+		int offset = 22;
+		int missileWidth = 15;
+		//GUI.BeginGroup(new Rect(healthBarPos.x, healthBarPos.y + 34, healthBarSize.x, healthBarSize.y));
+		for (int i = 0; i < numMissiles; i++)
+		{
+			GUI.DrawTexture (new Rect (healthBarPos.x + i*offset, 60, missileWidth, 35), missIcon, ScaleMode.ScaleToFit);
+		}
+		//GUI.EndGroup();
+
+
 		if(isPaused && !inOptions)
 		{
 			menuX = Screen.width/2.5f;
 			menuY = Screen.height/2.5f;
+
 			GUI.Box(new Rect(menuX,menuY,220,180),"Paused");
 			
 			//Create the Start button
