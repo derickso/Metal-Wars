@@ -32,6 +32,7 @@ public class Player : MonoBehaviour {
 
 	private bool isPaused;
 	private bool inOptions;
+	private bool isGameOver;
 	
 	public float hSliderValue = 15.0f;
 	
@@ -42,9 +43,11 @@ public class Player : MonoBehaviour {
 	public Vector2 healthBarSize = new Vector2(90,20);
 	public Texture2D emptyTex;
 	public Texture2D fullTex;
-	public Texture2D missIcon;
-	public static double numMissiles = 5;
-	public float healthAmount;
+	public Texture2D empIcon;
+	public Texture2D livesIcon;
+	public static double numEMPs;
+	public static double numLives = 3;
+	public static float healthAmount;
 
 
 	//Default thrusters
@@ -64,7 +67,11 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		isGameOver = false;
+		numEMPs = 5;
+		//numLives = 3;
 		Time.timeScale = 1;
+		healthAmount = .75f;
 		//Things to set up how the beginning of the scene should be, goes HERE.  
 		//What to do right at the beginning of the scene.  
 		//If attached, it is object instead of scene.  
@@ -89,9 +96,24 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		healthAmount = .75f;
 
-
+		if (healthAmount <= 0)
+		{
+			//if (numLives > 0)
+			//{
+			//	healthAmount = .75f;
+			//	numLives = numLives - 1;
+			//}
+			//else {
+			if (!isGameOver)
+				numLives--;
+			isGameOver = true;
+			//}
+		}
+		//if (numLives <= 0)
+		//{
+		//	isGameOver = true;
+		//}
 
 		//__________Ace Combat_______
 
@@ -233,23 +255,60 @@ public class Player : MonoBehaviour {
 	}
 	
 	void OnGUI (){
+		if (isGameOver)
+		{
+			Time.timeScale = 0;
+			menuX = Screen.width/2.5f;
+			menuY = Screen.height/2.5f;
+		
+			if (numLives <= 0)
+			{
+				GUI.Box(new Rect(menuX,menuY,220,150),"You're finished, kid.");
+
+				if(GUI.Button(new Rect(menuX + 60,menuY + 50,100,40),"Main Menu")) {
+					numLives = 3;
+					Application.LoadLevel ("Menu");
+				}
+			}
+			else
+			{
+				GUI.Box(new Rect(menuX,menuY,220,150),"You died! :(");
+				GUI.Label(new Rect(menuX+58,menuY+30,220,150),"Restart mission?");
+
+				//Create the Start button
+				if(GUI.Button(new Rect(menuX + 60,menuY + 50,100,40),"Yes")) {
+					Time.timeScale = 1;
+					Application.LoadLevel ("Scene1");
+				}
+				if(GUI.Button(new Rect(menuX + 60,menuY + 100,100,40),"No")) {
+					Application.LoadLevel ("Menu");
+				}
+			}
+		}
 		//draw the background:
-		GUI.Label(new Rect (healthBarPos.x, healthBarPos.y - 23, 100, 20), "Health");
+		int offset = 22;
+		GUI.Label(new Rect (healthBarPos.x, healthBarPos.y - 21, 100, 20), "Lives");
+		for (int i = 0; i < numLives; i++)
+		{
+			GUI.DrawTexture (new Rect (healthBarPos.x + 35 + i*17, healthBarPos.y - 25, 15, 28), livesIcon, ScaleMode.ScaleToFit);
+		}
+		
 		GUI.BeginGroup(new Rect(healthBarPos.x, healthBarPos.y, healthBarSize.x, healthBarSize.y));
 			GUI.Box(new Rect(0,0, healthBarSize.x, healthBarSize.y), emptyTex);
 		
 			//draw the filled-in part:
 			GUI.BeginGroup(new Rect(0,0, healthBarSize.x * healthAmount, healthBarSize.y));
 				GUI.DrawTexture(new Rect(0,0, healthBarSize.x * healthAmount, healthBarSize.y), fullTex);
+				GUI.Label(new Rect (0,0, 100, 20), "Armor");
 			GUI.EndGroup();
 		GUI.EndGroup();
 
-		int offset = 22;
-		int missileWidth = 15;
+
+		int empWidth = 15;
 		//GUI.BeginGroup(new Rect(healthBarPos.x, healthBarPos.y + 34, healthBarSize.x, healthBarSize.y));
-		for (int i = 0; i < numMissiles; i++)
+		for (int i = 0; i < numEMPs; i++)
 		{
-			GUI.DrawTexture (new Rect (healthBarPos.x + i*offset, 60, missileWidth, 35), missIcon, ScaleMode.ScaleToFit);
+			GUI.DrawTexture (new Rect (healthBarPos.x + i*offset, 55, empWidth, 28), empIcon, ScaleMode.ScaleToFit);
 		}
 		//GUI.EndGroup();
 

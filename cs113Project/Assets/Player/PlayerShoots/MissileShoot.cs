@@ -33,7 +33,7 @@ public class MissileShoot : MonoBehaviour {
 	void Update () {
 	
 		//float rotateAmount = 25f * Time.deltaTime;
-		if (Input.GetKeyDown(KeyCode.Q) && Player.numMissiles != 0) //Just hold down to shoot
+		if (Input.GetKeyDown(KeyCode.Q) && Player.numEMPs != 0) //Just hold down to shoot
 		{		
 			//GameObject go = argoProjectiles[iNext++];
 			GameObject go = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);
@@ -50,7 +50,10 @@ public class MissileShoot : MonoBehaviour {
 			//go.transform.rotation = transform.LookAt(transform.position + rigidbody.velocity);//
 			//go.transform.Rotate (90,0,0);//
 			go.rigidbody.AddForce (transform.forward * fMag);
-			Player.numMissiles = Player.numMissiles - 0.5;
+
+			Player.healthAmount = Player.healthAmount - .125f;
+			//Player.numLives = Player.numLives - 0.5;
+			//Debug.Log (Player.numLives);
 			//temp = go;
 
 

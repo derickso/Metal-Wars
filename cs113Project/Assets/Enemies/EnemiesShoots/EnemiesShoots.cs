@@ -33,7 +33,7 @@ public class EnemiesShoots : MonoBehaviour {
 	void Update () {
 		Vector3 direction = player.transform.position - transform.position;
 		float angle = Vector3.Angle(direction, transform.forward);
-		Debug.Log("Angle "+angle);
+		//Debug.Log("Angle "+angle);
 
 		initialGunFlash.enableEmission = false;
 		gunFlash.enableEmission = false;
