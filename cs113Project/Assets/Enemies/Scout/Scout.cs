@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Scout : MonoBehaviour {
+public class Scout : Enemy {
 
 	//Speeds
 	public float rotateSpeed;
