@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: cc85358121e344dd39fb5c7129aca87b
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - goProjectilePrefab: {instanceID: 0}
+  - target1: {instanceID: 0}
+  - target2: {instanceID: 0}
+  - target3: {instanceID: 0}
+  - target4: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
