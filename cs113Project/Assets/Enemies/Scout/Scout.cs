@@ -8,7 +8,7 @@ public class Scout : Enemy {
 	private const float speed = 60.0f;
 
 	//Enemy armor
-	private int armor;
+	//private int armor;
 	
 	// Use this for initialization
 	void Start () {
