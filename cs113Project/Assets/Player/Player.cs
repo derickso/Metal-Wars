@@ -5,7 +5,7 @@ using System.Net;
 
 public class Player : MonoBehaviour {
 
-
+	public GameObject explosion;
 	public GameObject target = null;//Camera
 
 	//public float field1 = 3.0f;
@@ -122,7 +122,7 @@ public class Player : MonoBehaviour {
 
 
 
-		transform.Translate(0,0,transAmount);
+		//transform.Translate(0,0,transAmount);
 
 
 
@@ -353,6 +353,19 @@ public class Player : MonoBehaviour {
 				Debug.Log("Exit Options");
 				inOptions = false;
 			}
+		}
+	}
+
+	public void receiveDamage(int damage){
+		armor -= damage;
+		Debug.Log("Player damaged!!"+damage);
+		if(armor < 1)
+		{
+			GameObject expl = (GameObject)Instantiate(explosion, transform.position, Quaternion.identity);
+			//Create explosion HERE
+			--lives;
+			Destroy(gameObject);
+			Destroy(expl,2);
 		}
 	}
 }

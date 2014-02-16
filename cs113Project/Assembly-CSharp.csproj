@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Enemies\EnemiesShoots\EnemiesBullets.cs" />
      <Compile Include="Assets\Enemies\EnemiesShoots\EnemiesShoots.cs" />
      <Compile Include="Assets\Enemies\Enemy.cs" />
      <Compile Include="Assets\Enemies\Scout\Scout.cs" />
@@ -56,6 +57,7 @@
      <Compile Include="Assets\Player\PlayerFrontLight.cs" />
      <Compile Include="Assets\Player\PlayerShoots\LaserShoot.cs" />
      <Compile Include="Assets\Player\PlayerShoots\MissileShoot.cs" />
+     <Compile Include="Assets\Player\PlayerShoots\PlayerBullets.cs" />
      <Compile Include="Assets\Player\PlayerView.cs" />
      <Compile Include="Assets\TargetSelection.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
