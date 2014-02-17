@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Scout : MonoBehaviour {
+public class Scout : Enemy {
 
 	//Speeds
 	public float rotateSpeed;
 	private const float speed = 60.0f;
 
 	//Enemy armor
-	private int armor;
+	//private int armor;
 	
 	// Use this for initialization
 	void Start () {

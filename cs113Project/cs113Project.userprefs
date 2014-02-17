@@ -1,10 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player/PlayerShoots/MissileShoot.cs">
     <Files>
       <File FileName="Assets/Menu.cs" Line="1" Column="1" />
       <File FileName="Assets/Player/PlayerShoots/MissileShoot.cs" Line="160" Column="20" />
       <File FileName="Assets/Player/Player.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player/PlayerShoots/LaserShoot.cs">
+    <Files>
+      <File FileName="Assets/Player/PlayerShoots/LaserShoot.cs" Line="90" Column="4" />
+      <File FileName="Assets/Player/Player.cs" Line="366" Column="11" />
+      <File FileName="Assets/Enemies/EnemiesShoots/EnemiesShoots.cs" Line="56" Column="4" />
+      <File FileName="Assets/Enemies/Enemy.cs" Line="11" Column="20" />
+      <File FileName="Assets/Player/PlayerShoots/PlayerBullets.cs" Line="13" Column="5" />
+>>>>>>> a92e2b8e7aa70837eb76c022e7712fcf32f02281
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

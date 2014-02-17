@@ -8,13 +8,13 @@ public abstract class Enemy : MonoBehaviour {
 	
 	public void receiveDamage(int damage){
 		armor -= damage;
-		Debug.Log("Levou dano!!");
+		Debug.Log("Enemy Damaged!!"+damage);
 		if(armor < 1)
 		{
 			GameObject expl = (GameObject)Instantiate(explosion, transform.position, Quaternion.identity);
 			//Create explosion HERE
 			Destroy(gameObject);
-			Destroy(expl,3);
+			Destroy(expl,2);
 		}
 	}
 
