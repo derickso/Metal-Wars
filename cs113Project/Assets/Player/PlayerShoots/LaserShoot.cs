@@ -29,19 +29,15 @@ public class LaserShoot : MonoBehaviour {
 		initialLaserFlash.enableEmission = false;
 		laserMuzzle.enableEmission = false;
 	
-
-
-
 		for (int i = 0; i < argoProjectiles.Length; i++) 
 		{
 			argoProjectiles[i] = (GameObject)Instantiate (goProjectilePrefab);
 			argoProjectiles[i].SetActive (false);
 		}
 	
-	
 	}
 
-// Update is called once per frame
+	// Update is called once per frame
 	void Update () {
 	
 
@@ -56,43 +52,42 @@ public class LaserShoot : MonoBehaviour {
 			//instatiatedProjectile.velocity = transform.TransformDirection (new Vector3(0,0,speed));
 			//
 
-
-
 		//}
-
 
 		//______________VERSION 2_________________________
 
 		initialLaserFlash.enableEmission = false;
 		laserMuzzle.enableEmission = false;
 
-
-
 		//if (Input.GetKeyDown(KeyCode.Space)) //Must press it every time to shoot
 		if (Input.GetKey(KeyCode.Space)) //Just hold down to shoot
 		{
 
-			initialLaserFlash.enableEmission = true;
-			laserMuzzle.enableEmission = true;
-
-
-
-
-
-			GameObject go = argoProjectiles[iNext++];
-
-			if (iNext >= argoProjectiles.Length) iNext = 0;
-
-			go.SetActive (true);
-			go.rigidbody.velocity = Vector3.zero;
-			go.transform.position = transform.position;
-			go.transform.rotation = transform.rotation;
-			go.rigidbody.AddForce (transform.forward * fMag);
+			FireLaser();
 
 			//temp = go;
 		}
 
 		//Destroy(temp);
 		
+	}
+	
+	void FireLaser () {
+		//Enable the flashes
+		initialLaserFlash.enableEmission = true;
+		laserMuzzle.enableEmission = true;
+
+		//Take the correct projectile
+		GameObject go = argoProjectiles[iNext++];
+		
+		if (iNext >= argoProjectiles.Length) iNext = 0;
+
+		//Fire the projectile
+		go.SetActive (true);
+		go.rigidbody.velocity = Vector3.zero;
+		go.transform.position = transform.position;
+		go.transform.rotation = transform.rotation;
+		//go.rigidbody.velocity = transform.forward * fMag;
+		go.rigidbody.AddForce(transform.forward * fMag);
 	}
 }

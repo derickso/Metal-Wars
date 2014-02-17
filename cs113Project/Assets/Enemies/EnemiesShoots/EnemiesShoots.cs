@@ -5,7 +5,7 @@ public class EnemiesShoots : MonoBehaviour {
 
 	//GameObjects
 	public GameObject goProjectilePrefab;
-	private GameObject[] argoProjectiles = new GameObject[50];
+	private GameObject[] argoProjectiles = new GameObject[80];
 	private GameObject player;
 
 	public ParticleSystem initialGunFlash;
@@ -13,7 +13,7 @@ public class EnemiesShoots : MonoBehaviour {
 
 	//Fire
 	private int iNext = 0;
-	private float fMag = 30000.0f;
+	private float fMag = 300.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -40,22 +40,31 @@ public class EnemiesShoots : MonoBehaviour {
 
 		if(angle < 30.0f)
 		{
-			initialGunFlash.enableEmission = true;
-			gunFlash.enableEmission = true;
 
-			GameObject go = argoProjectiles[iNext++];
-			
-			if(iNext == argoProjectiles.Length)
-				iNext = 0;
-			
-			go.SetActive (true);
-			go.rigidbody.velocity = Vector3.zero;
-			go.transform.position = transform.position;
-			go.transform.rotation = transform.rotation;
+			FireBullet();
+
 			//transform.Rotate(0, 180, 0);
-			go.rigidbody.AddForce (transform.forward * fMag);
+			//go.rigidbody.AddForce (transform.forward * fMag);
 			//transform.Rotate(0, 180, 0);
 		}
+	}
+
+	void FireBullet() {
+		//Fire flashes
+		initialGunFlash.enableEmission = true;
+		gunFlash.enableEmission = true;
+
+		//Take a bullet
+		GameObject go = argoProjectiles[iNext++];
+		
+		if(iNext == argoProjectiles.Length)
+			iNext = 0;
+
+		//Fire the bullet
+		go.SetActive (true);
+		go.rigidbody.velocity = transform.forward * fMag;
+		go.transform.position = transform.position;
+		go.transform.rotation = transform.rotation;
 	}
 	
 }
