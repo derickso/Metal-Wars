@@ -3,13 +3,13 @@ using System.Collections;
 
 public class PlayerBullets : MonoBehaviour {
 
-	public int speed;
+	//public int speed;
 	public int damage;
 
 	// Use this for initialization
 	void Start () {
-		speed = 1000;
-		damage = 1;
+		//speed = 1000;
+		damage = 5;
 		//rigidbody.velocity = transform.forward * speed;
 	}
 	
@@ -19,11 +19,12 @@ public class PlayerBullets : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider otherObject) {
-		Debug.Log("Collided with enemy");
+		//Debug.Log("PlayerBullets collided");
 		if(otherObject.tag == "Enemy")
 		{
 			Enemy enemy = (Enemy)otherObject.gameObject.GetComponent("Enemy");
 			enemy.receiveDamage(damage);
+			gameObject.SetActive(false);
 		}
 	}
 }

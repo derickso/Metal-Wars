@@ -1,13 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Enemies/EnemiesShoots/EnemiesBullets.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player/PlayerShoots/PlayerBullets.cs">
     <Files>
-      <File FileName="Assets/Player/PlayerShoots/LaserShoot.cs" Line="1" Column="1" />
-      <File FileName="Assets/Player/PlayerShoots/PlayerBullets.cs" Line="1" Column="1" />
-      <File FileName="Assets/Player/Player.cs" Line="1" Column="1" />
-      <File FileName="Assets/Enemies/Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets/Enemies/EnemiesShoots/EnemiesShoots.cs" Line="1" Column="1" />
-      <File FileName="Assets/Enemies/EnemiesShoots/EnemiesBullets.cs" Line="1" Column="1" />
+      <File FileName="Assets/Player/PlayerShoots/LaserShoot.cs" Line="88" Column="13" />
+      <File FileName="Assets/Player/PlayerShoots/PlayerBullets.cs" Line="12" Column="13" />
+      <File FileName="Assets/Player/Player.cs" Line="375" Column="6" />
+      <File FileName="Assets/Enemies/Enemy.cs" Line="11" Column="30" />
+      <File FileName="Assets/Enemies/EnemiesShoots/EnemiesShoots.cs" Line="52" Column="17" />
+      <File FileName="Assets/Enemies/EnemiesShoots/EnemiesBullets.cs" Line="21" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

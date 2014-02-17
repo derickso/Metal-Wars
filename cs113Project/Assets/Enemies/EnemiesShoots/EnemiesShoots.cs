@@ -5,7 +5,7 @@ public class EnemiesShoots : MonoBehaviour {
 
 	//GameObjects
 	public GameObject goProjectilePrefab;
-	private GameObject[] argoProjectiles = new GameObject[50];
+	private GameObject[] argoProjectiles = new GameObject[80];
 	private GameObject player;
 
 	public ParticleSystem initialGunFlash;
@@ -41,7 +41,7 @@ public class EnemiesShoots : MonoBehaviour {
 		if(angle < 30.0f)
 		{
 
-			FireBullets();
+			FireBullet();
 
 			//transform.Rotate(0, 180, 0);
 			//go.rigidbody.AddForce (transform.forward * fMag);
@@ -49,7 +49,7 @@ public class EnemiesShoots : MonoBehaviour {
 		}
 	}
 
-	void FireBullets() {
+	void FireBullet() {
 		//Fire flashes
 		initialGunFlash.enableEmission = true;
 		gunFlash.enableEmission = true;

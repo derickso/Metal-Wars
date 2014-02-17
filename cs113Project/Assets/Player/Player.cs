@@ -67,6 +67,9 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		armor = 50;
+
+
 		isGameOver = false;
 		numEMPs = 5;
 		//numLives = 3;
@@ -361,11 +364,15 @@ public class Player : MonoBehaviour {
 		Debug.Log("Player damaged!!"+damage);
 		if(armor < 1)
 		{
-			GameObject expl = (GameObject)Instantiate(explosion, transform.position, Quaternion.identity);
+			//Die procedure:
+			/*
 			//Create explosion HERE
+			GameObject expl = (GameObject)Instantiate(explosion, transform.position, Quaternion.identity);
+
 			--lives;
 			Destroy(gameObject);
 			Destroy(expl,2);
+			*/
 		}
 	}
 }

@@ -18,7 +18,7 @@ public class EnemiesBullets : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter (Collider otherObject) {
-		Debug.Log("EnemyBullets collided");
+		//Debug.Log("EnemyBullets collided");
 		if(otherObject.tag == "Player")
 		{
 			Player player = (Player)otherObject.gameObject.GetComponent("Player");
