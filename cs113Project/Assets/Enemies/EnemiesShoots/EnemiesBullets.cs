@@ -23,6 +23,7 @@ public class EnemiesBullets : MonoBehaviour {
 		{
 			Player player = (Player)otherObject.gameObject.GetComponent("Player");
 			player.receiveDamage(damage);
+
 			gameObject.SetActive(false);
 		}
 	}

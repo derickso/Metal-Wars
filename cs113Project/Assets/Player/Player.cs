@@ -359,6 +359,7 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	//Function called to cause damage to the player
 	public void receiveDamage(int damage){
 		armor -= damage;
 		Debug.Log("Player damaged!!"+damage);
