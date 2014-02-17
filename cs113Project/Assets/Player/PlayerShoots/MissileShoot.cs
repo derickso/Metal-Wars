@@ -108,7 +108,8 @@ public class MissileShoot : MonoBehaviour {
 			//go.transform.LookAt (target.transform.position);
 			
 			
-			
+			//if missile was locked on,
+			//this missile chases the selected enemy.  <------
 			
 			
 			//if()
