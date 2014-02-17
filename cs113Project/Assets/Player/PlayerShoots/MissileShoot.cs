@@ -14,8 +14,12 @@ public class MissileShoot : MonoBehaviour {
 	
 	
 	
-	/*
+	///*
 	//Heat-Seeking stuff
+
+	public GameObject playerRef;
+	private int distanceBtwnPlayerAndEnemy = 5000;
+
 	public GameObject target1;
 	private int totalNumOfSCOUTEnemies = 3;//Change this number when you add in more enemies
 	private GameObject[] enemies1 = new GameObject[100];
@@ -32,7 +36,7 @@ public class MissileShoot : MonoBehaviour {
 	public GameObject target4;
 	private int totalNumOfCLASS4Enemies = 3;//Change this number when you add in more enemies
 	private GameObject[] enemies4 = new GameObject[100];
-	*/
+	//*/
 	
 	// Use this for initialization
 	void Start () {
@@ -47,7 +51,7 @@ public class MissileShoot : MonoBehaviour {
 		
 		
 		
-		/*
+		///*
 		//Make all the enemy planes in the game possible for selection
 		
 		for(int i = 1; i <= totalNumOfSCOUTEnemies; i++)//Don't use enemy size array list otherwise you cause null reference objects.
@@ -57,7 +61,7 @@ public class MissileShoot : MonoBehaviour {
 			
 			
 		}
-		*/
+		//*/
 		
 		
 		
@@ -116,13 +120,53 @@ public class MissileShoot : MonoBehaviour {
 		
 		
 		//Trying out the heatseeking outside here first.
-		
-		/*
+
+
+
+		///*
+		 
+		//GameObject tempTarget;
+
 		for(int i = 0; i < totalNumOfSCOUTEnemies; i++)
 		{
-			
+
+			target1 = enemies1[i];
+
+			//tempTarget = enemies1[i];
+			// = GameObject.Find("Scout"+(i+1));
+
+
+
+			//if(GameObject.Find("Scout"+(i+1)) == target1)
+
+			//if crosshair.lookat == 
+			//If the crosshair is looking at the enemy,
+
+			//if(playerRef.transform.position.z + 500 == target1.transform.position.z
+			//   || playerRef.transform.position.z + 500 == target1.transform.position.x
+			//   || playerRef.transform.position.z + 500 == target1.transform.position.y)
+			//{
+			//
+			//}
+
+			//Check if player can see current enemy
+
+			Vector3 here = playerRef.transform.position;
+
+			if(target1.renderer.isVisible)
+			{
+
+				Vector3 position = target1.transform.position;
+				RaycastHit hit;
+
+
+			}
+
+
+
+
 		}
-		*/
+		//*/
 		
 		
 		
