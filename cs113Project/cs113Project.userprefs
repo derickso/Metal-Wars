@@ -1,17 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player/PlayerShoots/PlayerBullets.cs">
-    <Files>
-      <File FileName="Assets/Player/Player.cs" Line="362" Column="49" />
-      <File FileName="Assets/Enemies/Enemy.cs" Line="17" Column="4" />
-      <File FileName="Assets/Enemies/EnemiesShoots/EnemiesBullets.cs" Line="4" Column="46" />
-      <File FileName="Assets/Player/PlayerShoots/PlayerBullets.cs" Line="6" Column="56" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
->>>>>>> c049e53049f8b82c006a6813bf7adf997549ed63
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

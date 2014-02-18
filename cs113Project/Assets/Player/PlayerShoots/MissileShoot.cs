@@ -115,6 +115,16 @@ public class MissileShoot : MonoBehaviour {
 			//if()
 			//{
 			//}
+
+
+			for(int i = 0; i < totalNumOfSCOUTEnemies; i++)
+			{
+
+
+
+			}
+
+
 			
 		}
 		
