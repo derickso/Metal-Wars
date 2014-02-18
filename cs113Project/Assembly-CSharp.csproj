@@ -55,6 +55,7 @@
      <Compile Include="Assets\Menu.cs" />
      <Compile Include="Assets\Player\Player.cs" />
      <Compile Include="Assets\Player\PlayerFrontLight.cs" />
+     <Compile Include="Assets\Player\PlayerShoots\HeatSeekingScript.cs" />
      <Compile Include="Assets\Player\PlayerShoots\LaserShoot.cs" />
      <Compile Include="Assets\Player\PlayerShoots\MissileShoot.cs" />
      <Compile Include="Assets\Player\PlayerShoots\PlayerBullets.cs" />
