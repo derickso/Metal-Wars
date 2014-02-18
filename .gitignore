@@ -1,10 +1,10 @@
 # =============== #
 # Unity generated #
 # =============== #
-Temp/
-Obj/
-UnityGenerated/
-Library/
+cs113Project/Temp/
+cs113Project/Obj/
+cs113Project/UnityGenerated/
+cs113Project/Library/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
