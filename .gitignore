@@ -9,7 +9,7 @@ cs113Project/Library/
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
 # ===================================== #
-ExportedObj/
+cs113Project/ExportedObj/
 *.svd
 *.userprefs
 *.csproj
