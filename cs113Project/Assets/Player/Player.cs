@@ -25,7 +25,8 @@ public class Player : MonoBehaviour {
 	public GameObject enemyTarget;//temporary enemy target for time being
 
 	
-	private int armor, lives;
+	private float armor;
+	private int lives;
 
 	public float menuX = 0.0f;
 	public float menuY = 0.0f;
@@ -67,7 +68,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		armor = 50;
+		armor = 50.0f;
 
 
 		isGameOver = false;
@@ -360,8 +361,10 @@ public class Player : MonoBehaviour {
 	}
 
 	//Function called to cause damage to the player
-	public void receiveDamage(int damage){
+	public void receiveDamage(float damage){
 		armor -= damage;
+		//healthAmount = healthAmount - .125f;//health bar (the armor) goes down everytime this is called.  
+		healthAmount = healthAmount - (damage * 0.125f);
 		Debug.Log("Player damaged!!"+damage);
 		if(armor < 1)
 		{
