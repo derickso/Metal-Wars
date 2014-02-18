@@ -3,6 +3,9 @@ using System.Collections;
 
 public class PlayerBullets : MonoBehaviour {
 
+	//hit effect that will be showed once it hits an enemy
+	public GameObject hitEffect;
+
 	//public int speed;
 	public int damage;
 
@@ -24,6 +27,9 @@ public class PlayerBullets : MonoBehaviour {
 		{
 			Enemy enemy = (Enemy)otherObject.gameObject.GetComponent("Enemy");
 			enemy.receiveDamage(damage);
+
+			GameObject hit = (GameObject)Instantiate(hitEffect, transform.position, Quaternion.identity);
+			Destroy(hit,0.4f);
 			gameObject.SetActive(false);
 		}
 	}
