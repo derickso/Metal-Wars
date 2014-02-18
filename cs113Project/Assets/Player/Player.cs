@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
 	public GameObject enemyTarget;//temporary enemy target for time being
 
 	
-	private float armor;
+	private float armor, maxArmor;
 	private int lives;
 
 	public float menuX = 0.0f;
@@ -68,14 +68,14 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		armor = 50.0f;
+		maxArmor = armor = 50.0f;
 
 
 		isGameOver = false;
 		numEMPs = 5;
 		//numLives = 3;
 		Time.timeScale = 1;
-		healthAmount = .75f;
+		healthAmount = 1.0f;
 		//Things to set up how the beginning of the scene should be, goes HERE.  
 		//What to do right at the beginning of the scene.  
 		//If attached, it is object instead of scene.  
@@ -364,7 +364,8 @@ public class Player : MonoBehaviour {
 	public void receiveDamage(float damage){
 		armor -= damage;
 		//healthAmount = healthAmount - .125f;//health bar (the armor) goes down everytime this is called.  
-		healthAmount = healthAmount - (damage * 0.125f);
+		//healthAmount = healthAmount - (damage * 0.125f);
+		healthAmount = armor/maxArmor;
 		Debug.Log("Player damaged!!"+damage);
 		if(armor < 1)
 		{
