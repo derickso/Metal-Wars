@@ -14,10 +14,11 @@ public class LaserShoot : MonoBehaviour {
 
 	//_________VERSION 2_____________
 	public GameObject goProjectilePrefab;
-	private GameObject[] argoProjectiles = new GameObject[900];
+	private GameObject[] argoProjectiles = new GameObject[300];
 	private int iNext = 0;
-	private float fMag = 50000.0f;//1 Frame = 1000.  So bulletspeed = playerSpeed * 1000 to keep up
-	
+	private float fMag = 600.0f;//1 Frame = 1000.  So bulletspeed = playerSpeed * 1000 to keep up
+	private float fireNextTime = 0.0f;
+	private float fireNextDelay = 0.08f;
 
 	//private GameObject temp;
 
@@ -62,9 +63,18 @@ public class LaserShoot : MonoBehaviour {
 		//if (Input.GetKeyDown(KeyCode.Space)) //Must press it every time to shoot
 		if (Input.GetKey(KeyCode.Space)) //Just hold down to shoot
 		{
+			//Enable the flashes
+			initialLaserFlash.enableEmission = true;
+			laserMuzzle.enableEmission = true;
 
-			FireLaser();
-
+			//if the delay time passed it fires
+			if(fireNextTime < Time.time)
+			{
+				//Fire a laser
+				FireLaser();
+				//Adds the fireDelay to the time verifier
+				fireNextTime = Time.time + fireNextDelay;
+			}
 			//temp = go;
 		}
 
@@ -73,9 +83,6 @@ public class LaserShoot : MonoBehaviour {
 	}
 	
 	void FireLaser () {
-		//Enable the flashes
-		initialLaserFlash.enableEmission = true;
-		laserMuzzle.enableEmission = true;
 
 		//Take the correct projectile
 		GameObject go = argoProjectiles[iNext++];
@@ -84,10 +91,10 @@ public class LaserShoot : MonoBehaviour {
 
 		//Fire the projectile
 		go.SetActive (true);
-		go.rigidbody.velocity = Vector3.zero;
+		//go.rigidbody.velocity = Vector3.zero;
 		go.transform.position = transform.position;
 		go.transform.rotation = transform.rotation;
-		//go.rigidbody.velocity = transform.forward * fMag;
-		go.rigidbody.AddForce(transform.forward * fMag);
+		go.rigidbody.velocity = transform.forward * fMag;
+		//go.rigidbody.AddForce(transform.forward * fMag);
 	}
 }
