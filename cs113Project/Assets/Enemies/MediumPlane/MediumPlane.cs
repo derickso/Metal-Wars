@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MediumPlane : MonoBehaviour {
+public class MediumPlane : Enemy {
 
 	// Use this for initialization
 	void Start () {
-	
+		armor = 60;
 	}
 	
 	// Update is called once per frame
