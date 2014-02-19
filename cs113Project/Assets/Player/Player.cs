@@ -230,7 +230,13 @@ public class Player : MonoBehaviour {
 			//transform.Translate (
 		}
 
-		
+
+
+		if(true)	
+		{
+
+		}
+
 
 		//Finish later
 		//Landing/Takeoff
