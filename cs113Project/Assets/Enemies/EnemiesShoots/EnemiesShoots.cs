@@ -57,7 +57,7 @@ public class EnemiesShoots : MonoBehaviour {
 		//Take a bullet
 		GameObject go = argoProjectiles[iNext++];
 		
-		if(iNext == argoProjectiles.Length)
+		if(iNext >= argoProjectiles.Length)
 			iNext = 0;
 
 		//Fire the bullet
