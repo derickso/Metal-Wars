@@ -92,7 +92,7 @@ public class LaserShoot : MonoBehaviour {
 		//Fire the projectile
 		go.SetActive (true);
 		//go.rigidbody.velocity = Vector3.zero;
-		go.transform.position = transform.position;
+		go.transform.position = transform.position + transform.forward*10;
 		go.transform.rotation = transform.rotation;
 		go.rigidbody.velocity = transform.forward * fMag;
 		//go.rigidbody.AddForce(transform.forward * fMag);
