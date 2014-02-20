@@ -31,6 +31,7 @@ public class PlayerBullets : MonoBehaviour {
 			GameObject hit = (GameObject)Instantiate(hitEffect, transform.position, Quaternion.identity);
 			Destroy(hit,0.4f);
 			gameObject.SetActive(false);
+
 		}
 	}
 }
