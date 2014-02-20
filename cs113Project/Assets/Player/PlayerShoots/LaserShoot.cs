@@ -94,6 +94,7 @@ public class LaserShoot : MonoBehaviour {
 		//go.rigidbody.velocity = Vector3.zero;
 		go.transform.position = transform.position + transform.forward*10;
 		go.transform.rotation = transform.rotation;
+		go.transform.Rotate(90,0,0);//Needed to make the bullet go in the right position
 		go.rigidbody.velocity = transform.forward * fMag;
 		//go.rigidbody.AddForce(transform.forward * fMag);
 	}
