@@ -35,7 +35,7 @@ public class MediumPlane : Enemy {
 		//Unturns it
 		transform.Rotate (0, 0, -20);
 		//Goes forward and rotates in a circle
-		transform.Translate(0,0,-transAmount);//Needs to be -transAmount because the model is backwards
+		transform.Translate(0,0,transAmount);//Needs to be -transAmount because the model is backwards
 		transform.Rotate (0, rotateAmount, 0);
 		//Turns it a little to give the impression of being turning
 		transform.Rotate (0, 0, 20);
