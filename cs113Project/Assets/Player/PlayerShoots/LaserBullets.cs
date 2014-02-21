@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerBullets : MonoBehaviour {
+public class LaserBullets : MonoBehaviour {
 
 	//hit effect that will be showed once it hits an enemy
 	public GameObject hitEffect;
