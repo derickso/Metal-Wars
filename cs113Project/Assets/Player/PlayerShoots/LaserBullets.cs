@@ -26,6 +26,7 @@ public class LaserBullets : MonoBehaviour {
 		//if it hits an enemy:
 		if(otherObject.CompareTag("Enemy"))
 		{
+			Debug.Log("Name "+otherObject.name);
 			//Make damage to the enemy
 			Enemy enemy = (Enemy)otherObject.gameObject.GetComponent("Enemy");
 			enemy.receiveDamage(damage);
@@ -36,7 +37,7 @@ public class LaserBullets : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision collision) {
-		//If it collides with anything else it is destroied
+		//Make the hit effects
 		hit();
 	}
 

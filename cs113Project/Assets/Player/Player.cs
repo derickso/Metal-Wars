@@ -386,4 +386,11 @@ public class Player : MonoBehaviour {
 			*/
 		}
 	}
+
+	void OnTriggerExit (Collider collider) {
+		if(collider.CompareTag("MapBounds"))
+		{
+			transform.position =  -transform.forward;
+		}
+	}
 }
