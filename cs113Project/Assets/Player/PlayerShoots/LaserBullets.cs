@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerBullets : MonoBehaviour {
+public class LaserBullets : MonoBehaviour {
 
 	//hit effect that will be showed once it hits an enemy
 	public GameObject hitEffect;
@@ -23,7 +23,7 @@ public class PlayerBullets : MonoBehaviour {
 
 	void OnTriggerEnter (Collider otherObject) {
 		//Debug.Log("PlayerBullets collided");
-		if(otherObject.tag == "Enemy")
+		if(otherObject.CompareTag("Enemy"))
 		{
 			Enemy enemy = (Enemy)otherObject.gameObject.GetComponent("Enemy");
 			enemy.receiveDamage(damage);
