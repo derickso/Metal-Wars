@@ -63,8 +63,49 @@ public class EnemySpawner : MonoBehaviour {
 
 	
 	//private GameObject temp;
-	
-	
+
+	private int levelAndWaveMarker;//Starts at 1
+
+	//Level 1 has 3 waves
+	private int lvl1wave1Mark = 1;
+	private int lvl1wave2Mark = 2;
+	private int lvl1wave3Mark = 3;
+
+	private int lvl1wave1Amount = 5;//5 scout planes
+	private int lvl1wave2Amount = 2;//2 medium planes
+	private int lvl1wave3Amount = 1;//1 heavy plane
+
+
+
+	//Level 2 has 3 waves
+	private int lvl2wave1Mark = 4;
+	private int lvl2wave2Mark = 5;
+	private int lvl2wave3Mark = 6;
+
+
+	private int lvl2wave1Amount = 10;//10 light planes
+	private int lvl2wave2Amount = 10;// 7 scout planes, and 3 medium planes
+	private int lvl2wave3Amount = 15;// 2 heavy planes, 6 light planes, and 7 scout planes
+
+
+
+	//Level 3 has 4 waves
+
+
+
+
+
+
+
+
+	//Level 4 has 1 waves
+
+
+
+
+
+
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -103,6 +144,21 @@ public class EnemySpawner : MonoBehaviour {
 		}
 
 
+
+
+		//Randomize _WaypointStartScripti Somewhere in here.  Put anywhere!  
+
+
+
+
+
+
+
+
+
+
+
+
 		
 	}
 	
@@ -110,30 +166,35 @@ public class EnemySpawner : MonoBehaviour {
 	void Update () {
 		
 		
-
+		//Randomize _WaypointUpdateScripti Somewhere in here.  Put anywhere!  
 		
-		//if (Input.GetKeyDown(KeyCode.Space)) //Must press it every time to shoot
+
 		if (Input.GetKey(KeyCode.Space)) //Just hold down to shoot
 		{
 
 			
-			//if the delay time passed it fires
-			if(fireNextTime < Time.time)
-			{
-				//Fire a laser
-				FireLaser();
-				//Adds the fireDelay to the time verifier
-				fireNextTime = Time.time + fireNextDelay;
-			}
-			//temp = go;
+
 		}
 		
 		//Destroy(temp);
+
+
+
+
+
+
+
+
 		
 	}
 
 
-	void FireLaser () 
+
+	//_Spawn Functions:  
+
+
+
+	void SpawnObject () 
 	{
 		
 		//Take the correct projectile
@@ -149,4 +210,60 @@ public class EnemySpawner : MonoBehaviour {
 		go.rigidbody.velocity = transform.forward * fMag;
 		//go.rigidbody.AddForce(transform.forward * fMag);
 	}
+
+
+
+	void SpawnScout () 
+	{
+		//Use SpawnObject outline
+
+
+
+
+
+	}
+
+
+	void SpawnLightEnemy () 
+	{
+		//Use SpawnObject outline
+
+
+
+
+
+	}
+
+
+
+	void SpawnMediumEnemy () 
+	{
+		//Use SpawnObject outline
+
+
+
+
+
+	}
+
+
+
+
+
+	void SpawnHeavyEnemy () 
+	{
+		//Use SpawnObject outline
+
+
+
+
+
+	}
+
+
+
+
+
+
+
 }
