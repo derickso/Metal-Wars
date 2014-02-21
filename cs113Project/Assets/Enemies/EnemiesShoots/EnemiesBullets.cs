@@ -31,4 +31,11 @@ public class EnemiesBullets : MonoBehaviour {
 	void OnCollisionEnter (Collision collision) {
 		gameObject.SetActive(false);
 	}
+
+	void OnTriggerExit (Collider otherObject) {
+		if(otherObject.CompareTag("MapBounds"))
+		{
+			gameObject.SetActive(false);
+		}
+	}
 }

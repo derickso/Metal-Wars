@@ -36,6 +36,14 @@ public class LaserBullets : MonoBehaviour {
 		hit();
 	}
 
+
+	void OnTriggerExit (Collider otherObject) {
+		if(otherObject.CompareTag("MapBounds"))
+		{
+			gameObject.SetActive(false);
+		}
+	}
+
 	void hit(){
 		GameObject hit = (GameObject)Instantiate(hitEffect, transform.position, Quaternion.identity);
 		Destroy(hit,0.4f);
