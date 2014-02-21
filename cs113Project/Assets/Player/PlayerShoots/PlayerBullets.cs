@@ -23,7 +23,7 @@ public class PlayerBullets : MonoBehaviour {
 
 	void OnTriggerEnter (Collider otherObject) {
 		//Debug.Log("PlayerBullets collided");
-		if(otherObject.tag == "Enemy")
+		if(otherObject.CompareTag("Enemy"))
 		{
 			Enemy enemy = (Enemy)otherObject.gameObject.GetComponent("Enemy");
 			enemy.receiveDamage(damage);

@@ -62,9 +62,10 @@ public class EnemiesShoots : MonoBehaviour {
 
 		//Fire the bullet
 		go.SetActive (true);
-		go.rigidbody.velocity = transform.forward * fMag;
 		go.transform.position = transform.position;
 		go.transform.rotation = transform.rotation;
+		go.transform.Rotate(90,0,0);//Needed to make the bullet go in the right position
+		go.rigidbody.velocity = transform.forward * fMag;
 	}
 	
 }
