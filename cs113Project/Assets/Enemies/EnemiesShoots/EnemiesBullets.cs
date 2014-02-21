@@ -27,4 +27,8 @@ public class EnemiesBullets : MonoBehaviour {
 			gameObject.SetActive(false);
 		}
 	}
+
+	void OnCollisionEnter (Collision collision) {
+		gameObject.SetActive(false);
+	}
 }

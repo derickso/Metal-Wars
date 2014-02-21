@@ -28,10 +28,17 @@ public class LaserBullets : MonoBehaviour {
 			Enemy enemy = (Enemy)otherObject.gameObject.GetComponent("Enemy");
 			enemy.receiveDamage(damage);
 
-			GameObject hit = (GameObject)Instantiate(hitEffect, transform.position, Quaternion.identity);
-			Destroy(hit,0.4f);
-			gameObject.SetActive(false);
-
+			hit();
 		}
+	}
+
+	void OnCollisionEnter (Collision collision) {
+		hit();
+	}
+
+	void hit(Vector3 position){
+		GameObject hit = (GameObject)Instantiate(hitEffect, transform.position, Quaternion.identity);
+		Destroy(hit,0.4f);
+		gameObject.SetActive(false);
 	}
 }
