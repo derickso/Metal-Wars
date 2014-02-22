@@ -429,13 +429,15 @@ public class Player : MonoBehaviour {
 			*/
 		}
 	}
-
+	
 	void OnTriggerEnter (Collider collider) {
+		//if it enters the MapBounds it stop the return procedure
 		if(collider.CompareTag("MapBounds"))
 			outOfBounds = false;
 	}
 
 	void OnTriggerExit (Collider collider) {
+		//if it gets out of the MapBounds it starts the return procedure
 		if(collider.CompareTag("MapBounds")){
 			outOfBounds = true;//to make the out of bounds procedure
 			slowSpeedMode();

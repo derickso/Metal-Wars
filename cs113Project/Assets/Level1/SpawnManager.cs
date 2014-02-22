@@ -3,6 +3,8 @@ using System.Collections;
 
 public class SpawnManager : MonoBehaviour {
 
+	public GameObject mapBounds;
+
 	// Use this for initialization
 	void Start () {
 	
