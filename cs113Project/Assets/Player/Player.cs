@@ -125,7 +125,7 @@ public class Player : MonoBehaviour {
 		//__________Ace Combat_______
 
 
-		Debug.Log("out "+outOfBounds);
+		//Debug.Log("out "+outOfBounds);
 		if(outOfBounds)
 			returnToMapBounds();
 		else

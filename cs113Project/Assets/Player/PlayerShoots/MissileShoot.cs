@@ -54,9 +54,9 @@ public class MissileShoot : MonoBehaviour {
 		//goProjectilePrefab.SetActive (false);
 		for (int i = 0; i < argoProjectiles.Length; i++)
 		{
-			argoProjectiles[i] = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);//
+			//argoProjectiles[i] = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);//
 			//argoProjectiles[i].transform.Rotate(0,180f,0);
-			argoProjectiles[i].SetActive (false);//
+			//argoProjectiles[i].SetActive (false);//
 		}
 		
 		
@@ -107,9 +107,8 @@ public class MissileShoot : MonoBehaviour {
 					//IDEA:  Missile fires ONLY IF the current enemy is Visible on screen!!!!
 
 
-
 						//GameObject go = argoProjectiles[iNext++];
-						GameObject go = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);
+						GameObject go = (GameObject)Instantiate (goProjectilePrefab,transform.position,transform.rotation);
 						//go = (GameObject)Instantiate (goProjectilePrefab,this.gameObject.transform.position,this.gameObject.transform.rotation);	
 						//if (iNext >= argoProjectiles.Length) iNext = 0;
 							
@@ -121,8 +120,8 @@ public class MissileShoot : MonoBehaviour {
 						//go.transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);//
 						//go.transform.LookAt (Vector3.zero);//
 						//go.transform.rotation = transform.LookAt(transform.position + rigidbody.velocity);//
-						go.transform.Rotate (0,270f,0);//DO NOT COMMENT OUT!!!!
-						go.rigidbody.AddForce (transform.forward * fMag);
+						go.transform.Rotate (0,270,0);//DO NOT COMMENT OUT!!!!
+						go.rigidbody.AddForce (transform.forward * fMag/10);
 						//Player.numMissiles = Player.numMissiles - 0.5;//Unlimited ammo for now
 						//temp = go;
 							

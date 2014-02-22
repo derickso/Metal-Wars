@@ -21,7 +21,7 @@ public abstract class Enemy : MonoBehaviour {
 
 	//_WaypointStartScript1 and WaypointUpdateScript1 is used if a 1 is rolled
 
-	void WaypointStartScript1 (Transform t, float rotateSpeed = 0) {
+	void WaypointStartScript1 (Transform t, float rotateSpeed) {
 		
 		rotateSpeed = Random.Range(50,70);
 		
@@ -58,7 +58,7 @@ public abstract class Enemy : MonoBehaviour {
 
 	//_WaypointStartScript2 and WaypointUpdateScript2 is used if a 2 is rolled
 
-	void WaypointStartScript2 (Transform t, float rotateSpeed = 0) 
+	void WaypointStartScript2 (Transform t, float rotateSpeed) 
 	{
 
 
@@ -78,7 +78,7 @@ public abstract class Enemy : MonoBehaviour {
 
 	//_WaypointStartScript3 and WaypointUpdateScript3 is used if a 3 is rolled
 
-	void WaypointStartScript3 (Transform t, float rotateSpeed = 0) 
+	void WaypointStartScript3 (Transform t, float rotateSpeed) 
 	{
 
 
@@ -99,7 +99,7 @@ public abstract class Enemy : MonoBehaviour {
 
 	//_WaypointStartScript4 and WaypointUpdateScript1 is used if a 4 is rolled
 
-	void WaypointStartScript4 (Transform t, float rotateSpeed = 0) 
+	void WaypointStartScript4 (Transform t, float rotateSpeed) 
 	{
 
 

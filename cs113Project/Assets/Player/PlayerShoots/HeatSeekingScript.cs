@@ -22,8 +22,8 @@ public class HeatSeekingScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		transform.LookAt (target);
-		transform.Translate(Vector3.forward * 100.0f * Time.deltaTime);
+		//transform.LookAt (target);
+		//transform.Translate(Vector3.forward * 100.0f * Time.deltaTime);
 	
 	}
 
