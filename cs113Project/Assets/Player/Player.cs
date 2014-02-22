@@ -24,9 +24,10 @@ public class Player : MonoBehaviour {
 
 	public GameObject enemyTarget;//temporary enemy target for time being
 
+	private float angleToBackBounds = 0;
+	private bool outOfBounds = false;
 	
 	private float armor, maxArmor;
-	private int lives;
 
 	public float menuX = 0.0f;
 	public float menuY = 0.0f;
@@ -68,6 +69,8 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		outOfBounds = false;
+
 		maxArmor = armor = 50.0f;
 
 
@@ -121,56 +124,78 @@ public class Player : MonoBehaviour {
 
 		//__________Ace Combat_______
 
+
+		Debug.Log("out "+outOfBounds);
+		if(outOfBounds)
+			returnToMapBounds();
+		else
+			receiveInputCommands();
+	}
+
+	//Procedure to make the player go back to the map bounds
+	protected void returnToMapBounds(){
+		//Calculates the translation and rotation amounts
+		float transAmount = 0.5f* speed * Time.deltaTime;
+
+		if(angleToBackBounds < 1)
+			transform.Translate(0,0,transAmount);
+		else{
+			float rotateAmount = 3f* rotateSpeed * Time.deltaTime;
+
+			if(rotateAmount<angleToBackBounds){
+				angleToBackBounds -= rotateAmount;
+				transform.Rotate (-rotateAmount, 0, 0);
+			}else{
+				transform.Rotate(-angleToBackBounds, 0, 0);
+				angleToBackBounds = 0;
+			}
+		}
+	}
+
+	//Receives the player inputs and make their procedures
+	protected void receiveInputCommands () {
+
+		//Calculates the translation and rotation amounts
 		float transAmount = speed * Time.deltaTime;
 		float rotateAmount = rotateSpeed * Time.deltaTime;
-
-
 
 		//transform.Translate(0,0,transAmount);
 
 
-
-		defaultThrust1.enableEmission = true;
-		defaultThrust2.enableEmission = true;
-
-		thruster1.enableEmission = false;
-		thruster2.enableEmission = false;
-
-		engineHeat1.enableEmission = true;
-		engineHeat2.enableEmission = true;
-
-
-
+		//Sets the particle systems defaults
+		normalSpeedMode();
+		
+		
 		//pitch
 		if(Input.GetKey (KeyCode.UpArrow))
 		{
 			transform.Rotate (rotateAmount, 0, 0);
 			//target.transform.localPosition = transform.position + new Vector3(0,0,-7);
-
-
+			
+			
 			//camera rotate down along x
 			//target.transform.Rotate(transform.rotation.x,0,0);//Code that caused problem.  Camera collision fixed
 			//Although, that commented out code above had the strange attribute of causing 
 			//the cube not to be centered all the time, making the fighter more "realistic".  
 			//Come back to this if have more time.  For now, it stays fixed.  
-
-
+			
+			
 		}
 		if(Input.GetKey (KeyCode.DownArrow))
 		{
 			transform.Rotate (-rotateAmount, 0, 0);
 			//target.transform.localPosition = transform.position + new Vector3(0,0,-7);
-
+			
 			//camera rotate up along x
 			//target.transform.Rotate (-transform.rotation.x,0,0);//Code that caused problem.  Camera collision fixed
 			//Although, that commented out code above had the strange attribute of causing 
 			//the cube not to be centered all the time, making the fighter more "realistic".  
 			//Come back to this if have more time.  For now, it stays fixed.  
-
-
-
+			
+			
+			
 		}
-
+		
 		//yaw
 		if(Input.GetKey (KeyCode.A))
 		{
@@ -180,78 +205,94 @@ public class Player : MonoBehaviour {
 		{
 			transform.Rotate (0, rotateAmount, 0);
 		}
-
-
+		
+		
 		//barrel roll left
 		if(Input.GetKey (KeyCode.LeftArrow))
 		{
 			transform.Rotate (0, 0, (rotateAmount * 2));
 		}
-
+		
 		//barrel roll right
 		if(Input.GetKey (KeyCode.RightArrow))
 		{
 			transform.Rotate (0, 0, (-rotateAmount * 2));
 		}
-
+		
 		//speed up
 		if(Input.GetKey (KeyCode.W))
 		{
 			transform.Translate (0, 0, transAmount * 2);
 
-
-			engineHeat1.enableEmission = false;
-			engineHeat2.enableEmission = false;
-
-			thruster1.enableEmission = true;
-			thruster2.enableEmission = true;
+			fastSpeedMode();
 		}
-
+		
 		//slow down
 		if(Input.GetKey (KeyCode.S))
 		{
 			transform.Translate (0, 0, (-transAmount * 0.5f) );//Does slow down
 
-
-			defaultThrust1.enableEmission = false;
-			defaultThrust2.enableEmission = false;
-
-			engineHeat1.enableEmission = true;
-			engineHeat2.enableEmission = true;
-
-			thruster1.enableEmission = false;
-			thruster2.enableEmission = false;
+			slowSpeedMode();
 		}
-
+		
 		//Follow enemy plane
 		if(Input.GetKey (KeyCode.RightShift))
 		{
 			transform.LookAt (enemyTarget.transform.position);
 			//transform.Translate (
 		}
-
-
-
-		if(true)	
-		{
-
-		}
-
-
+		
 		//Finish later
 		//Landing/Takeoff
 		/*if(Input.GetKey ("t"))
 		{
 			transform.Translate(0, transform.position.y - 1,transAmount);
 		}*/
-
+		
 		//If the player hits the keyCode.P, it will change the pause state of the game
 		if(Input.GetKeyDown (KeyCode.P))
 		{
 			ChangePause();
 		}
 	}
-	
+
+	//Set the particle system of the engine and the thrust to match the normal speed mode
+	protected void normalSpeedMode(){
+		defaultThrust1.enableEmission = true;
+		defaultThrust2.enableEmission = true;
+		
+		thruster1.enableEmission = false;
+		thruster2.enableEmission = false;
+		
+		engineHeat1.enableEmission = true;
+		engineHeat2.enableEmission = true;
+	}
+
+	//Set the particle system of the engine and the thrust to match the slow speed mode
+	protected void slowSpeedMode(){
+		defaultThrust1.enableEmission = false;
+		defaultThrust2.enableEmission = false;
+		
+		engineHeat1.enableEmission = true;
+		engineHeat2.enableEmission = true;
+		
+		thruster1.enableEmission = false;
+		thruster2.enableEmission = false;
+	}
+
+	//Set the particle system of the engine and the thrust to match the fast speed mode
+	protected void fastSpeedMode(){
+		defaultThrust1.enableEmission = true;
+		defaultThrust2.enableEmission = true;
+
+		engineHeat1.enableEmission = false;
+		engineHeat2.enableEmission = false;
+		
+		thruster1.enableEmission = true;
+		thruster2.enableEmission = true;
+	}
+
+
 	//Pause function: changes between states (paused and unpaused)
 	protected void ChangePause() {
 		//Pause the game
@@ -263,7 +304,9 @@ public class Player : MonoBehaviour {
 		//Change the boolean variable accordingly
 		isPaused = !isPaused;
 	}
-	
+
+
+	//Shows the user interface
 	void OnGUI (){
 		if (isGameOver)
 		{
@@ -387,10 +430,17 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerExit (Collider collider) {
+	void OnTriggerEnter (Collider collider) {
 		if(collider.CompareTag("MapBounds"))
-		{
-			transform.position =  -transform.forward;
+			outOfBounds = false;
+	}
+
+	void OnTriggerExit (Collider collider) {
+		if(collider.CompareTag("MapBounds")){
+			outOfBounds = true;//to make the out of bounds procedure
+			slowSpeedMode();
+			angleToBackBounds = 180;
+			//transform.Rotate(180, 0, 0);
 		}
 	}
 }
