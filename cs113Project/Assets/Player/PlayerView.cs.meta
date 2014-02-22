@@ -2,7 +2,11 @@ fileFormatVersion: 2
 guid: 6e3cdb1ec57294f2182059e7c610af1f
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - FirstPersonCam: {fileID: 2000000, guid: a80be9ef912914e66936fa63183d1be5, type: 2}
+  - ThirdPersonCam: {fileID: 2000002, guid: a80be9ef912914e66936fa63183d1be5, type: 2}
+  - FirstCross: {fileID: 100000, guid: 957a6af1623223f4d9302eef2bcaca2a, type: 2}
+  - ThirdCrosshair: {fileID: 2800000, guid: 6edf3b5a84c610345a871a61f4064d46, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

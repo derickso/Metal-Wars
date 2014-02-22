@@ -47,6 +47,7 @@ public class Player : MonoBehaviour {
 	public Texture2D fullTex;
 	public Texture2D empIcon;
 	public Texture2D livesIcon;
+	public Texture2D thirdCrosshair;
 	public static double numEMPs;
 	public static double numLives = 3;
 	public static float healthAmount;
@@ -308,6 +309,12 @@ public class Player : MonoBehaviour {
 
 	//Shows the user interface
 	void OnGUI (){
+		/*if (PlayerView.ThirdIsEnabled == true)
+		{
+			GUI.DrawTexture(new Rect(Screen.width/2f - 22, Screen.height/2f - 55, 45, 35), thirdCrosshair);
+		}*/
+
+
 		if (isGameOver)
 		{
 			Time.timeScale = 0;
