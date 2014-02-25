@@ -14,26 +14,40 @@ public abstract class Enemy : MonoBehaviour {
 	//Paths
 	protected const int PATH_CIRCLE = 1;
 	protected const int PATH_EIGHT 	= 2;
-	protected int path;
+	private int path;
 
+	private float eightRotated;
+	private bool eightPathCircle;
+
+	/*
 	// Use this for initialization
+	//Initializer, ALL the variables must be initialized here
 	void Start () {
+		armor = 50;
+		
+		speed = 50.0f;
+		rotateSpeed = 50.0f;
+		
+		path = PATH_CIRCLE;
 
-		//Initialize the variables
+		//Initialize variabes
 		startInit();
 		//Initialize the path way
 		startInitPath();
 	}
 
 	//Initializer, ALL the variables must be initialized here
+	protected abstract void startInit () {}
+	*/
+
+	//Initializer, ALL the variables must be initialized here
 	protected void startInit () {
-
 		armor = 50;
-
+		
 		speed = 50.0f;
 		rotateSpeed = 50.0f;
 		
-		path = PATH_CIRCLE;
+		setPath(PATH_CIRCLE);
 	}
 
 	//Init procedure for each path
@@ -48,10 +62,20 @@ public abstract class Enemy : MonoBehaviour {
 			if(Random.Range(0,1)==0)
 				//Makes it follows not straight paths
 				transform.Rotate (0, 0, Random.Range(-20, 20));
+			break;
 
-			break;
 		case PATH_EIGHT:
+			//Just to give a little turn
+			//transform.Rotate (0, 0, -20);
+			
+			if(Random.Range(0,1)==0)
+				//Makes it follows not straight paths
+				transform.Rotate (0, 0, Random.Range(-20, 20));
+
+			eightRotated = 360.0f;
+			eightPathCircle = false;
 			break;
+
 		default:
 			break;
 		}
@@ -63,7 +87,7 @@ public abstract class Enemy : MonoBehaviour {
 		switch(path)
 		{
 		case PATH_CIRCLE:
-			moveInCircles();
+			moveInCircle();
 			break;
 		case PATH_EIGHT:
 			moveInEight();
@@ -88,7 +112,7 @@ public abstract class Enemy : MonoBehaviour {
 	}
 
 	//Follows the circle path
-	protected void moveInCircles () {
+	protected void moveInCircle () {
 		//Calculating the scout speed and its rotation
 		float transAmount = speed * Time.deltaTime;
 		float rotateAmount = rotateSpeed * Time.deltaTime;
@@ -102,9 +126,48 @@ public abstract class Enemy : MonoBehaviour {
 		transform.Rotate (0, 0, -20);
 	}
 
-	//Follows the eight path
-	protected void moveInEight () {
+	//The opposite circle path
+	private void moveInAntiCircle () {
+		//Calculating the scout speed and its rotation
+		float transAmount = speed * Time.deltaTime;
+		float rotateAmount = rotateSpeed * Time.deltaTime;
+		
+		//Unturns it
+		transform.Rotate (0, 0, -20);
+		//Goes forward and rotates in a circle
+		transform.Translate(0,0,transAmount);//Needs to be -transAmount because the model is backwards
+		transform.Rotate (0, -rotateAmount, 0);
+		//Turns it a little to give the impression of being turning
+		transform.Rotate (0, 0, 20);
+	}
 
+	//Moves in eight
+	protected void moveInEight () {
+		if(eightRotated < 1)
+		{
+			eightPathCircle = !eightPathCircle;
+			eightRotated = 360.0f;
+		}
+
+		eightRotated -= rotateSpeed * Time.deltaTime;
+
+		if(eightPathCircle)
+			moveInCircle();
+		else
+			moveInAntiCircle();
+	}
+
+
+	//Set the enemy path type
+	public void setPath (int path) {
+		this.path = path;
+
+		startInitPath();
+	}
+
+	//Get the enemy path type
+	public int getPath () {
+		return path;
 	}
 
 	/*

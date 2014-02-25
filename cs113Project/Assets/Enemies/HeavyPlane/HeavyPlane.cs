@@ -11,7 +11,7 @@ public class HeavyPlane : Enemy {
 	//private int armor;
 	
 	// Use this for initialization
-	void startInit () {
+	void Start () {
 		base.startInit();
 
 		armor = 100;
@@ -19,6 +19,6 @@ public class HeavyPlane : Enemy {
 		speed = 30.0f;
 		rotateSpeed = Random.Range(50,70);
 		
-		path = PATH_CIRCLE;
+		setPath(PATH_CIRCLE);
 	}
 }

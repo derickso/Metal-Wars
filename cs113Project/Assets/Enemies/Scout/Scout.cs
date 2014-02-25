@@ -9,17 +9,17 @@ public class Scout : Enemy {
 
 	//Enemy armor
 	//private int armor;
-	
+
 	// Use this for initialization
-	void startInit () {
+	void Start () {
 		base.startInit();
 
 		armor = 60;
-
+		
 		speed = 60.0f;
 		rotateSpeed = Random.Range(50,70);
 
-		path = PATH_CIRCLE;
+		setPath(PATH_EIGHT);
 	}
 
 }

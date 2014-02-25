@@ -11,7 +11,7 @@ public class MediumPlane : Enemy {
 	//private int armor;
 	
 	// Use this for initialization
-	void startInit () {
+	void Start () {
 		base.startInit();
 
 		armor = 80;
@@ -19,7 +19,7 @@ public class MediumPlane : Enemy {
 		speed = 40.0f;
 		rotateSpeed = Random.Range(50,70);
 
-		path = PATH_CIRCLE;
+		setPath(PATH_CIRCLE);
 	}
 
 }
