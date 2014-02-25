@@ -21,13 +21,7 @@ public class EnemySpawner : MonoBehaviour {
 	
 	//_________VERSION 2_____________
 
-	//Outline:  
-	public GameObject goProjectilePrefab;
-	private GameObject[] argoProjectiles = new GameObject[300];
-	private int iNext = 0;
-	private float fMag = 600.0f;//1 Frame = 1000.  So bulletspeed = playerSpeed * 1000 to keep up
-	private float fireNextTime = 0.0f;
-	private float fireNextDelay = 0.08f;
+
 
 
 	//Enemy 1
@@ -197,12 +191,7 @@ public class EnemySpawner : MonoBehaviour {
 		//The x,y, and z addition for each instatiate call shown below will be called when the
 		//object has been accessed.  
 
-		//Outline  
-		for (int i = 0; i < argoProjectiles.Length; i++) 
-		{
-			argoProjectiles[i] = (GameObject)Instantiate (goProjectilePrefab);
-			argoProjectiles[i].SetActive (false);//Don't let them appear on the map yet
-		}
+
 
 
 		//Enemy 1
@@ -474,30 +463,9 @@ public class EnemySpawner : MonoBehaviour {
 	//the list of already instantiated enemies.  We don't want to say Instantiate(...) every time.  
 	//We want to just 
 
-	void SpawnObject () 
-	{
-		
-		//Take the correct projectile
-		GameObject go = argoProjectiles[iNext++];
-		
-		if (iNext >= argoProjectiles.Length) iNext = 0;
-		
-		//Fire the projectile
-		go.SetActive (true);
-		//go.rigidbody.velocity = Vector3.zero;
-
-		//Object's waypoint goes here.  Replace this with something else, or not use this at all
-		//if the waypoints are already inside each object.  
-		//Chase AI code will replace waypoint code at same area:  
-		go.transform.position = transform.position + transform.forward*10;
-		go.transform.rotation = transform.rotation;
-		go.rigidbody.velocity = transform.forward * fMag;
-		//go.rigidbody.AddForce(transform.forward * fMag);
-	}
 
 
-
-	void SpawnScout () 
+	void SpawnScout (float x = 0.0f, float y = 0.0f, float z = 0.0f) 
 	{
 		//Use SpawnObject outline
 
@@ -509,10 +477,12 @@ public class EnemySpawner : MonoBehaviour {
 		go.SetActive (true);
 
 		//Offset the scout by a little every time the one before spawned.  
+		//go.transform.position = 
+		go.transform.TransformPoint(x, y, z);
 
-
-
-
+		//Object's waypoint goes here.  Replace this with something else, or not use this at all
+		//if the waypoints are already inside each object.  
+		//Chase AI code will replace waypoint code at same area: 
 
 	}
 
