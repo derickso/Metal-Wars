@@ -237,11 +237,11 @@ public class Player : MonoBehaviour {
 		}
 		
 		//Follow enemy plane
-		if(Input.GetKey (KeyCode.RightShift))
-		{
-			transform.LookAt (enemyTarget.transform.position);
-			//transform.Translate (
-		}
+		//if(Input.GetKey (KeyCode.RightShift))
+		//{
+		//	transform.LookAt (enemyTarget.transform.position);
+		//	//transform.Translate (
+		//}
 		
 		//Finish later
 		//Landing/Takeoff

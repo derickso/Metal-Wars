@@ -303,48 +303,50 @@ public class EnemySpawner : Enemy {
 
 
 
-		if(waveDestroyed == true)
+		//if(waveDestroyed == true)
+		//{
+		//	levelAndWaveMarker++;
+		//	waveDestroyed = false;
+		//}
+
+	//switch(levelAndWaveMarker)
+	//{
+	//case 1://Level 1 wave 1
+		if(levelAndWaveMarker == 1)
 		{
-			levelAndWaveMarker++;
-			waveDestroyed = false;
-		}
+				/*
+				private int lvl1wave1Mark = 1;
+				private int lvl1wave2Mark = 2;
+				private int lvl1wave3Mark = 3;
+				
+				private int lvl1wave1Amount = 5;//5 scout planes
+				//private int numScoutsInlvl1wave1 = 5;
+				//private int numLightEnemsInlvl1wave1 = 0;
+				//private int numMediumEnemsInlvl1wave1 = 0;
+				//private int numHeavyEnemsInlvl1wave1 = 0;
+				private int lvl1wave2Amount = 2;//2 medium planes
+				private int lvl1wave3Amount = 1;//1 heavy plane
+				
+				private int numEnemiesLeftInlvl1wave1Amount;//decrement when one of the planes is destroyed
+				private int numEnemiesLeftInlvl1wave2Amount;
+				private int numEnemiesLeftInlvl1wave3Amount;
+				*/
 
 
-		if(levelAndWaveMarker == 1)//Level 1 wave 1
-		{
-			/*
-			private int lvl1wave1Mark = 1;
-			private int lvl1wave2Mark = 2;
-			private int lvl1wave3Mark = 3;
-			
-			private int lvl1wave1Amount = 5;//5 scout planes
-			//private int numScoutsInlvl1wave1 = 5;
-			//private int numLightEnemsInlvl1wave1 = 0;
-			//private int numMediumEnemsInlvl1wave1 = 0;
-			//private int numHeavyEnemsInlvl1wave1 = 0;
-			private int lvl1wave2Amount = 2;//2 medium planes
-			private int lvl1wave3Amount = 1;//1 heavy plane
-			
-			private int numEnemiesLeftInlvl1wave1Amount;//decrement when one of the planes is destroyed
-			private int numEnemiesLeftInlvl1wave2Amount;
-			private int numEnemiesLeftInlvl1wave3Amount;
-			*/
-
-
-			//for(int i = 0; i < lvl1wave1Amount; i++)
-			//{
-			//}
+				//for(int i = 0; i < lvl1wave1Amount; i++)
+				//{
+				//}
 
 			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
-				//Necessary since we are in the update function that's called in a loop.  
+					//Necessary since we are in the update function that's called in a loop.  
 			{
-				//Spawn enemies of this specific wave here
+					//Spawn enemies of this specific wave here
 				SpawnScout ();
 				SpawnScout ();
 				SpawnScout ();
 				SpawnScout ();
 				SpawnScout ();
-
+			
 
 				enemiesOfCurrentWaveHaveBeenSpawned = true;
 			}
@@ -355,14 +357,14 @@ public class EnemySpawner : Enemy {
 				if(numEnemiesLeftInlvl1wave1Amount != 0)
 				{
 					numEnemiesLeftInlvl1wave1Amount--;
-
+				
 				
 				}
 
 				if(numEnemiesLeftInlvl1wave1Amount == 0)
 				{
 					//levelAndWaveMarker++;//This will keep incrementing.  
-
+				
 					//Move to next wave.
 					levelAndWaveMarker = 2;  //Stay at the argument of this switch statement as shown on RHS
 				}
@@ -370,112 +372,172 @@ public class EnemySpawner : Enemy {
 
 			}
 
-
-
-
-
+		//break;
 
 		}
-		else if(levelAndWaveMarker == 2)//Level 1 wave 2
-		{
 
-			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+
+			//case 2://Level 1 wave 2
+		if(levelAndWaveMarker == 2)
+		{
+		
+				if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
 				//Necessary since we are in the update function that's called in a loop.  
-			{
-				//Spawn enemies of this specific wave here
-				SpawnMediumEnemy ();
-				SpawnMediumEnemy ();
-				
-				
-				enemiesOfCurrentWaveHaveBeenSpawned = true;
-			}
-			
-			
-			if(isDestroyed == true)//enemy is destroyed
-			{
-				if(numEnemiesLeftInlvl1wave2Amount != 0)
 				{
-					numEnemiesLeftInlvl1wave2Amount--;
-					
-					
+					//Spawn enemies of this specific wave here
+					SpawnMediumEnemy ();
+					SpawnMediumEnemy ();
+
+
+					enemiesOfCurrentWaveHaveBeenSpawned = true;
 				}
 				
-				if(numEnemiesLeftInlvl1wave2Amount == 0)
+
+				if(isDestroyed == true)//enemy is destroyed
 				{
-					//levelAndWaveMarker++;//This will keep incrementing.  
+					if(numEnemiesLeftInlvl1wave2Amount != 0)
+					{
+						numEnemiesLeftInlvl1wave2Amount--;
+
+						
+					}
 					
-					//Move to next wave.
-					levelAndWaveMarker = 3;  //Stay at the argument of this switch statement as shown on RHS
+					if(numEnemiesLeftInlvl1wave2Amount == 0)
+					{
+						//levelAndWaveMarker++;//This will keep incrementing.  
+						
+						//Move to next wave.
+						levelAndWaveMarker = 3;  //Stay at the argument of this switch statement as shown on RHS
+					}
+					
+
 				}
+
+
+
+				//break;
+
+		}
+
+
+			//case 3://Level 1 wave 3
+		if(levelAndWaveMarker == 3)
+		{
+
 				
 				
-			}
-
-
-
-
-
+				
+					//break;
 		}
-		else if(levelAndWaveMarker == 3)//Level 1 wave 3
+
+
+			//case 4://Level 2 wave 1
+		if(levelAndWaveMarker == 4)
+		{
+
+
+
+			//break;
+		}
+
+
+			//case 5://Level 2 wave 2
+		if(levelAndWaveMarker == 5)
 		{
 
 
 
 
-
+			//break;
 		}
-		else if(levelAndWaveMarker == 4)//Level 2 wave 1
+
+
+			//case 6://Level 2 wave 3
+		if(levelAndWaveMarker == 6)
 		{
 
 
 
 
+			//break;
 		}
-		else if(levelAndWaveMarker == 5)//Level 2 wave 2
+
+
+			//case 7://Level 3 wave 1
+		if(levelAndWaveMarker == 7)
 		{
 
 
-
-
-
-		}
-		else if(levelAndWaveMarker == 6)//Level 2 wave 3
-		{
-
-
-
-
-
-		}
-		else if(levelAndWaveMarker == 7)//Level 3 wave 1
-		{
-		}
-		else if(levelAndWaveMarker == 8)//Level 3 wave 2
-		{
-		}
-		else if(levelAndWaveMarker == 9)//Level 3 wave 3
-		{
-		}
-		else if(levelAndWaveMarker == 10)//Level 3 wave 4
-		{
-		}
-		else if(levelAndWaveMarker == 11)//Level 4 wave 1
-		{
-		}
-		else if(levelAndWaveMarker == 12)//Level 1 wave 2
-		{
-		}
-		else if(levelAndWaveMarker == 13)//Level 1 wave 3
-		{
-		}
-		else if(levelAndWaveMarker == 14)//Level 1 wave 4
-		{
-		}
-		else if(levelAndWaveMarker == 15)//Level 1 wave 5
-		{
+			//break;
 		}
 
 
+			//case 8://Level 3 wave 2
+		if(levelAndWaveMarker == 8)
+		{
+
+			//break;
+		}
+
+
+			//case 9://Level 3 wave 3
+		if(levelAndWaveMarker == 9)
+		{
+				
+			//break;
+		}
+
+
+			//case 10://Level 3 wave 4
+		if(levelAndWaveMarker == 10)
+		{
+
+			//break;
+		}
+
+
+			//case 11://Level 4 wave 1
+		if(levelAndWaveMarker == 11)
+		{
+				
+			//break;
+		}
+
+
+			//case 12://Level 1 wave 2
+		if(levelAndWaveMarker == 12)
+		{
+
+			//break;
+		}
+
+
+			//case 13://Level 1 wave 3
+		if(levelAndWaveMarker == 13)
+		{
+
+			//break;
+		}
+
+
+			//case 14://Level 1 wave 4
+		if(levelAndWaveMarker == 14)
+		{
+
+			//break;
+		}
+
+
+			//case 15://Level 1 wave 5
+		if(levelAndWaveMarker == 15)
+		{
+
+			//break;
+		}
+
+
+
+		//}
 
 
 		
