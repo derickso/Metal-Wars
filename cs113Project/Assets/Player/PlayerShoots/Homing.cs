@@ -24,11 +24,11 @@ public class Homing : MonoBehaviour {
 		if (PlayerView.missileTarget) {
 			//Debug.Log ("ready to fire");
 			closest = PlayerView.missileTarget;
-			PlayerView.missileTarget = null;
+			//PlayerView.missileTarget = null;
 			readyToGo = true;
 		}
 		else {
-			PlayerView.missileTarget = null;
+			//PlayerView.missileTarget = null;
 			readyToGo = false;
 		}
 
@@ -42,7 +42,6 @@ public class Homing : MonoBehaviour {
 	void Update () {
 		//Debug.Log (readyToGo);
 		if (readyToGo) {
-			PlayerView.missileTarget = null;
 			// calculate the velocity vector:
 			Vector3 vel = (transform.position - lastPos) / Time.deltaTime;
 			lastPos = transform.position;

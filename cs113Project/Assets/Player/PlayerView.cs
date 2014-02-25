@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
 
 public class PlayerView : MonoBehaviour {
 
@@ -8,11 +9,17 @@ public class PlayerView : MonoBehaviour {
 	public GameObject FirstCross;
 	public GameObject ThirdCross;
 	public GameObject ThirdCrossRed;
+	public Rect crosshairRect;
 
 	private bool viewActivated = false;
 
 	public static GameObject missileTarget;
 	public Vector3 crosshairPos;
+
+	public float lowerX;
+	public float upperX;
+	public float lowerY;
+	public float upperY;
 
 
 	// Use this for initialization
@@ -30,21 +37,30 @@ public class PlayerView : MonoBehaviour {
 		transform.localScale.Scale(new Vector3(1,1,1));
 
 		crosshairPos = GameObject.Find("ThirdPersonCamera").camera.WorldToScreenPoint(ThirdCross.transform.position);
-		Debug.Log ("crosssize is " + ThirdCross.renderer.bounds.size);
-		Debug.Log ("chair at " + crosshairPos.x + ", " + crosshairPos.y);
+		//crosshairRect = GUIRectWithObject(ThirdCross);
+		crosshairRect = BoundsToScreenRect (ThirdCross.renderer.bounds);
+		
+		lowerX = crosshairPos.x - 30;
+		upperX = crosshairPos.x + 40;
+		lowerY = crosshairPos.y - 48;
+		upperY = crosshairPos.y + 22;
+
+		//Debug.Log ("Lowerx: " + lowerX + ", UpperX: " + upperX + ", LowerY: " + lowerY + ", UpperY: " + upperY);
+		//Debug.Log ("CrosshairRect " + crosshairRect.xMin + ", " + crosshairRect.yMin);
+		//Debug.Log ("height: " + crosshairRect.height + ", width: " + crosshairRect.width);
+		//Debug.Log ("crosssize is " + ThirdCross.renderer.bounds.size);
+		//Debug.Log ("chair at " + crosshairPos.x + ", " + crosshairPos.y);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
-		float lowerX = crosshairPos.x - 30;
-		float upperX = crosshairPos.x + 40;
-		float lowerY = crosshairPos.y - 58;
-		float upperY = crosshairPos.y + 22;
+
 		
 		foreach (GameObject Target in targets) {
 			Vector3 screenPos = GameObject.Find("ThirdPersonCamera").camera.WorldToScreenPoint(Target.transform.position);
-			if (screenPos.x > lowerX && screenPos.x < upperX && screenPos.y > lowerY && screenPos.y < upperY)
+			if (screenPos.x > (crosshairRect.xMin - crosshairRect.width) && screenPos.x < (crosshairRect.xMax + (crosshairRect.width * 2)) && screenPos.y > (crosshairRect.yMin) && screenPos.y < (crosshairRect.yMax + (crosshairRect.height * 2)))
+			//if (screenPos.x > lowerX && screenPos.x < upperX && screenPos.y > lowerY && screenPos.y < upperY)
 			{
 				//Debug.Log ("WE FOUND HIM BOYS");
 				missileTarget = Target;
@@ -64,7 +80,7 @@ public class PlayerView : MonoBehaviour {
 		}
 		if (missileTarget) {
 			Vector3 tarScreenPos = GameObject.Find("ThirdPersonCamera").camera.WorldToScreenPoint(missileTarget.transform.position);
-			if (tarScreenPos.x > lowerX && tarScreenPos.x < upperX && tarScreenPos.y > lowerY && tarScreenPos.y < upperY)
+			if (tarScreenPos.x > (crosshairRect.xMin - crosshairRect.width) && tarScreenPos.x < (crosshairRect.xMax + (crosshairRect.width * 2)) && tarScreenPos.y > (crosshairRect.yMin) && tarScreenPos.y < (crosshairRect.yMax + (crosshairRect.height * 2)))			//if (tarScreenPos.x > crosshairRect.xMin && tarScreenPos.x < crosshairRect.xMax && tarScreenPos.y > crosshairRect.yMin && tarScreenPos.y < crosshairRect.yMax)
 			{
 				ThirdCrossRed.renderer.enabled = true;
 				ThirdCross.renderer.enabled = false;
@@ -98,8 +114,44 @@ public class PlayerView : MonoBehaviour {
 
 			viewActivated = false;
 		}
+	}
 
+	Rect GUIRectWithObject(GameObject go)
+	{
+		Vector3 cen = go.renderer.bounds.center;
+		Vector3 ext = go.renderer.bounds.extents;
+		Vector2[] extentPoints = new Vector2[8]
+		{
+			HandleUtility.WorldToGUIPoint(new Vector3(cen.x-ext.x, cen.y-ext.y, cen.z-ext.z)),
+			HandleUtility.WorldToGUIPoint(new Vector3(cen.x+ext.x, cen.y-ext.y, cen.z-ext.z)),
+			HandleUtility.WorldToGUIPoint(new Vector3(cen.x-ext.x, cen.y-ext.y, cen.z+ext.z)),
+			HandleUtility.WorldToGUIPoint(new Vector3(cen.x+ext.x, cen.y-ext.y, cen.z+ext.z)),
+			
+			HandleUtility.WorldToGUIPoint(new Vector3(cen.x-ext.x, cen.y+ext.y, cen.z-ext.z)),
+			HandleUtility.WorldToGUIPoint(new Vector3(cen.x+ext.x, cen.y+ext.y, cen.z-ext.z)),
+			HandleUtility.WorldToGUIPoint(new Vector3(cen.x-ext.x, cen.y+ext.y, cen.z+ext.z)),
+			HandleUtility.WorldToGUIPoint(new Vector3(cen.x+ext.x, cen.y+ext.y, cen.z+ext.z))
+		};
+		
+		Vector2 min = extentPoints[0];
+		Vector2 max = extentPoints[0];
+		
+		foreach(Vector2 v in extentPoints)
+		{
+			min = Vector2.Min(min, v);
+			max = Vector2.Max(max, v);
+		}
+		
+		return new Rect(min.x, min.y, max.x-min.x, max.y-min.y);
+	}
 
-	
+	Rect BoundsToScreenRect(Bounds bounds)
+	{
+		// Get mesh origin and farthest extent (this works best with simple convex meshes)
+		Vector3 origin = GameObject.Find("ThirdPersonCamera").camera.WorldToScreenPoint(new Vector3(bounds.min.x, bounds.max.y, 0f));
+		Vector3 extent = GameObject.Find("ThirdPersonCamera").camera.WorldToScreenPoint(new Vector3(bounds.max.x, bounds.min.y, 0f));
+		
+		// Create rect in screen space and return - does not account for camera perspective
+		return new Rect(origin.x, Screen.height - origin.y, extent.x - origin.x, origin.y - extent.y);
 	}
 }
