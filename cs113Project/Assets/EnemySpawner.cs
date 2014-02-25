@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemySpawner : MonoBehaviour {
-
+public class EnemySpawner : Enemy {
+	//Inherit from Enemy.cs so that we can use the enemy script's public bool isDestroyed.  
 
 	//This object spawns another enemy every time one is destroyed
 
@@ -350,29 +350,27 @@ public class EnemySpawner : MonoBehaviour {
 			}
 
 
-			if(true)//enemy 1 is destroyed
+			if(isDestroyed == true)//enemy is destroyed
 			{
+				if(numEnemiesLeftInlvl1wave1Amount != 0)
+				{
+					numEnemiesLeftInlvl1wave1Amount--;
 
-				numEnemiesLeftInlvl1wave1Amount--;
-
-				//if(numEnemiesLeftInLvl1wave1Amount == 0)
-				//{
-				//	levelAndWaveMarker++;
-				//}
-
-			}
-
-			if(true)//enemy 2 is destroyed
-			{
-				numEnemiesLeftInlvl1wave1Amount--;
 				
+				}
+
+				if(numEnemiesLeftInlvl1wave1Amount == 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+
+					//Move to next wave.
+					levelAndWaveMarker = 2;  //Stay at the argument of this switch statement as shown on RHS
+				}
+
 
 			}
 
-			if(numEnemiesLeftInlvl1wave1Amount == 0)
-			{
-				levelAndWaveMarker++;
-			}
+
 
 
 
@@ -381,6 +379,37 @@ public class EnemySpawner : MonoBehaviour {
 		else if(levelAndWaveMarker == 2)//Level 1 wave 2
 		{
 
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			if(isDestroyed == true)//enemy is destroyed
+			{
+				if(numEnemiesLeftInlvl1wave2Amount != 0)
+				{
+					numEnemiesLeftInlvl1wave2Amount--;
+					
+					
+				}
+				
+				if(numEnemiesLeftInlvl1wave2Amount == 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 3;  //Stay at the argument of this switch statement as shown on RHS
+				}
+				
+				
+			}
 
 
 
@@ -487,7 +516,7 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 
-	void SpawnLightEnemy () 
+	void SpawnLightEnemy (float x = 0.0f, float y = 0.0f, float z = 0.0f) 
 	{
 		//Use SpawnObject outline
 
@@ -499,12 +528,15 @@ public class EnemySpawner : MonoBehaviour {
 		go.SetActive (true);
 
 
+		go.transform.TransformPoint (x,y,z);
+
+
 
 	}
 
 
 
-	void SpawnMediumEnemy () 
+	void SpawnMediumEnemy (float x = 0.0f, float y = 0.0f, float z = 0.0f) 
 	{
 		//Use SpawnObject outline
 
@@ -515,6 +547,7 @@ public class EnemySpawner : MonoBehaviour {
 		//Fire the projectile
 		go.SetActive (true);
 
+		go.transform.TransformPoint (x, y, z);
 
 
 	}
@@ -523,7 +556,7 @@ public class EnemySpawner : MonoBehaviour {
 
 
 
-	void SpawnHeavyEnemy () 
+	void SpawnHeavyEnemy (float x = 0.0f, float y = 0.0f, float z = 0.0f) 
 	{
 		//Use SpawnObject outline
 
@@ -534,6 +567,8 @@ public class EnemySpawner : MonoBehaviour {
 		//Fire the projectile
 		go.SetActive (true);
 
+
+		go.transform.TransformPoint(x, y, z);
 
 
 	}
