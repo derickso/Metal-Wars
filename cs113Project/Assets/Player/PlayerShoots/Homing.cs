@@ -42,7 +42,6 @@ public class Homing : MonoBehaviour {
 	void Update () {
 		//Debug.Log (readyToGo);
 		if (readyToGo) {
-			PlayerView.missileTarget = null;
 			// calculate the velocity vector:
 			Vector3 vel = (transform.position - lastPos) / Time.deltaTime;
 			lastPos = transform.position;

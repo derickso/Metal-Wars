@@ -88,7 +88,7 @@ public class PlayerView : MonoBehaviour {
 			else {
 				ThirdCrossRed.renderer.enabled = false;
 				ThirdCross.renderer.enabled = true;
-				//missileTarget = null;
+				missileTarget = null;
 			}
 		}
 		else {
