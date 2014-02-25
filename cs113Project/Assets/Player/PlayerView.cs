@@ -45,11 +45,11 @@ public class PlayerView : MonoBehaviour {
 		lowerY = crosshairPos.y - 48;
 		upperY = crosshairPos.y + 22;
 
-		Debug.Log ("CrosshairRect " + crosshairRect.x + ", " + crosshairRect.y);
-		Debug.Log ("CrosshairRect " + crosshairRect.xMin + ", " + crosshairRect.yMin);
+		//Debug.Log ("Lowerx: " + lowerX + ", UpperX: " + upperX + ", LowerY: " + lowerY + ", UpperY: " + upperY);
+		//Debug.Log ("CrosshairRect " + crosshairRect.xMin + ", " + crosshairRect.yMin);
 		//Debug.Log ("height: " + crosshairRect.height + ", width: " + crosshairRect.width);
 		//Debug.Log ("crosssize is " + ThirdCross.renderer.bounds.size);
-		Debug.Log ("chair at " + crosshairPos.x + ", " + crosshairPos.y);
+		//Debug.Log ("chair at " + crosshairPos.x + ", " + crosshairPos.y);
 	}
 	
 	// Update is called once per frame
@@ -59,8 +59,8 @@ public class PlayerView : MonoBehaviour {
 		
 		foreach (GameObject Target in targets) {
 			Vector3 screenPos = GameObject.Find("ThirdPersonCamera").camera.WorldToScreenPoint(Target.transform.position);
-			//if (screenPos.x > (crosshairRect.xMin - crosshairRect.width) && screenPos.x < (crosshairRect.xMax - crosshairRect.width) && screenPos.y > (crosshairRect.yMin  - crosshairRect.height) && screenPos.y < (crosshairRect.yMax - crosshairRect.height))
-			if (screenPos.x > lowerX && screenPos.x < upperX && screenPos.y > lowerY && screenPos.y < upperY)
+			if (screenPos.x > (crosshairRect.xMin - crosshairRect.width) && screenPos.x < (crosshairRect.xMax + (crosshairRect.width * 2)) && screenPos.y > (crosshairRect.yMin) && screenPos.y < (crosshairRect.yMax + (crosshairRect.height * 2)))
+			//if (screenPos.x > lowerX && screenPos.x < upperX && screenPos.y > lowerY && screenPos.y < upperY)
 			{
 				//Debug.Log ("WE FOUND HIM BOYS");
 				missileTarget = Target;
@@ -80,8 +80,7 @@ public class PlayerView : MonoBehaviour {
 		}
 		if (missileTarget) {
 			Vector3 tarScreenPos = GameObject.Find("ThirdPersonCamera").camera.WorldToScreenPoint(missileTarget.transform.position);
-			if (tarScreenPos.x > lowerX && tarScreenPos.x < upperX && tarScreenPos.y > lowerY && tarScreenPos.y < upperY)
-			//if (tarScreenPos.x > crosshairRect.xMin && tarScreenPos.x < crosshairRect.xMax && tarScreenPos.y > crosshairRect.yMin && tarScreenPos.y < crosshairRect.yMax)
+			if (tarScreenPos.x > (crosshairRect.xMin - crosshairRect.width) && tarScreenPos.x < (crosshairRect.xMax + (crosshairRect.width * 2)) && tarScreenPos.y > (crosshairRect.yMin) && tarScreenPos.y < (crosshairRect.yMax + (crosshairRect.height * 2)))			//if (tarScreenPos.x > crosshairRect.xMin && tarScreenPos.x < crosshairRect.xMax && tarScreenPos.y > crosshairRect.yMin && tarScreenPos.y < crosshairRect.yMax)
 			{
 				ThirdCrossRed.renderer.enabled = true;
 				ThirdCross.renderer.enabled = false;
@@ -89,7 +88,7 @@ public class PlayerView : MonoBehaviour {
 			else {
 				ThirdCrossRed.renderer.enabled = false;
 				ThirdCross.renderer.enabled = true;
-				missileTarget = null;
+				//missileTarget = null;
 			}
 		}
 		else {

@@ -24,11 +24,11 @@ public class Homing : MonoBehaviour {
 		if (PlayerView.missileTarget) {
 			//Debug.Log ("ready to fire");
 			closest = PlayerView.missileTarget;
-			PlayerView.missileTarget = null;
+			//PlayerView.missileTarget = null;
 			readyToGo = true;
 		}
 		else {
-			PlayerView.missileTarget = null;
+			//PlayerView.missileTarget = null;
 			readyToGo = false;
 		}
 
