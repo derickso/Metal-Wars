@@ -422,7 +422,7 @@ public class Player : MonoBehaviour {
 		//healthAmount = healthAmount - .125f;//health bar (the armor) goes down everytime this is called.  
 		//healthAmount = healthAmount - (damage * 0.125f);
 		healthAmount = armor/maxArmor;
-		//Debug.Log("Player damaged!!"+damage);
+		Debug.Log("Player damaged!!"+damage);
 		if(armor < 1)
 		{
 			//Die procedure:

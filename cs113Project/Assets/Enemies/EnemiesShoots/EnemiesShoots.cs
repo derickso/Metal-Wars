@@ -15,6 +15,12 @@ public class EnemiesShoots : MonoBehaviour {
 	private int iNext = 0;
 	private float fMag = 300.0f;
 
+	public float fireRate = 300;
+	public float damage = 1.0f;
+
+	private float fireNextTime = 0.0f;
+	private float fireNextDelay = 0.0f;
+
 	// Use this for initialization
 	void Start () {
 		initialGunFlash.enableEmission = false;
@@ -25,8 +31,13 @@ public class EnemiesShoots : MonoBehaviour {
 		for (int i = 0; i < argoProjectiles.Length; i++) 
 		{
 			argoProjectiles[i] = (GameObject)Instantiate (goProjectilePrefab);
+			EnemiesBullets bullets = (EnemiesBullets)argoProjectiles[i].GetComponent("EnemiesBullets");
+			bullets.damage = damage;
 			argoProjectiles[i].SetActive (false);
 		}
+
+		//Calculate the fire delay based in the fireRate
+		fireNextDelay = 13/fireRate;
 	}
 	
 	// Update is called once per frame
@@ -40,12 +51,17 @@ public class EnemiesShoots : MonoBehaviour {
 
 		if(angle < 30.0f)
 		{
+			if(fireNextTime < Time.time)
+			{
+				FireBullet();
 
-			FireBullet();
+				//Adds the fireDelay to the time verifier
+				fireNextTime = Time.time + fireNextDelay;
 
-			//transform.Rotate(0, 180, 0);
-			//go.rigidbody.AddForce (transform.forward * fMag);
-			//transform.Rotate(0, 180, 0);
+				//transform.Rotate(0, 180, 0);
+				//go.rigidbody.AddForce (transform.forward * fMag);
+				//transform.Rotate(0, 180, 0);
+			}
 		}
 	}
 
