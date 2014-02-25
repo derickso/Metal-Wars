@@ -497,7 +497,7 @@ public class EnemySpawner : MonoBehaviour {
 
 
 
-	void SpawnScout () 
+	void SpawnScout (float x = 0.0f, float y = 0.0f, float z = 0.0f) 
 	{
 		//Use SpawnObject outline
 
@@ -509,7 +509,7 @@ public class EnemySpawner : MonoBehaviour {
 		go.SetActive (true);
 
 		//Offset the scout by a little every time the one before spawned.  
-
+		//go.transform.position = 
 
 
 
