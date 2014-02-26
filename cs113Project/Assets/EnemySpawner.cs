@@ -388,30 +388,33 @@ public class EnemySpawner : MonoBehaviour {
 		if(levelAndWaveMarker == 2)
 		{
 		
-				if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
-				//Necessary since we are in the update function that's called in a loop.  
-				{
-					//Spawn enemies of this specific wave here
-					SpawnMediumEnemy ();
-					SpawnMediumEnemy ();
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+			//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
 
 
-					enemiesOfCurrentWaveHaveBeenSpawned = true;
-				}
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
 				
 
 				
 				
 				
 					
-				//if(numEnemiesLeftInlvl1wave2Amount == 0)
-				if(PlayerView.numOfEnemiesLeft <= 0)
-				{
-				//levelAndWaveMarker++;//This will keep incrementing.  
+			//if(numEnemiesLeftInlvl1wave2Amount == 0)
+			if(PlayerView.numOfEnemiesLeft <= 0)
+			{
+			//levelAndWaveMarker++;//This will keep incrementing.  
 						
-				//Move to next wave.
-					levelAndWaveMarker = 3;  //Stay at the argument of this switch statement as shown on RHS
-				}
+			//Move to next wave.
+				levelAndWaveMarker = 3;  //Stay at the argument of this switch statement as shown on RHS
+					
+				enemiesOfCurrentWaveHaveBeenSpawned = false;
+
+			}
 					
 
 				
