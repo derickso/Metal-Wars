@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;
+//using UnityEditor;
 
 public class PlayerView : MonoBehaviour {
 
@@ -21,6 +21,7 @@ public class PlayerView : MonoBehaviour {
 	public float lowerY;
 	public float upperY;
 
+	public static int numOfEnemiesLeft = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -50,15 +51,25 @@ public class PlayerView : MonoBehaviour {
 		//Debug.Log ("height: " + crosshairRect.height + ", width: " + crosshairRect.width);
 		//Debug.Log ("crosssize is " + ThirdCross.renderer.bounds.size);
 		//Debug.Log ("chair at " + crosshairPos.x + ", " + crosshairPos.y);
+
+		//numOfEnemiesLeft = 0;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
 
+		numOfEnemiesLeft = targets.Length;
+		Debug.Log (numOfEnemiesLeft);
 		
 		foreach (GameObject Target in targets) {
 			Vector3 screenPos = GameObject.Find("ThirdPersonCamera").camera.WorldToScreenPoint(Target.transform.position);
+
+
+
+
+
 			if (screenPos.x > (crosshairRect.xMin - crosshairRect.width) && screenPos.x < (crosshairRect.xMax + (crosshairRect.width * 2)) && screenPos.y > (crosshairRect.yMin) && screenPos.y < (crosshairRect.yMax + (crosshairRect.height * 2)))
 			//if (screenPos.x > lowerX && screenPos.x < upperX && screenPos.y > lowerY && screenPos.y < upperY)
 			{
@@ -116,6 +127,7 @@ public class PlayerView : MonoBehaviour {
 		}
 	}
 
+	/*
 	Rect GUIRectWithObject(GameObject go)
 	{
 		Vector3 cen = go.renderer.bounds.center;
@@ -144,6 +156,7 @@ public class PlayerView : MonoBehaviour {
 		
 		return new Rect(min.x, min.y, max.x-min.x, max.y-min.y);
 	}
+	*/
 
 	Rect BoundsToScreenRect(Bounds bounds)
 	{

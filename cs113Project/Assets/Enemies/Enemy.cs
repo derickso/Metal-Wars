@@ -7,7 +7,7 @@ public abstract class Enemy : MonoBehaviour {
 	public GameObject explosion;
 	protected int armor;
 
-	public bool isDestroyed;//public because var is not part of the object
+	//static bool isDestroyed;//public because var is not part of the object
 	//Don't know if we can inherit.  Assume not.  So we need to make the object before accessing
 	//this.  But even so, we make it public so that it won't be destroyed along with the object...
 	//That's the idea for now....
@@ -108,7 +108,7 @@ public abstract class Enemy : MonoBehaviour {
 	//public bool receiveDamage(int damage) {
 
 
-		isDestroyed = false;//Make this false at the beginning.  Only change it to true if 
+		//isDestroyed = false;//Make this false at the beginning.  Only change it to true if 
 		//game object is destroyed
 		//Must be initialized
 		//set to false every time this is called
@@ -122,7 +122,11 @@ public abstract class Enemy : MonoBehaviour {
 			//Create explosion HERE
 			Destroy(expl,2);
 			Destroy(gameObject);
-			isDestroyed = true;
+			//isDestroyed = true;
+
+			PlayerView.numOfEnemiesLeft--;
+			Debug.Log (PlayerView.numOfEnemiesLeft);
+
 		}
 
 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemySpawner : Enemy {
+public class EnemySpawner : MonoBehaviour {
 	//Inherit from Enemy.cs so that we can use the enemy script's public bool isDestroyed.  
 
 	//This object spawns another enemy every time one is destroyed
@@ -59,7 +59,7 @@ public class EnemySpawner : Enemy {
 	
 	//private GameObject temp;
 
-	private int levelAndWaveMarker;//Starts at 1
+	private int levelAndWaveMarker = 1;//Starts at 1
 
 	//Level 1 has 3 waves
 	private int lvl1wave1Mark = 1;
@@ -253,7 +253,7 @@ public class EnemySpawner : Enemy {
 
 		waveDestroyed = false;
 
-		levelAndWaveMarker = 1;
+		//levelAndWaveMarker = 1;
 
 
 
@@ -342,35 +342,42 @@ public class EnemySpawner : Enemy {
 			{
 					//Spawn enemies of this specific wave here
 				SpawnScout ();
+				//PlayerView.numOfEnemiesLeft = PlayerView.numOfEnemiesLeft + 1;
 				SpawnScout ();
+				//PlayerView.numOfEnemiesLeft++;
 				SpawnScout ();
+				//PlayerView.numOfEnemiesLeft++;
 				SpawnScout ();
+				//PlayerView.numOfEnemiesLeft++;
 				SpawnScout ();
+				//PlayerView.numOfEnemiesLeft++;
 			
 
 				enemiesOfCurrentWaveHaveBeenSpawned = true;
 			}
 
 
-			if(isDestroyed == true)//enemy is destroyed
+
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
 			{
-				if(numEnemiesLeftInlvl1wave1Amount != 0)
-				{
-					numEnemiesLeftInlvl1wave1Amount--;
-				
-				
-				}
 
-				if(numEnemiesLeftInlvl1wave1Amount == 0)
+
+				if(PlayerView.numOfEnemiesLeft <= 0)
 				{
-					//levelAndWaveMarker++;//This will keep incrementing.  
+				//levelAndWaveMarker++;//This will keep incrementing.  
 				
-					//Move to next wave.
+				//Move to next wave.
 					levelAndWaveMarker = 2;  //Stay at the argument of this switch statement as shown on RHS
-				}
 
+					Debug.Log ("LevelAndWaveMarker is " + levelAndWaveMarker);
+
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+				}
 
 			}
+
 
 		//break;
 
@@ -393,25 +400,21 @@ public class EnemySpawner : Enemy {
 				}
 				
 
-				if(isDestroyed == true)//enemy is destroyed
+				
+				
+				
+					
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
 				{
-					if(numEnemiesLeftInlvl1wave2Amount != 0)
-					{
-						numEnemiesLeftInlvl1wave2Amount--;
-
+				//levelAndWaveMarker++;//This will keep incrementing.  
 						
-					}
-					
-					if(numEnemiesLeftInlvl1wave2Amount == 0)
-					{
-						//levelAndWaveMarker++;//This will keep incrementing.  
-						
-						//Move to next wave.
-						levelAndWaveMarker = 3;  //Stay at the argument of this switch statement as shown on RHS
-					}
-					
-
+				//Move to next wave.
+					levelAndWaveMarker = 3;  //Stay at the argument of this switch statement as shown on RHS
 				}
+					
+
+				
 
 
 
