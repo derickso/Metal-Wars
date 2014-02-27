@@ -37,7 +37,7 @@ public class EnemiesShoots : MonoBehaviour {
 		}
 
 		//Calculate the fire delay based in the fireRate
-		fireNextDelay = 13/fireRate;
+		fireNextDelay = 26/fireRate;
 	}
 	
 	// Update is called once per frame

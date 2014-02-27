@@ -36,6 +36,7 @@ public class MiniMap : MonoBehaviour {
 
 		if(Input.GetKey (KeyCode.A))
 		{
+			//transform.Rotate (0, 0, Player.rotateAmount);
 			//transform.Rotate (0, 0, rotateAmount);
 			//transform.Rotate (0, 0, playerObject.transform.rotation.y);
 			//transform.Rotate (0, 0, playerObject.transform.eulerAngles.y);
@@ -45,6 +46,7 @@ public class MiniMap : MonoBehaviour {
 		}
 		if(Input.GetKey (KeyCode.D))
 		{
+			//transform.Rotate (0, 0, -Player.rotateAmount);
 			//transform.Rotate (0, 0, -rotateAmount);
 			//transform.Rotate (0, 0, -(playerObject.transform.rotation.y));
 			//transform.Rotate (0, 0, -(playerObject.transform.eulerAngles.y));

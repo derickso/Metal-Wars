@@ -5,7 +5,8 @@ public class EnemiesBullets : MonoBehaviour {
 
 	//public int speed;
 	public float damage = 1.0f;
-	
+
+
 	// Use this for initialization
 	void Start () {
 		//speed = 100;
@@ -27,7 +28,8 @@ public class EnemiesBullets : MonoBehaviour {
 			player.receiveDamage(damage);
 
 			//Vanishes the gameObject
-			gameObject.SetActive(false);
+			//gameObject.SetActive(false);
+			Destroy (this);
 		}
 	}
 
@@ -40,6 +42,7 @@ public class EnemiesBullets : MonoBehaviour {
 	void OnTriggerExit (Collider otherObject) {
 		//If the bullet get out fo the map bounds it stops
 		if(otherObject.CompareTag("MapBounds"))
-			gameObject.SetActive(false);
+			//gameObject.SetActive(false);
+			Destroy (this);
 	}
 }
