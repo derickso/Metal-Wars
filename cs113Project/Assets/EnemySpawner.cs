@@ -398,6 +398,7 @@ public class EnemySpawner : MonoBehaviour {
 				SpawnMediumEnemy ();
 				SpawnMediumEnemy ();
 
+				PlayerView.numOfEnemiesLeft = 2;
 
 				enemiesOfCurrentWaveHaveBeenSpawned = true;
 			}
@@ -444,7 +445,7 @@ public class EnemySpawner : MonoBehaviour {
 			{
 				//Spawn enemies of this specific wave here
 				SpawnHeavyEnemy ();
-				
+				PlayerView.numOfEnemiesLeft = 1;
 				
 				enemiesOfCurrentWaveHaveBeenSpawned = true;
 			}
@@ -498,7 +499,8 @@ public class EnemySpawner : MonoBehaviour {
 				SpawnLightEnemy();
 				SpawnLightEnemy();
 				SpawnLightEnemy();
-				
+
+				PlayerView.numOfEnemiesLeft = 10;
 				
 				enemiesOfCurrentWaveHaveBeenSpawned = true;
 			}
