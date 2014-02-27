@@ -26,7 +26,8 @@ public class Player : MonoBehaviour {
 
 	private float angleToBackBounds = 0;
 	private bool outOfBounds = false;
-	
+
+	private int score;
 	private float armor, maxArmor;
 
 	public float menuX = 0.0f;
@@ -76,6 +77,7 @@ public class Player : MonoBehaviour {
 	void Start () {
 		outOfBounds = false;
 
+		score = 0;
 		maxArmor = armor = 50.0f;
 
 
@@ -457,5 +459,17 @@ public class Player : MonoBehaviour {
 			angleToBackBounds = 180;
 			//transform.Rotate(180, 0, 0);
 		}
+	}
+
+	//Function used to add score to the current player
+	public void addScore (int score) {
+		//if the player armor is full it gains double score
+		if(armor == maxArmor)
+			this.score += score*2;
+		//else it just receives the usual score
+		else
+			this.score += score;
+
+		//Debug.Log("Score: "+this.score);
 	}
 }

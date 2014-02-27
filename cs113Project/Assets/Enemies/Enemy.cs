@@ -6,6 +6,7 @@ public abstract class Enemy : MonoBehaviour {
 
 	public GameObject explosion;
 	protected int armor;
+	protected int score;
 
 	//static bool isDestroyed;//public because var is not part of the object
 	//Don't know if we can inherit.  Assume not.  So we need to make the object before accessing
@@ -49,6 +50,8 @@ public abstract class Enemy : MonoBehaviour {
 	//Initializer, ALL the variables must be initialized here
 	protected void startInit () {
 		armor = 50;
+
+		score = 100;
 		
 		speed = 50.0f;
 		rotateSpeed = 50.0f;
@@ -118,15 +121,19 @@ public abstract class Enemy : MonoBehaviour {
 		//Debug.Log("Enemy Damaged!! "+armor);
 		if(armor < 1)
 		{
-			GameObject expl = (GameObject)Instantiate(explosion, transform.position, Quaternion.identity);
 			//Create explosion HERE
-			Destroy(expl,2);
-			Destroy(gameObject);
-			//isDestroyed = true;
+			GameObject expl = (GameObject)Instantiate(explosion, transform.position, Quaternion.identity);
 
+			//Pass to the player the score relative to this enemy
+			((Player)GameObject.FindWithTag("Player").GetComponent("Player")).addScore(score);
+
+			//Changes the number of current enemies left
 			PlayerView.numOfEnemiesLeft--;
 			Debug.Log (PlayerView.numOfEnemiesLeft);
 
+			//Destroy the explosion and the game object
+			Destroy(expl,2);
+			Destroy(gameObject);
 		}
 
 

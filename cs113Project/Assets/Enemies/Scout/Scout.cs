@@ -15,7 +15,9 @@ public class Scout : Enemy {
 		base.startInit();
 
 		armor = 60;
-		
+
+		score = 100;
+
 		speed = 60.0f;
 		rotateSpeed = Random.Range(50,70);
 
