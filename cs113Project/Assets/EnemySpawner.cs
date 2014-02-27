@@ -374,6 +374,8 @@ public class EnemySpawner : MonoBehaviour {
 					Debug.Log ("LevelAndWaveMarker is " + levelAndWaveMarker);
 
 					enemiesOfCurrentWaveHaveBeenSpawned = false;
+
+					PlayerView.numOfEnemiesLeft = 0;
 				}
 
 			}
@@ -385,7 +387,7 @@ public class EnemySpawner : MonoBehaviour {
 
 
 			//case 2://Level 1 wave 2
-		if(levelAndWaveMarker == 2)
+		else if(levelAndWaveMarker == 2)
 		{
 		
 			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
@@ -403,17 +405,23 @@ public class EnemySpawner : MonoBehaviour {
 				
 				
 				
-					
-			//if(numEnemiesLeftInlvl1wave2Amount == 0)
-			if(PlayerView.numOfEnemiesLeft <= 0)
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
 			{
-			//levelAndWaveMarker++;//This will keep incrementing.  
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+				//levelAndWaveMarker++;//This will keep incrementing.  
+							
+				//Move to next wave.
+					levelAndWaveMarker = 3;  //Stay at the argument of this switch statement as shown on RHS
 						
-			//Move to next wave.
-				levelAndWaveMarker = 3;  //Stay at the argument of this switch statement as shown on RHS
-					
-				enemiesOfCurrentWaveHaveBeenSpawned = false;
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
 
+					PlayerView.numOfEnemiesLeft = 0;
+
+				}
 			}
 					
 
@@ -427,10 +435,44 @@ public class EnemySpawner : MonoBehaviour {
 
 
 			//case 3://Level 1 wave 3
-		if(levelAndWaveMarker == 3)
+		else if(levelAndWaveMarker == 3)
 		{
 
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+				SpawnHeavyEnemy ();
 				
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			
+			
+			
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
+			{
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 4;  //Stay at the argument of this switch statement as shown on RHS
+					
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+
+					PlayerView.numOfEnemiesLeft = 0;
+					
+				}
+			}
+			
+			
+
 				
 				
 					//break;
