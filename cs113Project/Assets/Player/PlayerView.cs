@@ -21,6 +21,11 @@ public class PlayerView : MonoBehaviour {
 	public float lowerY;
 	public float upperY;
 
+
+	//GameObject[] targets;
+
+
+
 	public static int numOfEnemiesLeft = 0;
 
 	// Use this for initialization
@@ -59,9 +64,30 @@ public class PlayerView : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
+		//targets = GameObject.FindGameObjectsWithTag("Enemy");//Reference/Re-Reference
 
+<<<<<<< HEAD
 		//numOfEnemiesLeft = targets.Length;
 		//Debug.Log (numOfEnemiesLeft);
+=======
+		numOfEnemiesLeft = targets.Length;
+		Debug.Log (numOfEnemiesLeft);
+
+		/*
+		//If all enemies destroyed, reset targets list back to 0
+		if(numOfEnemiesLeft <= 0)
+		{
+			for(int i = 0; i < targets.Length; i++)
+			{
+				Destroy (GameObject.FindGameObjectsWithTag("Enemy")[i]);
+			}
+
+			targets = new GameObject[30];//Pick any size number.  It's going to be re-referenced anyways.  
+		}
+		*/
+
+
+>>>>>>> 329629d25eb32f19ad7aae7ab5f60b45fbe0688a
 		
 		foreach (GameObject Target in targets) {
 			Vector3 screenPos = GameObject.Find("ThirdPersonCamera").camera.WorldToScreenPoint(Target.transform.position);
