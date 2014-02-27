@@ -66,10 +66,10 @@ public class PlayerView : MonoBehaviour {
 		GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
 		//targets = GameObject.FindGameObjectsWithTag("Enemy");//Reference/Re-Reference
 
-<<<<<<< HEAD
+
 		//numOfEnemiesLeft = targets.Length;
 		//Debug.Log (numOfEnemiesLeft);
-=======
+
 		numOfEnemiesLeft = targets.Length;
 		Debug.Log (numOfEnemiesLeft);
 
@@ -87,7 +87,7 @@ public class PlayerView : MonoBehaviour {
 		*/
 
 
->>>>>>> 329629d25eb32f19ad7aae7ab5f60b45fbe0688a
+
 		
 		foreach (GameObject Target in targets) {
 			Vector3 screenPos = GameObject.Find("ThirdPersonCamera").camera.WorldToScreenPoint(Target.transform.position);
