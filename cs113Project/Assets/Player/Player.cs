@@ -52,6 +52,7 @@ public class Player : MonoBehaviour {
 	public static double numLives = 3;
 	public static float healthAmount;
 
+	public static float rotateAmount;
 
 	//Default thrusters
 	public ParticleSystem defaultThrust1;
@@ -65,6 +66,9 @@ public class Player : MonoBehaviour {
 	public ParticleSystem engineHeat1;
 	public ParticleSystem engineHeat2;
 
+
+	//Sounds
+	public AudioClip sPlayerImpact;
 
 
 
@@ -141,11 +145,11 @@ public class Player : MonoBehaviour {
 		if(angleToBackBounds < 1)
 			transform.Translate(0,0,transAmount);
 		else{
-			float rotateAmount = 3f* rotateSpeed * Time.deltaTime;
+			float returnRotateAmount = 3f* rotateSpeed * Time.deltaTime;
 
-			if(rotateAmount<angleToBackBounds){
-				angleToBackBounds -= rotateAmount;
-				transform.Rotate (-rotateAmount, 0, 0);
+			if(returnRotateAmount<angleToBackBounds){
+				angleToBackBounds -= returnRotateAmount;
+				transform.Rotate (-returnRotateAmount, 0, 0);
 			}else{
 				transform.Rotate(-angleToBackBounds, 0, 0);
 				angleToBackBounds = 0;
@@ -158,7 +162,7 @@ public class Player : MonoBehaviour {
 
 		//Calculates the translation and rotation amounts
 		float transAmount = speed * Time.deltaTime;
-		float rotateAmount = rotateSpeed * Time.deltaTime;
+		rotateAmount = rotateSpeed * Time.deltaTime;
 
 		//transform.Translate(0,0,transAmount);
 
@@ -423,6 +427,8 @@ public class Player : MonoBehaviour {
 		//healthAmount = healthAmount - (damage * 0.125f);
 		healthAmount = armor/maxArmor;
 		Debug.Log("Player damaged!!"+damage);
+		audio.PlayOneShot (sPlayerImpact);
+
 		if(armor < 1)
 		{
 			//Die procedure:

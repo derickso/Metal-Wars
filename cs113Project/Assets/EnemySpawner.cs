@@ -351,6 +351,7 @@ public class EnemySpawner : MonoBehaviour {
 				//PlayerView.numOfEnemiesLeft++;
 				SpawnScout ();
 				//PlayerView.numOfEnemiesLeft++;
+				PlayerView.numOfEnemiesLeft = 5;
 			
 
 				enemiesOfCurrentWaveHaveBeenSpawned = true;

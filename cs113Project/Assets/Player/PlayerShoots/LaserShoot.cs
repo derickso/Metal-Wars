@@ -9,6 +9,7 @@ public class LaserShoot : MonoBehaviour {
 	public ParticleSystem initialLaserFlash;
 	public ParticleSystem laserMuzzle;
 
+	public AudioClip sPlayerLaser;
 
 	//public Transform projectile2;
 
@@ -72,6 +73,9 @@ public class LaserShoot : MonoBehaviour {
 			{
 				//Fire a laser
 				FireLaser();
+
+				audio.PlayOneShot (sPlayerLaser);
+
 				//Adds the fireDelay to the time verifier
 				fireNextTime = Time.time + fireNextDelay;
 			}

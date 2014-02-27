@@ -41,10 +41,10 @@ public class PlayerView : MonoBehaviour {
 		//crosshairRect = GUIRectWithObject(ThirdCross);
 		crosshairRect = BoundsToScreenRect (ThirdCross.renderer.bounds);
 		
-		lowerX = crosshairPos.x - 30;
-		upperX = crosshairPos.x + 40;
-		lowerY = crosshairPos.y - 48;
-		upperY = crosshairPos.y + 22;
+		//lowerX = crosshairPos.x - 30;
+		//upperX = crosshairPos.x + 40;
+		//lowerY = crosshairPos.y - 48;
+		//upperY = crosshairPos.y + 22;
 
 		//Debug.Log ("Lowerx: " + lowerX + ", UpperX: " + upperX + ", LowerY: " + lowerY + ", UpperY: " + upperY);
 		//Debug.Log ("CrosshairRect " + crosshairRect.xMin + ", " + crosshairRect.yMin);
@@ -60,15 +60,11 @@ public class PlayerView : MonoBehaviour {
 	void Update () {
 		GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
 
-		numOfEnemiesLeft = targets.Length;
-		Debug.Log (numOfEnemiesLeft);
+		//numOfEnemiesLeft = targets.Length;
+		//Debug.Log (numOfEnemiesLeft);
 		
 		foreach (GameObject Target in targets) {
 			Vector3 screenPos = GameObject.Find("ThirdPersonCamera").camera.WorldToScreenPoint(Target.transform.position);
-
-
-
-
 
 			if (screenPos.x > (crosshairRect.xMin - crosshairRect.width) && screenPos.x < (crosshairRect.xMax + (crosshairRect.width * 2)) && screenPos.y > (crosshairRect.yMin) && screenPos.y < (crosshairRect.yMax + (crosshairRect.height * 2)))
 			//if (screenPos.x > lowerX && screenPos.x < upperX && screenPos.y > lowerY && screenPos.y < upperY)
