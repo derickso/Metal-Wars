@@ -8,6 +8,8 @@ public class Homing : MonoBehaviour {
 	public GameObject closest = null;
 	private Vector3 lastPos;	// used to calculate the velocity vector
 	private bool readyToGo;
+	public GameObject hitEffect;
+	public int damage;
 
 	void Start () {
 		/*
@@ -21,6 +23,7 @@ public class Homing : MonoBehaviour {
 				closest = Target;
 			}
 		}*/
+		damage = 25;
 		if (PlayerView.missileTarget) {
 			//Debug.Log ("ready to fire");
 			closest = PlayerView.missileTarget;
@@ -41,7 +44,7 @@ public class Homing : MonoBehaviour {
 
 	void Update () {
 		//Debug.Log (readyToGo);
-		if (readyToGo) {
+		if (readyToGo && closest != null && transform != null && this != null) {
 			// calculate the velocity vector:
 			Vector3 vel = (transform.position - lastPos) / Time.deltaTime;
 			lastPos = transform.position;
@@ -59,8 +62,19 @@ public class Homing : MonoBehaviour {
 			Speed = Speed + 120 * Time.deltaTime;
 			float dest = Vector3.Distance (closest.transform.position, transform.position);
 			if (dest < 5) {
-				Debug.Log ("hooey");
-				Destroy (gameObject);
+				UnityEngine.GameObject.Destroy (gameObject);
+				//Debug.Log ("hooey");
+				Enemy enemy = (Enemy)closest.gameObject.GetComponent("Enemy");
+				enemy.receiveDamage(damage);
+				//UnityEngine.GameObject.Destroy (transform);
+
+				//UnityEngine.GameObject.Destroy (this);
+				gameObject.SetActive(false);
+				readyToGo = false;
+				
+				//Make the hit effects
+				GameObject hit = (GameObject)Instantiate(hitEffect, transform.position, Quaternion.identity);
+				Destroy(hit,0.4f);
 			}
 		}
 		else {

@@ -351,7 +351,7 @@ public class EnemySpawner : MonoBehaviour {
 				//PlayerView.numOfEnemiesLeft++;
 				SpawnScout ();
 				//PlayerView.numOfEnemiesLeft++;
-				PlayerView.numOfEnemiesLeft = 5;
+				//PlayerView.numOfEnemiesLeft = 5;
 			
 
 				enemiesOfCurrentWaveHaveBeenSpawned = true;
@@ -398,9 +398,10 @@ public class EnemySpawner : MonoBehaviour {
 				SpawnMediumEnemy ();
 				SpawnMediumEnemy ();
 
-				PlayerView.numOfEnemiesLeft = 2;
+				//PlayerView.numOfEnemiesLeft = 2;
 
 				enemiesOfCurrentWaveHaveBeenSpawned = true;
+				Debug.Log ("enemies now " + PlayerView.numOfEnemiesLeft);
 			}
 				
 
@@ -445,7 +446,7 @@ public class EnemySpawner : MonoBehaviour {
 			{
 				//Spawn enemies of this specific wave here
 				SpawnHeavyEnemy ();
-				PlayerView.numOfEnemiesLeft = 1;
+				//PlayerView.numOfEnemiesLeft = 1;
 				
 				enemiesOfCurrentWaveHaveBeenSpawned = true;
 			}
@@ -500,7 +501,7 @@ public class EnemySpawner : MonoBehaviour {
 				SpawnLightEnemy();
 				SpawnLightEnemy();
 
-				PlayerView.numOfEnemiesLeft = 10;
+				//PlayerView.numOfEnemiesLeft = 10;
 				
 				enemiesOfCurrentWaveHaveBeenSpawned = true;
 			}
@@ -649,6 +650,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void SpawnScout (float x = 0.0f, float y = 0.0f, float z = 0.0f) 
 	{
+		PlayerView.numOfEnemiesLeft++;
 		//Use SpawnObject outline
 
 		GameObject go = argoScouts[iNextScout++];
@@ -671,6 +673,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void SpawnLightEnemy (float x = 0.0f, float y = 0.0f, float z = 0.0f) 
 	{
+		PlayerView.numOfEnemiesLeft++;
 		//Use SpawnObject outline
 
 		GameObject go = argoLightEnems[iNextLightEnem++];
@@ -691,6 +694,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void SpawnMediumEnemy (float x = 0.0f, float y = 0.0f, float z = 0.0f) 
 	{
+		PlayerView.numOfEnemiesLeft++;
 		//Use SpawnObject outline
 
 		GameObject go = argoMediumEnems[iNextMediumEnem++];
@@ -711,6 +715,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	void SpawnHeavyEnemy (float x = 0.0f, float y = 0.0f, float z = 0.0f) 
 	{
+		PlayerView.numOfEnemiesLeft++;
 		//Use SpawnObject outline
 
 		GameObject go = argoHeavyEnems[iNextHeavyEnem++];

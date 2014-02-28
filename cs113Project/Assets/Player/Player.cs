@@ -52,6 +52,9 @@ public class Player : MonoBehaviour {
 	public static double numEMPs;
 	public static double numLives = 3;
 	public static float healthAmount;
+	public GUIStyle scoreFont;
+	public Font digitalFont;
+
 
 	public static float rotateAmount;
 
@@ -76,6 +79,11 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		outOfBounds = false;
+		scoreFont = new GUIStyle();
+		scoreFont.font = digitalFont;
+		scoreFont.fontSize = 24;
+		scoreFont.normal.textColor = Color.yellow;
+		scoreFont.alignment = TextAnchor.MiddleRight;
 
 		score = 0;
 		maxArmor = armor = 50.0f;
@@ -351,8 +359,8 @@ public class Player : MonoBehaviour {
 				}
 			}
 		}
-		//draw the background:
-		int offset = 22;
+		//draw the number of lives
+		GUI.Label(new Rect (healthBarPos.x, healthBarPos.y - 35, healthBarSize.x, 10), score.ToString(), scoreFont);
 		GUI.Label(new Rect (healthBarPos.x, healthBarPos.y - 21, 100, 20), "Lives");
 		for (int i = 0; i < numLives; i++)
 		{
@@ -374,7 +382,7 @@ public class Player : MonoBehaviour {
 		//GUI.BeginGroup(new Rect(healthBarPos.x, healthBarPos.y + 34, healthBarSize.x, healthBarSize.y));
 		for (int i = 0; i < numEMPs; i++)
 		{
-			GUI.DrawTexture (new Rect (healthBarPos.x + i*offset, 55, empWidth, 28), empIcon, ScaleMode.ScaleToFit);
+			GUI.DrawTexture (new Rect (healthBarPos.x + i*20, 55, empWidth, 28), empIcon, ScaleMode.ScaleToFit);
 		}
 		//GUI.EndGroup();
 
