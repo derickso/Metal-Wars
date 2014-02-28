@@ -105,10 +105,10 @@ public class EnemySpawner : MonoBehaviour {
 	private int lvl3wave4Mark = 10;
 	
 	
-	private int lvl3wave1Amount = 10;//10 light planes
-	private int lvl3wave2Amount = 10;// 7 scout planes, and 3 medium planes
-	private int lvl3wave3Amount = 15;// 2 heavy planes, 6 light planes, and 7 scout planes
-	private int lvl3Wave4Amount = 5;
+	private int lvl3wave1Amount = 5;//5 medium planes
+	private int lvl3wave2Amount = 10;// 10 Medium Planes
+	private int lvl3wave3Amount = 3;// 3 Heavy Planes
+	private int lvl3Wave4Amount = 20;//20 Medium Planes
 	
 	private int numEnemiesLeftInlvl3wave1Amount;
 	private int numEnemiesLeftInlvl3wave2Amount;
@@ -128,11 +128,11 @@ public class EnemySpawner : MonoBehaviour {
 	private int lvl4wave5Mark = 15;
 	
 	
-	private int lvl4wave1Amount = 10;//10 light planes
-	private int lvl4wave2Amount = 10;// 7 scout planes, and 3 medium planes
-	private int lvl4wave3Amount = 15;// 2 heavy planes, 6 light planes, and 7 scout planes
-	private int lvl4Wave4Amount = 5;
-	private int lvl4Wave5Amount = 15;
+	private int lvl4wave1Amount = 5;//5 Heavy Planes
+	private int lvl4wave2Amount = 8;// 7 Medium Planes, 1 Heavy Plane
+	private int lvl4wave3Amount = 15;// 10 scout planes, 5 Light Planes
+	private int lvl4Wave4Amount = 30;//30 Light Planes
+	private int lvl4Wave5Amount = 10;//10 Heavy Planes//Was originally 15 medium planes, 5 Heavy Planes
 	
 	private int numEnemiesLeftInlvl4wave1Amount;
 	private int numEnemiesLeftInlvl4wave2Amount;
@@ -234,16 +234,16 @@ public class EnemySpawner : MonoBehaviour {
 		numEnemiesLeftInlvl2wave2Amount = 10;
 		numEnemiesLeftInlvl2wave3Amount = 15;
 
-		numEnemiesLeftInlvl3wave1Amount = 0;
-		numEnemiesLeftInlvl3wave2Amount = 0;
-		numEnemiesLeftInlvl3wave3Amount = 0;
-		numEnemiesLeftInlvl3wave4Amount = 0;
+		numEnemiesLeftInlvl3wave1Amount = 5;
+		numEnemiesLeftInlvl3wave2Amount = 10;
+		numEnemiesLeftInlvl3wave3Amount = 3;
+		numEnemiesLeftInlvl3wave4Amount = 20;
 
-		numEnemiesLeftInlvl4wave1Amount = 0;
-		numEnemiesLeftInlvl4wave2Amount = 0;
-		numEnemiesLeftInlvl4wave3Amount = 0;
-		numEnemiesLeftInlvl4wave4Amount = 0;
-		numEnemiesLeftInlvl4wave5Amount = 0;
+		numEnemiesLeftInlvl4wave1Amount = 5;
+		numEnemiesLeftInlvl4wave2Amount = 8;
+		numEnemiesLeftInlvl4wave3Amount = 15;
+		numEnemiesLeftInlvl4wave4Amount = 30;
+		numEnemiesLeftInlvl4wave5Amount = 10;
 
 
 
@@ -535,8 +535,49 @@ public class EnemySpawner : MonoBehaviour {
 			//case 5://Level 2 wave 2
 		if(levelAndWaveMarker == 5)
 		{
-
-
+			// 7 scout planes, and 3 medium planes
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+				SpawnScout ();
+				SpawnScout ();
+				SpawnScout ();
+				SpawnScout ();
+				SpawnScout ();
+				SpawnScout ();
+				SpawnScout ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				
+				PlayerView.numOfEnemiesLeft = 10;
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			
+			
+			
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
+			{
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 6;  //Stay at the argument of this switch statement as shown on RHS
+					
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+					
+					PlayerView.numOfEnemiesLeft = 0;
+					
+				}
+			}
 
 
 			//break;
@@ -546,7 +587,55 @@ public class EnemySpawner : MonoBehaviour {
 			//case 6://Level 2 wave 3
 		if(levelAndWaveMarker == 6)
 		{
+			// 2 heavy planes, 6 light planes, and 7 scout planes
 
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+				SpawnHeavyEnemy ();
+				SpawnHeavyEnemy ();
+				SpawnLightEnemy ();
+				SpawnLightEnemy ();
+				SpawnLightEnemy ();
+				SpawnLightEnemy ();
+				SpawnLightEnemy ();
+				SpawnLightEnemy ();
+				SpawnScout ();
+				SpawnScout ();
+				SpawnScout ();
+				SpawnScout ();
+				SpawnScout ();
+				SpawnScout ();
+				SpawnScout ();
+				
+				PlayerView.numOfEnemiesLeft = 15;
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			
+			
+			
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
+			{
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 7;  //Stay at the argument of this switch statement as shown on RHS
+					
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+					
+					PlayerView.numOfEnemiesLeft = 0;
+					
+				}
+			}
 
 
 
@@ -557,7 +646,45 @@ public class EnemySpawner : MonoBehaviour {
 			//case 7://Level 3 wave 1
 		if(levelAndWaveMarker == 7)
 		{
+			//5 medium planes
 
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				
+				PlayerView.numOfEnemiesLeft = 5;
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			
+			
+			
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
+			{
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 8;  //Stay at the argument of this switch statement as shown on RHS
+					
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+					
+					PlayerView.numOfEnemiesLeft = 0;
+					
+				}
+			}
 
 			//break;
 		}
@@ -566,7 +693,52 @@ public class EnemySpawner : MonoBehaviour {
 			//case 8://Level 3 wave 2
 		if(levelAndWaveMarker == 8)
 		{
+			// 10 Medium Planes
 
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				
+				PlayerView.numOfEnemiesLeft = 10;
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			
+			
+			
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
+			{
+
+
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 9;  //Stay at the argument of this switch statement as shown on RHS
+					
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+					
+					PlayerView.numOfEnemiesLeft = 0;
+					
+				}
+			}
 			//break;
 		}
 
@@ -574,7 +746,45 @@ public class EnemySpawner : MonoBehaviour {
 			//case 9://Level 3 wave 3
 		if(levelAndWaveMarker == 9)
 		{
+			//3 Heavy Planes
+
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+				SpawnHeavyEnemy ();
+				SpawnHeavyEnemy ();
+				SpawnHeavyEnemy ();
 				
+				PlayerView.numOfEnemiesLeft = 3;
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			
+			
+			
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
+			{
+				
+				
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 10;  //Stay at the argument of this switch statement as shown on RHS
+					
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+					
+					PlayerView.numOfEnemiesLeft = 0;
+					
+				}
+			}	
 			//break;
 		}
 
@@ -582,6 +792,63 @@ public class EnemySpawner : MonoBehaviour {
 			//case 10://Level 3 wave 4
 		if(levelAndWaveMarker == 10)
 		{
+			//20 Medium Planes
+
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				
+				PlayerView.numOfEnemiesLeft = 20;
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			
+			
+			
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
+			{
+				
+				
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 11;  //Stay at the argument of this switch statement as shown on RHS
+					
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+					
+					PlayerView.numOfEnemiesLeft = 0;
+					
+				}
+			}	
 
 			//break;
 		}
@@ -590,39 +857,294 @@ public class EnemySpawner : MonoBehaviour {
 			//case 11://Level 4 wave 1
 		if(levelAndWaveMarker == 11)
 		{
+			/*private int lvl4wave1Amount = 5;//5 Heavy Planes
+	private int lvl4wave2Amount = 8;// 7 Medium Planes, 1 Heavy Plane
+	private int lvl4wave3Amount = 15;// 10 scout planes, 5 Light Planes
+	private int lvl4Wave4Amount = 30;//30 Light Planes
+	private int lvl4Wave5Amount = 10;//10 Heavy Planes//Was originally 15 medium planes, 5 Heavy Planes*/
+
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
 				
+				PlayerView.numOfEnemiesLeft = 5;
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			
+			
+			
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
+			{
+				
+				
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 12;  //Stay at the argument of this switch statement as shown on RHS
+					
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+					
+					PlayerView.numOfEnemiesLeft = 0;
+					
+				}
+			}	
+
+
 			//break;
 		}
 
 
-			//case 12://Level 1 wave 2
+			//case 12://Level 4 wave 2
 		if(levelAndWaveMarker == 12)
 		{
-
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+				//Spawn enemies of this specific wave here
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnMediumEnemy ();
+				SpawnHeavyEnemy();
+				
+				PlayerView.numOfEnemiesLeft = 8;
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			
+			
+			
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
+			{
+				
+				
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 13;  //Stay at the argument of this switch statement as shown on RHS
+					
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+					
+					PlayerView.numOfEnemiesLeft = 0;
+					
+				}
+			}	
 			//break;
 		}
 
 
-			//case 13://Level 1 wave 3
+			//case 13://Level 4 wave 3
 		if(levelAndWaveMarker == 13)
 		{
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
 
+				
+				SpawnScout();
+				SpawnScout();
+				SpawnScout();
+				SpawnScout();
+				SpawnScout();
+				SpawnScout();
+				SpawnScout();
+				SpawnScout();
+				SpawnScout();
+				SpawnScout();
+				
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				
+				PlayerView.numOfEnemiesLeft = 15;
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			
+			
+			
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
+			{
+				
+				
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 14;  //Stay at the argument of this switch statement as shown on RHS
+					
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+					
+					PlayerView.numOfEnemiesLeft = 0;
+					
+				}
+			}	
 			//break;
 		}
 
 
-			//case 14://Level 1 wave 4
+			//case 14://Level 4 wave 4
 		if(levelAndWaveMarker == 14)
 		{
-
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+				
+				
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				SpawnLightEnemy();
+				
+				PlayerView.numOfEnemiesLeft = 30;
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			
+			
+			
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
+			{
+				
+				
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 15;  //Stay at the argument of this switch statement as shown on RHS
+					
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+					
+					PlayerView.numOfEnemiesLeft = 0;
+					
+				}
+			}	
 			//break;
 		}
 
 
-			//case 15://Level 1 wave 5
+			//case 15://Level 4 wave 5
 		if(levelAndWaveMarker == 15)
 		{
-
+			if(enemiesOfCurrentWaveHaveBeenSpawned == false)//Spawn wave only if wave wasn't spawned yet
+				//Necessary since we are in the update function that's called in a loop.  
+			{
+				//Spawn enemies of this specific wave here
+				
+				
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
+				SpawnHeavyEnemy();
+				
+				PlayerView.numOfEnemiesLeft = 10;
+				
+				enemiesOfCurrentWaveHaveBeenSpawned = true;
+			}
+			
+			
+			
+			
+			
+			//if(numEnemiesLeftInlvl1wave1Amount == 0)
+			//yield return new WaitForSeconds (2);
+			if(Time.time > 2.0f)
+			{
+				
+				
+				//if(numEnemiesLeftInlvl1wave2Amount == 0)
+				if(PlayerView.numOfEnemiesLeft <= 0)
+				{
+					//levelAndWaveMarker++;//This will keep incrementing.  
+					
+					//Move to next wave.
+					levelAndWaveMarker = 15;//Last level. Loop back to level 4 wave 5 for now  //Stay at the argument of this switch statement as shown on RHS
+					
+					enemiesOfCurrentWaveHaveBeenSpawned = false;
+					
+					PlayerView.numOfEnemiesLeft = 0;
+					
+				}
+			}	
 			//break;
 		}
 
