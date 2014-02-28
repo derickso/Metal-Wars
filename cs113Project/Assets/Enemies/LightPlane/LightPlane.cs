@@ -15,6 +15,8 @@ public class LightPlane : Enemy {
 		base.startInit();
 
 		armor = 65;
+
+		score = 150;
 		
 		speed = 50.0f;
 		rotateSpeed = Random.Range(50,70);

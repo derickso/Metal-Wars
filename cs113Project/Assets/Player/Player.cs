@@ -26,7 +26,8 @@ public class Player : MonoBehaviour {
 
 	private float angleToBackBounds = 0;
 	private bool outOfBounds = false;
-	
+
+	private int score;
 	private float armor, maxArmor;
 
 	public float menuX = 0.0f;
@@ -51,6 +52,9 @@ public class Player : MonoBehaviour {
 	public static double numEMPs;
 	public static double numLives = 3;
 	public static float healthAmount;
+	public GUIStyle scoreFont;
+	public Font digitalFont;
+
 
 	public static float rotateAmount;
 
@@ -75,7 +79,13 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		outOfBounds = false;
+		scoreFont = new GUIStyle();
+		scoreFont.font = digitalFont;
+		scoreFont.fontSize = 24;
+		scoreFont.normal.textColor = Color.yellow;
+		scoreFont.alignment = TextAnchor.MiddleRight;
 
+		score = 0;
 		maxArmor = armor = 50.0f;
 
 
@@ -349,8 +359,8 @@ public class Player : MonoBehaviour {
 				}
 			}
 		}
-		//draw the background:
-		int offset = 22;
+		//draw the number of lives
+		GUI.Label(new Rect (healthBarPos.x, healthBarPos.y - 35, healthBarSize.x, 10), score.ToString(), scoreFont);
 		GUI.Label(new Rect (healthBarPos.x, healthBarPos.y - 21, 100, 20), "Lives");
 		for (int i = 0; i < numLives; i++)
 		{
@@ -372,7 +382,7 @@ public class Player : MonoBehaviour {
 		//GUI.BeginGroup(new Rect(healthBarPos.x, healthBarPos.y + 34, healthBarSize.x, healthBarSize.y));
 		for (int i = 0; i < numEMPs; i++)
 		{
-			GUI.DrawTexture (new Rect (healthBarPos.x + i*offset, 55, empWidth, 28), empIcon, ScaleMode.ScaleToFit);
+			GUI.DrawTexture (new Rect (healthBarPos.x + i*20, 55, empWidth, 28), empIcon, ScaleMode.ScaleToFit);
 		}
 		//GUI.EndGroup();
 
@@ -457,5 +467,17 @@ public class Player : MonoBehaviour {
 			angleToBackBounds = 180;
 			//transform.Rotate(180, 0, 0);
 		}
+	}
+
+	//Function used to add score to the current player
+	public void addScore (int score) {
+		//if the player armor is full it gains double score
+		if(armor == maxArmor)
+			this.score += score*2;
+		//else it just receives the usual score
+		else
+			this.score += score;
+
+		//Debug.Log("Score: "+this.score);
 	}
 }

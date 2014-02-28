@@ -16,6 +16,8 @@ public class MediumPlane : Enemy {
 
 		armor = 80;
 
+		score = 250;
+
 		speed = 40.0f;
 		rotateSpeed = Random.Range(50,70);
 

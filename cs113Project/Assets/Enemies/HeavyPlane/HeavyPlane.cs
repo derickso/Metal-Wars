@@ -15,6 +15,8 @@ public class HeavyPlane : Enemy {
 		base.startInit();
 
 		armor = 100;
+
+		score = 350;
 		
 		speed = 30.0f;
 		rotateSpeed = Random.Range(50,70);

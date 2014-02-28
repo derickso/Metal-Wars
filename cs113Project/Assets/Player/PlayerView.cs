@@ -70,9 +70,6 @@ public class PlayerView : MonoBehaviour {
 		//numOfEnemiesLeft = targets.Length;
 		//Debug.Log (numOfEnemiesLeft);
 
-		numOfEnemiesLeft = targets.Length;
-		Debug.Log (numOfEnemiesLeft);
-
 		/*
 		//If all enemies destroyed, reset targets list back to 0
 		if(numOfEnemiesLeft <= 0)
