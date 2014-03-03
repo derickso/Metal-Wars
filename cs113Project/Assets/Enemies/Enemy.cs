@@ -26,6 +26,9 @@ public abstract class Enemy : MonoBehaviour {
 	private float eightRotated;
 	private bool eightPathCircle;
 
+
+	public float empCountDown;
+
 	/*
 	// Use this for initialization
 	//Initializer, ALL the variables must be initialized here
@@ -57,6 +60,9 @@ public abstract class Enemy : MonoBehaviour {
 		rotateSpeed = 50.0f;
 		
 		setPath(PATH_CIRCLE);
+
+
+		empCountDown = 0.0f;
 	}
 
 	//Init procedure for each path
@@ -104,6 +110,24 @@ public abstract class Enemy : MonoBehaviour {
 		default:
 			break;
 		}
+
+		//empCountDown = 0.0f;
+
+		//If player fired the EMP Weapon
+		if(Input.GetKeyDown (KeyCode.E) && (Player.numEMPs >= 0))
+		{
+			//receiveDamage (5);
+			empCountDown += Time.deltaTime;
+
+			//if(empCountDown >= 0.05f)
+			//{
+				receiveDamage(1000);
+				empCountDown = 0.0f;//Crucial to reset the counter. 
+				//Player.numEMPs--;
+			//}
+
+		}
+
 	}
 
 	//Called when hitted, procedure to receive damage
