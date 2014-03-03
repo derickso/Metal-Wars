@@ -28,8 +28,8 @@ public class EnemiesBullets : MonoBehaviour {
 			player.receiveDamage(damage);
 
 			//Vanishes the gameObject
-			//gameObject.SetActive(false);
-			Destroy (this);
+			gameObject.SetActive(false);
+			//Destroy (this);
 		}
 	}
 
