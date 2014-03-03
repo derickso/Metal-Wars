@@ -75,6 +75,27 @@ public class Player : MonoBehaviour {
 	public AudioClip sPlayerImpact;
 
 
+	//EMP Playing
+	public ParticleSystem EMPCore;
+	public ParticleSystem EMP1;
+	public ParticleSystem EMP2;
+	public ParticleSystem EMP3;
+
+
+	public float empCountDown;
+
+	public bool empEnabled = true;
+
+
+
+	//Player Explosion
+	public ParticleSystem playerExplosion;
+
+	//LowHealthDamage
+	public ParticleSystem lowHealthDamage1;
+	public ParticleSystem lowHealthDamage2;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -113,6 +134,22 @@ public class Player : MonoBehaviour {
 		thruster2.enableEmission = false;
 		engineHeat1.enableEmission = false;
 		engineHeat2.enableEmission = false;
+
+
+
+		EMPCore.enableEmission = false;
+		EMP1.enableEmission = false;
+		EMP2.enableEmission = false;
+		EMP3.enableEmission = false;
+
+		playerExplosion.enableEmission = false;
+
+
+		lowHealthDamage1.enableEmission = false;
+		lowHealthDamage2.enableEmission = false;
+
+
+		empCountDown = 0.0f;
 		
 	}
 	
@@ -179,8 +216,17 @@ public class Player : MonoBehaviour {
 
 		//Sets the particle systems defaults
 		normalSpeedMode();
-		
-		
+
+
+		//Disable EMP while it's not fired
+		empActivated (false);
+		EMPCore.enableEmission = false;
+		EMP1.enableEmission = false;
+		EMP2.enableEmission = false;
+		EMP3.enableEmission = false;
+
+
+
 		//pitch
 		if(Input.GetKey (KeyCode.UpArrow))
 		{
@@ -256,7 +302,54 @@ public class Player : MonoBehaviour {
 		//	transform.LookAt (enemyTarget.transform.position);
 		//	//transform.Translate (
 		//}
-		
+
+		empEnabled = true;
+
+		//Fire EMP
+		if(Input.GetKey (KeyCode.E) && (numEMPs >= 0) && (empEnabled == true))
+		{
+			empActivated (true);
+
+			//Destroy (GameObject.FindWithTag("Enemy"));
+			//if(PlayerView.numOfEnemiesLeft == 0) numEMPs--;
+			//GameObject.FindGameObjectWithTag("Enemy").gameObject.GetComponent ("Enemy");
+			//Enemy enemy = (Enemy)otherObject.gameObject.GetComponent("Enemy");
+
+			//Enemy enemy = (Enemy)gameObject.GetComponent("Enemy");
+			//enemy.receiveDamage(30);
+
+			//GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+			//Enemy
+
+			//Timer so EMP can't be held down.  EMP stops emitting after a press period
+			//And the key is allowed to be pressed again.  
+			empCountDown += Time.deltaTime;
+			if(empCountDown >= 0.05f)
+			{
+				empActivated (false);
+				empCountDown = 0.0f;//Crucial to reset the counter. Otherwise this condition will
+				//always be met, causing empActivated to keep executing.  
+
+				//numEMPs--;
+				empEnabled = false;
+			}
+
+
+
+		}
+		if(Input.GetKeyDown (KeyCode.E) && (numEMPs >= 0))
+		{
+			numEMPs--;
+		}
+
+
+		//Testing player damage:
+		//if(Input.GetKeyDown (KeyCode.K))
+		//{
+		//	armor = 10.0f;
+		//}
+
+
 		//Finish later
 		//Landing/Takeoff
 		/*if(Input.GetKey ("t"))
@@ -305,6 +398,29 @@ public class Player : MonoBehaviour {
 		
 		thruster1.enableEmission = true;
 		thruster2.enableEmission = true;
+	}
+
+	protected void empActivated(bool activated)
+	{
+
+		if(activated == true)
+		{
+			EMPCore.enableEmission = true;
+			EMP1.enableEmission = true;
+			EMP2.enableEmission = true;
+			EMP3.enableEmission = true;
+
+		}
+		else{
+
+			EMPCore.enableEmission = false;
+			EMP1.enableEmission = false;
+			EMP2.enableEmission = false;
+			EMP3.enableEmission = false;
+
+		}
+
+
 	}
 
 
@@ -439,6 +555,13 @@ public class Player : MonoBehaviour {
 		Debug.Log("Player damaged!!"+damage);
 		audio.PlayOneShot (sPlayerImpact);
 
+		if(armor <= 15)
+		{
+			lowHealthDamage1.enableEmission = true;
+			lowHealthDamage2.enableEmission = true;
+		}
+
+
 		if(armor < 1)
 		{
 			//Die procedure:
@@ -450,6 +573,7 @@ public class Player : MonoBehaviour {
 			Destroy(gameObject);
 			Destroy(expl,2);
 			*/
+			playerExplosion.enableEmission = true;
 		}
 	}
 	
