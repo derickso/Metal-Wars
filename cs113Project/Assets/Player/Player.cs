@@ -66,6 +66,17 @@ public class Player : MonoBehaviour {
 	public ParticleSystem thruster1;
 	public ParticleSystem thruster2;
 
+	public ParticleSystem wingWind1;
+	public ParticleSystem wingWind2;
+	public ParticleSystem fuelslageWind1;
+	public ParticleSystem fuelslageWind2;
+	//public ParticleSystem wingWindTrail1;
+	//public ParticleSystem wingWindTrail2;
+	//public ParticleSystem yawRudderWindTrail1;
+	//public ParticleSystem yawRudderWindTrail2;
+	//public ParticleSystem pitchRudderWindTrail1;
+	//public ParticleSystem pitchRudderWindTrail2;
+
 	//Slow down thrusters
 	public ParticleSystem engineHeat1;
 	public ParticleSystem engineHeat2;
@@ -136,6 +147,20 @@ public class Player : MonoBehaviour {
 		engineHeat2.enableEmission = false;
 
 
+		wingWind1.enableEmission = false;
+		wingWind2.enableEmission = false;
+		fuelslageWind1.enableEmission = false;
+		fuelslageWind2.enableEmission = false;
+		//wingWindTrail1.enableEmission = false;
+		//wingWindTrail2.enableEmission = false;
+		//yawRudderWindTrail1.enableEmission = false;
+		//yawRudderWindTrail2.enableEmission = false;
+		//pitchRudderWindTrail1.enableEmission = false;
+		//pitchRudderWindTrail2.enableEmission = false;
+
+
+
+
 
 		EMPCore.enableEmission = false;
 		EMP1.enableEmission = false;
@@ -155,6 +180,11 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		float transAmount = speed * Time.deltaTime;//Do not delete.  
+		//float rotateAmount = rotateSpeed * Time.deltaTime;
+		transform.Translate(0,0,transAmount);//Do not delete.  
+
 
 		if (healthAmount <= 0)
 		{
@@ -374,6 +404,19 @@ public class Player : MonoBehaviour {
 		
 		engineHeat1.enableEmission = true;
 		engineHeat2.enableEmission = true;
+
+
+
+		wingWind1.enableEmission = false;
+		wingWind2.enableEmission = false;
+		fuelslageWind1.enableEmission = false;
+		fuelslageWind2.enableEmission = false;
+		//wingWindTrail1.enableEmission = true;
+		//wingWindTrail2.enableEmission = true;
+		//yawRudderWindTrail1.enableEmission = false;
+		//yawRudderWindTrail2.enableEmission = false;
+		//pitchRudderWindTrail1.enableEmission = true;
+		//pitchRudderWindTrail2.enableEmission = true;
 	}
 
 	//Set the particle system of the engine and the thrust to match the slow speed mode
@@ -386,6 +429,19 @@ public class Player : MonoBehaviour {
 		
 		thruster1.enableEmission = false;
 		thruster2.enableEmission = false;
+
+
+
+		wingWind1.enableEmission = false;
+		wingWind2.enableEmission = false;
+		fuelslageWind1.enableEmission = false;
+		fuelslageWind2.enableEmission = false;
+		//wingWindTrail1.enableEmission = false;
+		//wingWindTrail2.enableEmission = false;
+		//yawRudderWindTrail1.enableEmission = false;
+		//yawRudderWindTrail2.enableEmission = false;
+		//pitchRudderWindTrail1.enableEmission = false;
+		//pitchRudderWindTrail2.enableEmission = false;
 	}
 
 	//Set the particle system of the engine and the thrust to match the fast speed mode
@@ -398,6 +454,26 @@ public class Player : MonoBehaviour {
 		
 		thruster1.enableEmission = true;
 		thruster2.enableEmission = true;
+
+
+
+
+		if(Input.GetKey (KeyCode.DownArrow) || Input.GetKey (KeyCode.UpArrow))
+		{
+
+			wingWind1.enableEmission = true;
+			wingWind2.enableEmission = true;		
+			fuelslageWind1.enableEmission = true;
+			fuelslageWind2.enableEmission = true;
+		}
+		//wingWindTrail1.enableEmission = false;
+		//wingWindTrail2.enableEmission = false;
+		//yawRudderWindTrail1.enableEmission = true;
+		//yawRudderWindTrail2.enableEmission = true;
+		//pitchRudderWindTrail1.enableEmission = false;
+		//pitchRudderWindTrail2.enableEmission = false;
+
+
 	}
 
 	protected void empActivated(bool activated)
