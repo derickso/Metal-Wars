@@ -134,13 +134,6 @@ public abstract class Enemy : MonoBehaviour {
 	public void receiveDamage(int damage) {
 	//public bool receiveDamage(int damage) {
 
-
-		//isDestroyed = false;//Make this false at the beginning.  Only change it to true if 
-		//game object is destroyed
-		//Must be initialized
-		//set to false every time this is called
-
-
 		armor -= damage;
 		//Debug.Log("Enemy Damaged!! "+armor);
 		if(armor < 1)
@@ -152,8 +145,9 @@ public abstract class Enemy : MonoBehaviour {
 			((Player)GameObject.FindWithTag("Player").GetComponent("Player")).addScore(score);
 
 			//Changes the number of current enemies left
-			PlayerView.numOfEnemiesLeft--;
-			Debug.Log (PlayerView.numOfEnemiesLeft);
+			//PlayerView.numOfEnemiesLeft--;
+			//Debug.Log (PlayerView.numOfEnemiesLeft);
+			SpawnManager.decrementEnemiesAliveNumber();
 
 			//Destroy the explosion and the game object
 			Destroy(expl,2);
