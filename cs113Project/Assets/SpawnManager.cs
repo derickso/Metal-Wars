@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour {
 	private const float POSITION_RANGE = 100.0f;
 
 	//Keeps the current wave number
-	public int numberOfWaves;//Used to change it
+	public int numberOfWaves = 1;//Used to change it
 	private static int sNumberOfWaves = 1;
 	private static int currentWave = 0;
 	private int objCurrentWave = 0; // Each instantiation specific current wave
