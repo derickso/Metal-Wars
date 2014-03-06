@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpawnManager : MonoBehaviour {
 
-	private const float POSITION_RANGE = 250.0f;
+	private const float POSITION_RANGE = 100.0f;
 
 	//Keeps the current wave number
 	public int numberOfWaves;//Used to change it
@@ -140,11 +140,15 @@ public class SpawnManager : MonoBehaviour {
 	//Spawns the enemy game object received
 	private void spawnEnemy (GameObject go) {
 		go.SetActive (true);
-		go.transform.position.Set(
-			Random.Range(transform.position.x-POSITION_RANGE,transform.position.x+POSITION_RANGE),
-			Random.Range(transform.position.y-POSITION_RANGE,transform.position.y+POSITION_RANGE),
-			Random.Range(transform.position.z-POSITION_RANGE,transform.position.z+POSITION_RANGE));
-		//go.transform.rotation = transform.rotation;
+		float x = transform.position.x;
+		float y = transform.position.y;
+		float z = transform.position.z;
+		Vector3 newPosition = new Vector3(
+			Random.Range(x-POSITION_RANGE, x+POSITION_RANGE),
+		    Random.Range(y-POSITION_RANGE, y+POSITION_RANGE),
+		    Random.Range(z-POSITION_RANGE, z+POSITION_RANGE));
+		go.transform.position = newPosition;
+		//go.transform.rotation = Random.rotation;
 		++numberOfEnemiesAlive;
 	}
 
