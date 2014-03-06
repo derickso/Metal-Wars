@@ -156,6 +156,13 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+		float transAmount = speed * Time.deltaTime;//Do not delete.  
+		//float rotateAmount = rotateSpeed * Time.deltaTime;
+		transform.Translate(0,0,transAmount);//Do not delete.  
+
+
+
 		if (healthAmount <= 0)
 		{
 			//if (numLives > 0)
