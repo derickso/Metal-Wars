@@ -36,7 +36,10 @@ public class Player : MonoBehaviour {
 	private bool isPaused;
 	private bool inOptions;
 	private bool isGameOver;
-	
+	public static bool isDead;
+
+	public AudioClip sPlayerExplosion;
+
 	public float hSliderValue = 15.0f;
 	
 	int selGridInt  = 0;
@@ -54,7 +57,6 @@ public class Player : MonoBehaviour {
 	public static float healthAmount;
 	public GUIStyle scoreFont;
 	public Font digitalFont;
-
 
 	public static float rotateAmount;
 
@@ -111,6 +113,7 @@ public class Player : MonoBehaviour {
 
 
 		isGameOver = false;
+		isDead = false;
 		numEMPs = 5;
 		//numLives = 3;
 		Time.timeScale = 1;
@@ -165,16 +168,24 @@ public class Player : MonoBehaviour {
 
 		if (healthAmount <= 0)
 		{
-			//if (numLives > 0)
-			//{
-			//	healthAmount = .75f;
-			//	numLives = numLives - 1;
-			//}
-			//else {
-			if (!isGameOver)
-				numLives--;
-			isGameOver = true;
-			//}
+			if (!isDead) {
+				audio.Stop ();
+				audio.PlayOneShot (sPlayerExplosion, 0.3F);
+			}
+			isDead = true;
+			//audio.Stop ();
+			speed = 0;
+			defaultThrust1.Stop ();
+			defaultThrust2.Stop ();
+			thruster1.Stop ();
+			thruster2.Stop ();
+			engineHeat1.Stop ();
+			engineHeat2.Stop ();
+			GameObject[] targets = GameObject.FindGameObjectsWithTag("PlayerModel");
+			foreach (GameObject Target in targets) {
+				Target.renderer.enabled = false;
+			}
+			Invoke("Explode", 1.4f);
 		}
 		//if (numLives <= 0)
 		//{
@@ -189,6 +200,14 @@ public class Player : MonoBehaviour {
 			returnToMapBounds();
 		else
 			receiveInputCommands();
+	}
+
+	public void Explode() {
+		if (!isGameOver)
+			numLives--;
+		//StartCoroutine(Lose());
+		Time.timeScale = 0;
+		isGameOver = true;
 	}
 
 	//Procedure to make the player go back to the map bounds
@@ -373,38 +392,44 @@ public class Player : MonoBehaviour {
 
 	//Set the particle system of the engine and the thrust to match the normal speed mode
 	protected void normalSpeedMode(){
-		defaultThrust1.enableEmission = true;
-		defaultThrust2.enableEmission = true;
-		
-		thruster1.enableEmission = false;
-		thruster2.enableEmission = false;
-		
-		engineHeat1.enableEmission = true;
-		engineHeat2.enableEmission = true;
+		if (!isDead) {
+			defaultThrust1.enableEmission = true;
+			defaultThrust2.enableEmission = true;
+			
+			thruster1.enableEmission = false;
+			thruster2.enableEmission = false;
+			
+			engineHeat1.enableEmission = true;
+			engineHeat2.enableEmission = true;
+		}
 	}
 
 	//Set the particle system of the engine and the thrust to match the slow speed mode
 	protected void slowSpeedMode(){
-		defaultThrust1.enableEmission = false;
-		defaultThrust2.enableEmission = false;
-		
-		engineHeat1.enableEmission = true;
-		engineHeat2.enableEmission = true;
-		
-		thruster1.enableEmission = false;
-		thruster2.enableEmission = false;
+		if (!isDead) {
+			defaultThrust1.enableEmission = false;
+			defaultThrust2.enableEmission = false;
+			
+			engineHeat1.enableEmission = true;
+			engineHeat2.enableEmission = true;
+			
+			thruster1.enableEmission = false;
+			thruster2.enableEmission = false;
+		}
 	}
 
 	//Set the particle system of the engine and the thrust to match the fast speed mode
 	protected void fastSpeedMode(){
-		defaultThrust1.enableEmission = true;
-		defaultThrust2.enableEmission = true;
+		if (!isDead) {
+			defaultThrust1.enableEmission = true;
+			defaultThrust2.enableEmission = true;
 
-		engineHeat1.enableEmission = false;
-		engineHeat2.enableEmission = false;
-		
-		thruster1.enableEmission = true;
-		thruster2.enableEmission = true;
+			engineHeat1.enableEmission = false;
+			engineHeat2.enableEmission = false;
+			
+			thruster1.enableEmission = true;
+			thruster2.enableEmission = true;
+		}
 	}
 
 	protected void empActivated(bool activated)
@@ -454,6 +479,9 @@ public class Player : MonoBehaviour {
 
 		if (isGameOver)
 		{
+			GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+			playerObject.renderer.enabled = false;
+			this.renderer.enabled = false;
 			Time.timeScale = 0;
 			menuX = Screen.width/2.5f;
 			menuY = Screen.height/2.5f;
@@ -560,7 +588,7 @@ public class Player : MonoBehaviour {
 		//healthAmount = healthAmount - (damage * 0.125f);
 		healthAmount = armor/maxArmor;
 		//Debug.Log("Player damaged!!"+damage);
-		audio.PlayOneShot (sPlayerImpact);
+		//audio.PlayOneShot (sPlayerImpact);
 
 		if(armor <= 15)
 		{

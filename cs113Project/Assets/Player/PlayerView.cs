@@ -10,6 +10,7 @@ public class PlayerView : MonoBehaviour {
 	public GameObject ThirdCross;
 	public GameObject ThirdCrossRed;
 	public Rect crosshairRect;
+	public GameObject playerIcon;
 
 	private bool viewActivated = false;
 
@@ -63,6 +64,9 @@ public class PlayerView : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Player.isDead)
+		    playerIcon.renderer.enabled = false;
+		   
 		GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
 		//targets = GameObject.FindGameObjectsWithTag("Enemy");//Reference/Re-Reference
 
@@ -143,6 +147,15 @@ public class PlayerView : MonoBehaviour {
 			ThirdCross.renderer.enabled = true;
 
 			viewActivated = false;
+		}
+
+		if(Input.GetKey (KeyCode.A))
+		{
+			playerIcon.transform.Rotate (0, 1.26f, 0);
+		}
+		if(Input.GetKey (KeyCode.D))
+		{
+			playerIcon.transform.Rotate (0, -1.26f, 0);
 		}
 	}
 

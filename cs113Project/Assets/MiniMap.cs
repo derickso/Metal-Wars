@@ -34,7 +34,7 @@ public class MiniMap : MonoBehaviour {
 		//transform.rotation = new Quaternion(0, playerObject.transform.eulerAngles.y, 0, 1);
 		//transform.rotation = new Quaternion(0, playerObject.transform.rotation.z, 0, 1);
 
-		if(Input.GetKey (KeyCode.A))
+		/*if(Input.GetKey (KeyCode.A))
 		{
 			//transform.Rotate (0, 0, Player.rotateAmount);
 			//transform.Rotate (0, 0, rotateAmount);
@@ -53,7 +53,7 @@ public class MiniMap : MonoBehaviour {
 			//transform.Rotate (0, 0, -(playerObject.transform.rotation.y * Time.deltaTime));
 			//transform.Rotate (0, 0, -(playerObject.transform.rotation.y * rotateAmount));
 
-		}
+		}*/
 
 
 	}

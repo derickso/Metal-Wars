@@ -31,8 +31,8 @@ public class Radar : MonoBehaviour
 	private GameObject _centerObject;
 	private int        _radarWidth;
 	private int        _radarHeight;
-	private Vector2    _radarCenter;
-	public Texture2D  _radarCenterTexture;
+	//private Vector2    _radarCenter;
+	//public Texture2D  _radarCenterTexture;
 	private Texture2D  _radarBlip1Texture;
 	
 	// Initialize the radar
@@ -44,7 +44,7 @@ public class Radar : MonoBehaviour
 		
 		// Get the location of the radar
 		//setRadarLocation();
-		_radarCenter = new Vector2(Screen.width - _radarWidth / 2, Screen.height - _radarHeight / 2);
+		//_radarCenter = new Vector2(Screen.width - _radarWidth / 2, Screen.height - _radarHeight / 2);
 		
 		// Create the blip textures
 		//_radarCenterTexture = new Texture2D(3, 3, TextureFormat.RGB24, false);
@@ -98,8 +98,8 @@ public class Radar : MonoBehaviour
 		// Draw center oject
 		//if (radarCenterActive)
 		//{
-			Rect centerRect = new Rect(getRadarLocation ().x, getRadarLocation ().y, 12, 12);
-			GUI.DrawTexture(centerRect, _radarCenterTexture);
+		//	Rect centerRect = new Rect(getRadarLocation ().x, getRadarLocation ().y, 12, 12);
+		//	GUI.DrawTexture(centerRect, _radarCenterTexture);
 		//}
 	}
 	

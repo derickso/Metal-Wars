@@ -2,7 +2,8 @@ fileFormatVersion: 2
 guid: 7cbcdf8729e82446faa1957e0625d7e9
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - sPlayerImpact: {fileID: 8300000, guid: 7018b3e5009245441adfb4021fafd622, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

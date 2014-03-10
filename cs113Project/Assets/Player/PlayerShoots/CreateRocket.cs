@@ -8,7 +8,7 @@ public class CreateRocket : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Q)) {
-			audio.PlayOneShot(missileFire, 0.5F);
+			audio.PlayOneShot(missileFire, 0.25F);
 			Instantiate (projectile, transform.position, transform.rotation);
 		}
 	}

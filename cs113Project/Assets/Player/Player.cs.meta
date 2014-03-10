@@ -2,7 +2,31 @@ fileFormatVersion: 2
 guid: 507b7b68f5a4b4dc7ac8d21c8dbeed76
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - explosion: {instanceID: 0}
+  - target: {instanceID: 0}
+  - enemyTarget: {instanceID: 0}
+  - emptyTex: {instanceID: 0}
+  - fullTex: {instanceID: 0}
+  - empIcon: {instanceID: 0}
+  - livesIcon: {instanceID: 0}
+  - thirdCrosshair: {instanceID: 0}
+  - digitalFont: {instanceID: 0}
+  - playerObject: {fileID: 100056, guid: a80be9ef912914e66936fa63183d1be5, type: 2}
+  - defaultThrust1: {instanceID: 0}
+  - defaultThrust2: {instanceID: 0}
+  - thruster1: {instanceID: 0}
+  - thruster2: {instanceID: 0}
+  - engineHeat1: {instanceID: 0}
+  - engineHeat2: {instanceID: 0}
+  - sPlayerImpact: {instanceID: 0}
+  - EMPCore: {instanceID: 0}
+  - EMP1: {instanceID: 0}
+  - EMP2: {instanceID: 0}
+  - EMP3: {instanceID: 0}
+  - playerExplosion: {instanceID: 0}
+  - lowHealthDamage1: {instanceID: 0}
+  - lowHealthDamage2: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
