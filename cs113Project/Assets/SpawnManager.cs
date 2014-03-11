@@ -8,7 +8,8 @@ public class SpawnManager : MonoBehaviour {
 	//Keeps the current wave number
 	public int numberOfWaves = 1;//Used to change it
 	private static int sNumberOfWaves = 1;
-	private static int currentWave = 0;
+	//private static int currentWave = 0;
+	public static int currentWave = 0;
 	private int objCurrentWave = 0; // Each instantiation specific current wave
 
 	//Keeps the next wave time
