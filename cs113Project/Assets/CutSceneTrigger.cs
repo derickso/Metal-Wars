@@ -240,7 +240,7 @@ public class CutSceneTrigger : MonoBehaviour {
 	//public Camera thirdPersonCamera;
 
 
-	public Rect rect = new Rect(Screen.width, Screen.height, 132.0f, 132.0f);
+	public Rect rect;// = new Rect(Screen.width, Screen.height, 1320.0f, 1320.0f);
 	//public Rect rect = new Rect(
 
 	// Use this for initialization
@@ -258,16 +258,21 @@ public class CutSceneTrigger : MonoBehaviour {
 
 	void OnGUI()
 	{
+		rect = new Rect(0.0f, 0.0f, Screen.width, Screen.height);
 
 		if(SpawnManager.currentWave == 0)
 		{
 			//GUI.
 			//GUI.DrawTexture (rect, sketch1);
+			Time.timeScale = 0;
 			
 		}
 		else if(SpawnManager.currentWave == 1)
 		{
-			GUI.DrawTexture (rect, sketch1);
+			//GUI.DrawTexture (rect, sketch1);
+
+
+
 		}
 		else if(SpawnManager.currentWave == 2)
 		{
