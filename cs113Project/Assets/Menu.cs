@@ -25,7 +25,8 @@ public class Menu : MonoBehaviour {
 			//Create the Start button
 			if(GUI.Button(new Rect(75,70,100,50),"Start")) {
 				Debug.Log("StartButton pressed.");
-				Application.LoadLevel("Scene1");
+				//Application.LoadLevel("Scene1");
+				Application.LoadLevel("Intro");
 			}
 			
 			//Create the Options button

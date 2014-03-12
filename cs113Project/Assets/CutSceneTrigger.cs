@@ -263,8 +263,12 @@ public class CutSceneTrigger : MonoBehaviour {
 		if(SpawnManager.currentWave == 0)
 		{
 			//GUI.
+			//GUI.DrawTexture (rect, sketch1, ScaleMode.ScaleToFit);
 			//GUI.DrawTexture (rect, sketch1);
-			Time.timeScale = 0;
+			//Time.timeScale = 0;//Whenever you do this, you effectively cause a bool to pause the game
+
+
+
 			
 		}
 		else if(SpawnManager.currentWave == 1)
@@ -276,45 +280,87 @@ public class CutSceneTrigger : MonoBehaviour {
 		}
 		else if(SpawnManager.currentWave == 2)
 		{
+			GUI.DrawTexture (rect, sketch18);
+
+
 		}
 		else if(SpawnManager.currentWave == 3)
 		{
+
+
+
 		}
 		else if(SpawnManager.currentWave == 4)
 		{
+
+
+
 		}
 		else if(SpawnManager.currentWave == 5)
 		{
+
+
+
 		}
 		else if(SpawnManager.currentWave == 6)
 		{
+
+
+
 		}
 		else if(SpawnManager.currentWave == 7)
 		{
+
+
+
 		}
 		else if(SpawnManager.currentWave == 8)
 		{
+
+
+
 		}
 		else if(SpawnManager.currentWave == 9)
 		{
+
+
+
 		}
 		else if(SpawnManager.currentWave == 10)
 		{
+
+
+
 		}
 		else if(SpawnManager.currentWave == 11)
 		{
+
+
+
 		}
 		else if(SpawnManager.currentWave == 12)
 		{
+
+
+
 		}
 		else if(SpawnManager.currentWave == 13)
 		{
+
+
+
 		}
 		else if(SpawnManager.currentWave == 14)
 		{
+
+
+
 		}
 		else if(SpawnManager.currentWave == 15)
 		{
+
+
+
 		}
 
 
