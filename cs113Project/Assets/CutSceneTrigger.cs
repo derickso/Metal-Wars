@@ -907,6 +907,26 @@ public class CutSceneTrigger : MonoBehaviour {
 		{
 			//GUI.DrawTexture (rect, sketch18);
 
+			if(inc15 == true)
+			{
+				GUI.DrawTexture (rect, c15);
+				nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc15 = false;
+				inc16 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 8.0f;
+				
+			}
+
 
 		}
 		else if(SpawnManager.currentWave == 3)
@@ -915,6 +935,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 
 		}
+
+		//Level 2 Begins
 		else if(SpawnManager.currentWave == 4)
 		{
 
@@ -933,6 +955,9 @@ public class CutSceneTrigger : MonoBehaviour {
 
 
 		}
+
+
+		//Level 3 Begins
 		else if(SpawnManager.currentWave == 7)
 		{
 
@@ -957,6 +982,9 @@ public class CutSceneTrigger : MonoBehaviour {
 
 
 		}
+
+
+		//Level 4 Begins
 		else if(SpawnManager.currentWave == 11)
 		{
 

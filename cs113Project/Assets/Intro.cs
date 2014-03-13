@@ -111,7 +111,7 @@ public class Intro : MonoBehaviour {
 
 
 			//
-			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 
 		}
 
@@ -137,7 +137,7 @@ public class Intro : MonoBehaviour {
 			GUI.DrawTexture (rect, c2);
 
 
-			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 		}
 
 		if(nextButton)
@@ -161,7 +161,7 @@ public class Intro : MonoBehaviour {
 			GUI.DrawTexture (rect, c3);
 			
 			
-			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -185,7 +185,7 @@ public class Intro : MonoBehaviour {
 			GUI.DrawTexture (rect, c4);
 			
 			
-			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -209,7 +209,7 @@ public class Intro : MonoBehaviour {
 			GUI.DrawTexture (rect, c5);
 			
 			
-			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -235,7 +235,7 @@ public class Intro : MonoBehaviour {
 			GUI.DrawTexture (rect, c6);
 			
 			
-			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -261,7 +261,7 @@ public class Intro : MonoBehaviour {
 			GUI.DrawTexture (rect, c7);
 			
 			
-			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -286,7 +286,7 @@ public class Intro : MonoBehaviour {
 			GUI.DrawTexture (rect, c8);
 			
 			
-			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -312,7 +312,7 @@ public class Intro : MonoBehaviour {
 			GUI.DrawTexture (rect, c9);
 			
 			
-			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -339,7 +339,7 @@ public class Intro : MonoBehaviour {
 			GUI.DrawTexture (rect, c10);
 			
 			
-			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -367,7 +367,7 @@ public class Intro : MonoBehaviour {
 			GUI.DrawTexture (rect, c11);
 			
 			
-			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 		}
 		
 		if(nextButton)
