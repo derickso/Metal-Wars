@@ -203,6 +203,194 @@ public class Intro : MonoBehaviour {
 
 
 
+		if(inC5 == true)
+		{
+			
+			GUI.DrawTexture (rect, c5);
+			
+			
+			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+		}
+		
+		if(nextButton)
+		{
+			inC5 = false;
+			inC6 = true;
+			
+			//buttonPressed = false;
+			nextButton = false;
+			
+			
+		}
+
+
+
+
+
+
+
+		if(inC6 == true)
+		{
+			
+			GUI.DrawTexture (rect, c6);
+			
+			
+			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+		}
+		
+		if(nextButton)
+		{
+			inC6 = false;
+			inC7 = true;
+			
+			//buttonPressed = false;
+			nextButton = false;
+			
+			
+		}
+
+
+
+
+
+
+
+		if(inC7 == true)
+		{
+			
+			GUI.DrawTexture (rect, c7);
+			
+			
+			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+		}
+		
+		if(nextButton)
+		{
+			inC7 = false;
+			inC8 = true;
+			
+			//buttonPressed = false;
+			nextButton = false;
+			
+			
+		}
+
+
+
+
+
+
+		if(inC8 == true)
+		{
+			
+			GUI.DrawTexture (rect, c8);
+			
+			
+			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+		}
+		
+		if(nextButton)
+		{
+			inC8 = false;
+			inC9 = true;
+			
+			//buttonPressed = false;
+			nextButton = false;
+			
+			
+		}
+
+
+
+
+
+
+
+		if(inC9 == true)
+		{
+			
+			GUI.DrawTexture (rect, c9);
+			
+			
+			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+		}
+		
+		if(nextButton)
+		{
+			inC9 = false;
+			inC10 = true;
+			
+			//buttonPressed = false;
+			nextButton = false;
+			
+			
+		}
+
+
+
+
+
+
+
+
+		if(inC10 == true)
+		{
+			
+			GUI.DrawTexture (rect, c10);
+			
+			
+			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+		}
+		
+		if(nextButton)
+		{
+			inC10 = false;
+			inC11 = true;
+			
+			//buttonPressed = false;
+			nextButton = false;
+			
+			
+		}
+
+
+
+
+
+
+
+
+
+		if(inC11 == true)
+		{
+			
+			GUI.DrawTexture (rect, c11);
+			
+			
+			nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+		}
+		
+		if(nextButton)
+		{
+			inC11 = false;
+			inC12 = true;
+
+			Application.LoadLevel("Scene1");
+
+			
+			//buttonPressed = false;
+			nextButton = false;
+			
+			
+		}
+
+
+
+
+
+
+
+
 
 
 
