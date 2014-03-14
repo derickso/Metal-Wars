@@ -13,8 +13,8 @@ public class SpawnManager : MonoBehaviour {
 	private int objCurrentWave = 0; // Each instantiation specific current wave
 
 	//Keeps the next wave time
-	private static float nextWaveTime = 0.0f;
-	private const float nextWaveDelay = 90.0f;
+	//private static float nextWaveTime = 0.0f;
+	//private const float nextWaveDelay = 90.0f;
 
 	//Keeps how many enemies are left in the current wave
 	private static int numberOfEnemiesAlive = 0;
@@ -48,8 +48,8 @@ public class SpawnManager : MonoBehaviour {
 	
 		sNumberOfWaves = numberOfWaves;
 		currentWave = 0;
-		nextWaveTime = 0.0f;
-		numberOfEnemiesAlive = 0;
+		//nextWaveTime = 0.0f;
+		numberOfEnemiesAlive = -1;
 
 		createEnemiesArgos();
 		initEnemiesArgos();
@@ -158,10 +158,10 @@ public class SpawnManager : MonoBehaviour {
 	private static void updateWave () {
 		//If the wave time is over, or all the enemies from the previous wave are dead
 		if((currentWave < sNumberOfWaves)&&
-		   ((numberOfEnemiesAlive < 0)||(Time.time > nextWaveTime)))
+		   (numberOfEnemiesAlive < 0))//||(Time.time > nextWaveTime)))
 		{
 			//Next wave time
-			nextWaveTime = Time.time + nextWaveDelay;
+			//nextWaveTime = Time.time + nextWaveDelay;
 			//Ressets the numberOfLivingEnemies variable
 			numberOfEnemiesAlive = 0;
 			//Increment the wave number
