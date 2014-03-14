@@ -14,11 +14,8 @@ public class Menu : MonoBehaviour {
 	private float hSliderValue;
 
 	string[] descriptions;
-	public string hover;
 
 	private AudioClip sMenuTheme;
-
-	public GUIStyle style;
 
 	string[] selStrings;
 
@@ -37,9 +34,6 @@ public class Menu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		audio.volume = hSliderValue / 100;
-		if(hover=="Frost")
-			
-			Debug.Log("Hovering Button 2"); 
 	}
 
 	void OnGUI () {
@@ -83,7 +77,7 @@ public class Menu : MonoBehaviour {
 
 				GUI.Label (new Rect (8,70, 100, 20), "Difficulty");
 				selGridInt = GUI.SelectionGrid (new Rect (110,73, 65, 60), selGridInt, selStrings, 1);
-				hover = GUI.tooltip; 
+
 				if (selGridInt == 1)
 				{
 					damageModifier = 1f;
