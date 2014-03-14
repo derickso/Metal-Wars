@@ -15,6 +15,8 @@ public class LaserBullets : MonoBehaviour {
 	void Start () {
 		//speed = 1000;
 		damage = 49f * Menu.damageModifier;
+
+		damage = 5;//Take it off when have menu.damageModifier working
 		//rigidbody.velocity = transform.forward * speed;
 		//Debug.Log ("Time is: " + Time.time);
 		spawnTime = Time.time;

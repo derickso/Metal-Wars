@@ -32,10 +32,10 @@ public class EnemiesBullets : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter (Collision collision) {
+	//void OnCollisionEnter (Collision collision) {
 		//Dissapear if it hits anything
-		gameObject.SetActive(false);
-	}
+	//	gameObject.SetActive(false);
+	//}
 
 	//On trigger collision exit
 	void OnTriggerExit (Collider otherObject) {
