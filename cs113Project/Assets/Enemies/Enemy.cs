@@ -134,10 +134,11 @@ public abstract class Enemy : MonoBehaviour {
 	public void receiveDamage(int damage) {
 	//public bool receiveDamage(int damage) {
 
-		armor -= damage;
-		//Debug.Log("Enemy Damaged!! "+armor);
+		armor = armor - damage;
+		//Debug.Log("Enemy Damaged for " + damage + ". Armor now = " + armor);
 		if(armor < 1)
 		{
+			//Debug.Log ("enemy should die here");
 			//Create explosion HERE
 			GameObject expl = (GameObject)Instantiate(explosion, transform.position, Quaternion.identity);
 

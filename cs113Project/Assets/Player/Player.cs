@@ -297,13 +297,13 @@ public class Player : MonoBehaviour {
 		//barrel roll left
 		if(Input.GetKey (KeyCode.LeftArrow))
 		{
-			transform.Rotate (0, 0, (rotateAmount * 2));
+			transform.Rotate (0, 0, (rotateAmount * 1));
 		}
 		
 		//barrel roll right
 		if(Input.GetKey (KeyCode.RightArrow))
 		{
-			transform.Rotate (0, 0, (-rotateAmount * 2));
+			transform.Rotate (0, 0, (-rotateAmount * 1));
 		}
 		
 		//speed up

@@ -14,7 +14,7 @@ public class LaserBullets : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//speed = 1000;
-		damage = 10;
+		damage = 49;
 		//rigidbody.velocity = transform.forward * speed;
 		//Debug.Log ("Time is: " + Time.time);
 		spawnTime = Time.time;
@@ -47,9 +47,9 @@ public class LaserBullets : MonoBehaviour {
 		//Make the hit effects
 		if (collision.collider.CompareTag ("Enemy"))
 		{
-			Debug.Log ("hit " + collision.collider.name + " for " + damage + " damage");
-			Enemy enemy = (Enemy)collision.collider.gameObject.GetComponent("Enemy");
-			if (enemy != null)
+			//Debug.Log ("hit " + collision.collider.name + " for " + damage + " damage");
+			Enemy enemy = (Enemy)collision.collider.transform.parent.gameObject.GetComponent("Enemy");
+			//if (enemy != null)
 				enemy.receiveDamage(damage);
 			hit();
 		}
