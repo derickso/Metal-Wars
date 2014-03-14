@@ -300,17 +300,17 @@ public class Player : MonoBehaviour {
 		{
 			isTurning = true;
 			transform.Rotate (0, -rotateAmount, 0);
-			foreach (GameObject Target in targets) {
-				Target.transform.Rotate (0f, .5f, 0f);
-			}
+			//foreach (GameObject Target in targets) {
+			//	Target.transform.Rotate (0f, .5f, 0f);
+			//}
 		}
 		if(Input.GetKey (KeyCode.D))
 		{
 			isTurning = true;
 			transform.Rotate (0, rotateAmount, 0);
-			foreach (GameObject Target in targets) {
-				Target.transform.Rotate (0f, -.5f, 0f);
-			}
+			//foreach (GameObject Target in targets) {
+			//	Target.transform.Rotate (0f, -.5f, 0f);
+			//}
 		}
 		
 		isTurning = false;
