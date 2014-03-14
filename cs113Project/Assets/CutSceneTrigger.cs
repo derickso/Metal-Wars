@@ -892,7 +892,7 @@ public class CutSceneTrigger : MonoBehaviour {
 				//
 				//nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
 				
-				GUI.DrawTexture (rect, null);
+				//GUI.DrawTexture (rect, null);
 				
 			}
 			

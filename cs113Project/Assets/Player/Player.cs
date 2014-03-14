@@ -588,7 +588,7 @@ public class Player : MonoBehaviour {
 		//healthAmount = healthAmount - (damage * 0.125f);
 		healthAmount = armor/maxArmor;
 		//Debug.Log("Player damaged!!"+damage);
-		//audio.PlayOneShot (sPlayerImpact);
+		audio.PlayOneShot (sPlayerImpact);
 
 		if(armor <= 15)
 		{

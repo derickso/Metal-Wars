@@ -151,11 +151,11 @@ public class PlayerView : MonoBehaviour {
 
 		if(Input.GetKey (KeyCode.A))
 		{
-			playerIcon.transform.Rotate (0, 1.26f, 0);
+			playerIcon.transform.Rotate (0, 1.3f, 0);
 		}
 		if(Input.GetKey (KeyCode.D))
 		{
-			playerIcon.transform.Rotate (0, -1.26f, 0);
+			playerIcon.transform.Rotate (0, -1.3f, 0);
 		}
 	}
 

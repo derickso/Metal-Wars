@@ -6,10 +6,6 @@ public class EnemiesBullets : MonoBehaviour {
 	//public int speed;
 	public float damage = 1.0f;
 
-	//Sounds
-	public AudioClip sPlayerImpact;
-
-
 	// Use this for initialization
 	void Start () {
 		//speed = 100;
@@ -28,7 +24,6 @@ public class EnemiesBullets : MonoBehaviour {
 		{
 			//The player receives damage
 			Player player = (Player)otherObject.gameObject.GetComponent("Player");
-			audio.PlayOneShot (sPlayerImpact);
 			player.receiveDamage(damage);
 
 			//Vanishes the gameObject

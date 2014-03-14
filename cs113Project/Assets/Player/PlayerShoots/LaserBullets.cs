@@ -14,7 +14,7 @@ public class LaserBullets : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//speed = 1000;
-		damage = 5;
+		damage = 10;
 		//rigidbody.velocity = transform.forward * speed;
 		//Debug.Log ("Time is: " + Time.time);
 		spawnTime = Time.time;
@@ -26,7 +26,7 @@ public class LaserBullets : MonoBehaviour {
 			UnityEngine.GameObject.Destroy (gameObject);
 	}
 
-	void OnTriggerEnter (Collider otherObject) {
+	/*void OnTriggerEnter (Collider otherObject) {
 		//Debug.Log("PlayerBullets collided");
 		//if it hits an enemy:
 		if(otherObject.CompareTag("Enemy"))
@@ -39,11 +39,22 @@ public class LaserBullets : MonoBehaviour {
 			//Make the hit effects
 			hit();
 		}
-	}
+	}*/
 
 	void OnCollisionEnter (Collision collision) {
+		//Debug.Log ("hit " + collision.gameObject.name);
+		
 		//Make the hit effects
-		hit();
+		if (collision.collider.CompareTag ("Enemy"))
+		{
+			Debug.Log ("hit " + collision.collider.name + " for " + damage + " damage");
+			Enemy enemy = (Enemy)collision.collider.gameObject.GetComponent("Enemy");
+			if (enemy != null)
+				enemy.receiveDamage(damage);
+			hit();
+		}
+		
+		Destroy (gameObject);
 	}
 
 	//On trigger collision exit
