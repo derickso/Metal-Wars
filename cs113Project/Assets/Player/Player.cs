@@ -36,14 +36,15 @@ public class Player : MonoBehaviour {
 	private bool isPaused;
 	private bool inOptions;
 	private bool isGameOver;
+	private bool isTurning;
 	public static bool isDead;
 
 	public AudioClip sPlayerExplosion;
 
 	public float hSliderValue = 15.0f;
 	
-	int selGridInt  = 0;
-	string[] selStrings = new string[] {"Easy", "Medium", "Hard"};
+	int selGridInt;
+	string[] selStrings;
 
 	public Vector2 healthBarPos = new Vector2(20,40);	
 	public Vector2 healthBarSize = new Vector2(90,20);
@@ -76,6 +77,9 @@ public class Player : MonoBehaviour {
 	//Sounds
 	public AudioClip sPlayerImpact;
 
+	//Models
+	GameObject[] targets;
+	Quaternion baseTransform;
 
 	//EMP Playing
 	public ParticleSystem EMPCore;
@@ -109,11 +113,19 @@ public class Player : MonoBehaviour {
 		scoreFont.alignment = TextAnchor.MiddleRight;
 
 		score = 0;
-		maxArmor = armor = 50.0f;
+		maxArmor = armor = 50.0f * Menu.healthModifier;
+
+		targets = GameObject.FindGameObjectsWithTag("PlayerModel");
+		foreach (GameObject Target in targets) {
+			//Target.transform.rotation = transform.rotation;
+			//Debug.Log (Target.transform.rotation);
+		}
+		baseTransform = transform.rotation;
 
 
 		isGameOver = false;
 		isDead = false;
+		isTurning = false;
 		numEMPs = 5;
 		//numLives = 3;
 		Time.timeScale = 1;
@@ -286,12 +298,22 @@ public class Player : MonoBehaviour {
 		//yaw
 		if(Input.GetKey (KeyCode.A))
 		{
+			isTurning = true;
 			transform.Rotate (0, -rotateAmount, 0);
+			foreach (GameObject Target in targets) {
+				Target.transform.Rotate (0f, .5f, 0f);
+			}
 		}
 		if(Input.GetKey (KeyCode.D))
 		{
+			isTurning = true;
 			transform.Rotate (0, rotateAmount, 0);
+			foreach (GameObject Target in targets) {
+				Target.transform.Rotate (0f, -.5f, 0f);
+			}
 		}
+		
+		isTurning = false;
 		
 		
 		//barrel roll left
@@ -583,7 +605,7 @@ public class Player : MonoBehaviour {
 
 	//Function called to cause damage to the player
 	public void receiveDamage(float damage){
-		armor -= damage;
+		armor = armor - damage;
 		//healthAmount = healthAmount - .125f;//health bar (the armor) goes down everytime this is called.  
 		//healthAmount = healthAmount - (damage * 0.125f);
 		healthAmount = armor/maxArmor;

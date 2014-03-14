@@ -7,14 +7,14 @@ public class LaserBullets : MonoBehaviour {
 	public GameObject hitEffect;
 
 	//public int speed;
-	public int damage;
+	public float damage;
 
 	public float spawnTime;
 
 	// Use this for initialization
 	void Start () {
 		//speed = 1000;
-		damage = 49;
+		damage = 49f * Menu.damageModifier;
 		//rigidbody.velocity = transform.forward * speed;
 		//Debug.Log ("Time is: " + Time.time);
 		spawnTime = Time.time;

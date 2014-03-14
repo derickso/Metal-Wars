@@ -5,7 +5,7 @@ using System.Collections;
 public abstract class Enemy : MonoBehaviour {
 
 	public GameObject explosion;
-	protected int armor;
+	protected float armor;
 	protected int score;
 
 	//static bool isDestroyed;//public because var is not part of the object
@@ -52,7 +52,7 @@ public abstract class Enemy : MonoBehaviour {
 
 	//Initializer, ALL the variables must be initialized here
 	protected void startInit () {
-		armor = 50;
+		armor = 50f;
 
 		score = 100;
 		
@@ -131,7 +131,7 @@ public abstract class Enemy : MonoBehaviour {
 	}
 
 	//Called when hitted, procedure to receive damage
-	public void receiveDamage(int damage) {
+	public void receiveDamage(float damage) {
 	//public bool receiveDamage(int damage) {
 
 		armor = armor - damage;
