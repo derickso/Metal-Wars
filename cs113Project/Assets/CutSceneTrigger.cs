@@ -487,7 +487,7 @@ public class CutSceneTrigger : MonoBehaviour {
 	//private float curTime = 0.0f;
 
 	//private bool timeToShowCutscenes = true;
-	private float cutscenesTimeDuration = 5.0f;
+	private float cutscenesTimeDuration = 12.0f;
 
 
 
@@ -777,7 +777,7 @@ public class CutSceneTrigger : MonoBehaviour {
 				GUI.DrawTexture (rect, c12);
 				
 				//
-				nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 
 				cutscenesTimeDuration -= Time.deltaTime;
 
@@ -795,7 +795,7 @@ public class CutSceneTrigger : MonoBehaviour {
 				nextButton = false;
 
 				//cutscenesTimeDuration = 5.0f;//reset//Can reset to any time limit appropriate!
-				cutscenesTimeDuration = 2.0f;
+				cutscenesTimeDuration = 8.0f;
 			}
 
 
@@ -809,7 +809,7 @@ public class CutSceneTrigger : MonoBehaviour {
 				GUI.DrawTexture (rect, c13);
 
 				//
-				nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 
 				cutscenesTimeDuration -= Time.deltaTime;
 				
@@ -838,7 +838,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			if(inc14 == true)
 			{
 				GUI.DrawTexture (rect, c14);
-				nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 
 				cutscenesTimeDuration -= Time.deltaTime;
 
@@ -851,7 +851,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 				nextButton = false;
 
-				cutscenesTimeDuration = 5.0f;
+				cutscenesTimeDuration = 15.0f;
 				
 			}
 
@@ -861,7 +861,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			if(inc15 == true)
 			{
 				GUI.DrawTexture (rect, c15);
-				nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 
 				cutscenesTimeDuration -= Time.deltaTime;
 				
@@ -874,7 +874,7 @@ public class CutSceneTrigger : MonoBehaviour {
 				
 				nextButton = false;
 				
-				cutscenesTimeDuration = 8.0f;
+				cutscenesTimeDuration = 20.0f;
 				
 			}
 
@@ -907,10 +907,10 @@ public class CutSceneTrigger : MonoBehaviour {
 		{
 			//GUI.DrawTexture (rect, sketch18);
 
-			if(inc15 == true)
+			if(inc16 == true)
 			{
-				GUI.DrawTexture (rect, c15);
-				nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+				GUI.DrawTexture (rect, c16);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
 				cutscenesTimeDuration -= Time.deltaTime;
 				
@@ -918,8 +918,168 @@ public class CutSceneTrigger : MonoBehaviour {
 			
 			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
 			{
-				inc15 = false;
-				inc16 = true;
+				inc16 = false;
+				inc17 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 20.0f;
+				
+			}
+
+
+
+			if(inc17 == true)
+			{
+				GUI.DrawTexture (rect, c17);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc17 = false;
+				inc18 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 10.0f;
+				
+			}
+
+
+
+			if(inc18 == true)
+			{
+				GUI.DrawTexture (rect, c18);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc18 = false;
+				inc19 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 4.0f;
+				
+			}
+
+
+
+
+			if(inc19 == true)
+			{
+				GUI.DrawTexture (rect, c19);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc19 = false;
+				inc20 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 20.0f;
+				
+			}
+
+
+
+
+			if(inc20 == true)
+			{
+				GUI.DrawTexture (rect, c20);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc20 = false;
+				inc21 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 10.0f;
+				
+			}
+
+
+
+
+			if(inc21 == true)
+			{
+				GUI.DrawTexture (rect, c21);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc21 = false;
+				inc22 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 20.0f;
+				
+			}
+
+
+
+			if(inc22 == true)
+			{
+				
+				
+				//GUI.DrawTexture (rect, sketch1);
+				//GUI.DrawTexture (rect, c13);
+				
+				//
+				//nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+				
+				GUI.DrawTexture (rect, null);
+				
+			}
+
+
+
+
+
+
+
+		}
+		else if(SpawnManager.currentWave == 3)
+		{
+
+
+			if(inc22 == true)
+			{
+				GUI.DrawTexture (rect, c22);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc22 = false;
+				inc23 = true;
 				
 				nextButton = false;
 				
@@ -928,9 +1088,117 @@ public class CutSceneTrigger : MonoBehaviour {
 			}
 
 
-		}
-		else if(SpawnManager.currentWave == 3)
-		{
+
+			if(inc23 == true)
+			{
+				GUI.DrawTexture (rect, c23);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc23 = false;
+				inc24 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 15.0f;
+				
+			}
+
+
+
+
+			if(inc24 == true)
+			{
+				GUI.DrawTexture (rect, c24);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc24 = false;
+				inc25 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 4.0f;
+				
+			}
+
+
+
+			if(inc25 == true)
+			{
+				GUI.DrawTexture (rect, c25);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc25 = false;
+				inc26 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 4.0f;
+				
+			}
+
+
+
+
+			if(inc26 == true)
+			{
+				GUI.DrawTexture (rect, c26);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc26 = false;
+				inc27 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 20.0f;
+				
+			}
+
+
+
+
+			if(inc27 == true)
+			{
+				
+				
+				//GUI.DrawTexture (rect, sketch1);
+				//GUI.DrawTexture (rect, c13);
+				
+				//
+				//nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
+				
+				GUI.DrawTexture (rect, null);
+				
+			}
+
+
+
+
+
+
 
 
 
