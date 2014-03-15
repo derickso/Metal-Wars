@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Intro : MonoBehaviour {
-
+	
 	//Cutscenes
 	public Texture sketch1;
 	public Texture sketch2;
@@ -43,8 +43,8 @@ public class Intro : MonoBehaviour {
 	public Texture sketch20night;
 	public Texture sketch20ver2;
 	public Texture sketch21;
-
-
+	
+	
 	//Subtitles
 	public Texture c1;
 	public Texture c2;
@@ -61,27 +61,27 @@ public class Intro : MonoBehaviour {
 	public Texture c13;
 	public Texture c14;
 	public Texture c15;
-
-
-
-
-
+	
+	
+	
+	
+	
 	//____________________
-
+	
 	private bool inTexture1 = false;
 	private bool inTexture2 = false;
-
-
-
-
+	
+	
+	
+	
 	private bool inC1 = false;
 	private bool inC2 = false;
-
+	
 	private bool inC3 = false;
 	private bool inC4 = false;
-
+	
 	private bool inC5 = false;
-
+	
 	private bool inC6 = false;
 	private bool inC7 = false;
 	private bool inC8 = false;
@@ -92,106 +92,106 @@ public class Intro : MonoBehaviour {
 	private bool inC13 = false;
 	private bool inC14 = false;
 	private bool inC15 = false;
-
-
+	
+	
 	//private bool  buttonPressed;
 	private bool nextButton;
-
-
-
-
-
+	
+	
+	
+	
+	
 	public Rect rect;
-
-
+	
+	
 	// Use this for initialization
 	void Start () {
-	
+		
 		inTexture1 = true;//initialize what you want to run in the game loop first
-
+		
 		inC1 = true;//initialize what you want to run in the game loop first
 		//Basic initialization to make how the update function starts off.  <--You know this!!!!
-
-
+		
+		
 		//
 		//buttonPressed = false;
 		nextButton = false;
-
-
+		audio.volume = 0.05f;
+		
 		//Don't know if need this
 		inC2 = false;
 		inC3 = false;
 		inC4 = false;
 		inC5 = false;
-
-
-
+		
+		audio.Play ();
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Menu.musicVolume <= 0.05)
+			audio.volume = Menu.musicVolume;
 	}
-
+	
 	//Works exactly like Update function.  Updates every frame.  
 	void OnGUI()
 	{
 		rect = new Rect(0.0f, 0.0f, Screen.width, Screen.height);//box gets recreated every frame
 		//in order to use in conditions below.  
-
-
+		
 		if(inC1 == true)
 		{
-
 			GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c1);
-
-
+			
+			
 			//
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
-
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
+			
 		}
-
+		
 		if(nextButton) 
 		{
+
 			inC1 = false;
 			inC2 = true;
-
-
+			
+			
 			//
 			//buttonPressed = false;
 			nextButton = false;
-
+			
 		}
-
-
-
-
-
+		
+		
+		
+		
+		
 		if(inC2 == true)
 		{
 			GUI.DrawTexture (rect, sketch2);
 			GUI.DrawTexture (rect, c2);
-
-
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+			
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
 		}
-
+		
 		if(nextButton)
 		{
 			inC2 = false;
 			inC3 = true;
-
+			
 			//buttonPressed = false;
 			nextButton = false;
-
-
+			
+			
 		}
-
-
-
-
-
+		
+		
+		
+		
+		
 		if(inC3 == true)
 		{
 			//GUI.DrawTexture (rect, sketch2);
@@ -199,7 +199,7 @@ public class Intro : MonoBehaviour {
 			GUI.DrawTexture (rect, c3);
 			
 			
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -212,19 +212,19 @@ public class Intro : MonoBehaviour {
 			
 			
 		}
-
-
-
-
-
+		
+		
+		
+		
+		
 		if(inC4 == true)
 		{
-
+			
 			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c4);
 			
 			
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -237,18 +237,18 @@ public class Intro : MonoBehaviour {
 			
 			
 		}
-
-
-
-
-
+		
+		
+		
+		
+		
 		if(inC5 == true)
 		{
 			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c5);
 			
 			
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -261,20 +261,20 @@ public class Intro : MonoBehaviour {
 			
 			
 		}
-
-
-
-
-
-
-
+		
+		
+		
+		
+		
+		
+		
 		if(inC6 == true)
 		{
 			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c6);
 			
 			
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -287,20 +287,20 @@ public class Intro : MonoBehaviour {
 			
 			
 		}
-
-
-
-
-
-
-
+		
+		
+		
+		
+		
+		
+		
 		if(inC7 == true)
 		{
 			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c7);
 			
 			
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -313,19 +313,19 @@ public class Intro : MonoBehaviour {
 			
 			
 		}
-
-
-
-
-
-
+		
+		
+		
+		
+		
+		
 		if(inC8 == true)
 		{
 			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c8);
 			
 			
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -338,20 +338,20 @@ public class Intro : MonoBehaviour {
 			
 			
 		}
-
-
-
-
-
-
-
+		
+		
+		
+		
+		
+		
+		
 		if(inC9 == true)
 		{
 			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c9);
 			
 			
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -364,21 +364,21 @@ public class Intro : MonoBehaviour {
 			
 			
 		}
-
-
-
-
-
-
-
-
+		
+		
+		
+		
+		
+		
+		
+		
 		if(inC10 == true)
 		{
 			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c10);
 			
 			
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
 		}
 		
 		if(nextButton)
@@ -391,58 +391,58 @@ public class Intro : MonoBehaviour {
 			
 			
 		}
-
-
-
-
-
-
-
-
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		if(inC11 == true)
 		{
 			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c11);
 			
 			
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
 		}
 		
 		if(nextButton)
 		{
 			inC11 = false;
 			inC12 = true;
-
+			
 			Application.LoadLevel("Scene1");
-
+			
 			
 			//buttonPressed = false;
 			nextButton = false;
 			
 			
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
-
-
-
-
+	
+	
+	
+	
 	//Algorithm Above:  
 	//Every frame, check to see if the _cutscene_ to execute/draw is enabled.  
 	
@@ -464,9 +464,9 @@ public class Intro : MonoBehaviour {
 	//2. if(pressed) enable cutscene 3
 	
 	//1.  if(cutscene 3 enabled)......
-
-
-
-
-
+	
+	
+	
+	
+	
 }

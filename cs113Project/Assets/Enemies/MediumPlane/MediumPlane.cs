@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class MediumPlane : Enemy {
-
-	//Sounds
-	public AudioClip sEnemyExplosion;
+	
 	//Speeds
 	//public float rotateSpeed;
 	//private const float speed = 60.0f;
@@ -36,8 +34,7 @@ public class MediumPlane : Enemy {
 			//Debug.Log ("enemy should die here");
 			//Create explosion HERE
 			GameObject expl = (GameObject)Instantiate(explosion, transform.position, Quaternion.identity);
-			audio.Stop ();
-			audio.PlayOneShot (sEnemyExplosion);
+			GameObject explsound = (GameObject)Instantiate (explosionSound, transform.position, Quaternion.identity);
 			
 			//Pass to the player the score relative to this enemy
 			((Player)GameObject.FindWithTag("Player").GetComponent("Player")).addScore(score);

@@ -5,6 +5,7 @@ public class Menu : MonoBehaviour {
 
 	public Texture2D menuLogo;
 	public Texture2D menuLogoText;
+	public Texture2D menuWallpaper;
 
 	public static float damageModifier;
 	public static float healthModifier;
@@ -19,13 +20,17 @@ public class Menu : MonoBehaviour {
 
 	string[] selStrings;
 
+	public static float musicVolume;
+
+	private GUIStyle GUICustom;
+
 	// Use this for initialization
 	void Start () {
 		damageModifier = 1;
 		healthModifier = 1;
 		inOptions = false;
 		selGridInt = 1;
-		hSliderValue = 100f;
+		hSliderValue = 50f;
 		audio.Play ();
 
 		selStrings = new string[] {"Frost", "Normal"};
@@ -34,18 +39,22 @@ public class Menu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		audio.volume = hSliderValue / 100;
+		musicVolume = hSliderValue / 100;
+		audio.volume = musicVolume;
 	}
 
 	void OnGUI () {
-		GUI.DrawTexture (new Rect(Screen.width / 2f - 200, Screen.height/10f - 10, 400, 250), menuLogo);
-		GUI.DrawTexture (new Rect(Screen.width / 2f - 200, Screen.height/10f + 210, 1400, 80), menuLogoText);
+		GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), menuWallpaper);
+		GUI.BeginGroup (new Rect (Screen.width / 2f - 200, Screen.height/10f - 10, 400, 350));
+			GUI.DrawTexture (new Rect(0, 0, 400, 250), menuLogo);
+			GUI.DrawTexture (new Rect(0, 215, 1350, 80), menuLogoText);
+		GUI.EndGroup ();
 
 		if (!inOptions)
 		{
 			//Create the menu box
 			GUI.BeginGroup (new Rect (Screen.width / 2f - 125, Screen.height / 3.0f, 250, 300));
-				//GUI.Box(new Rect(0,0,250,250),"Metal Wars");
+				//GUI.Box(new Rect(65,60,120,190),"");
 				
 				//Create the Start button
 				if(GUI.Button(new Rect(75,70,100,50),"Start")) {
@@ -74,9 +83,10 @@ public class Menu : MonoBehaviour {
 			GUI.BeginGroup (new Rect (Screen.width / 2f - 125, Screen.height / 2.3f, 250, 300));
 				GUI.Box(new Rect(0,0,220,150),"Options");
 				GUI.Label (new Rect (8,40, 100, 20), "Music Volume");
-				hSliderValue = GUI.HorizontalSlider (new Rect (110,45, 100, 30), hSliderValue, 0.0f, 30.0f);
+				hSliderValue = GUI.HorizontalSlider (new Rect (110,45, 100, 30), hSliderValue, 0.0f, 50.0f);
 
 				GUI.Label (new Rect (8,70, 100, 20), "Difficulty");
+			//GUI.skin.button.onHover.textColor = Color.cyan;
 				selGridInt = GUI.SelectionGrid (new Rect (110,73, 65, 60), selGridInt, selStrings, 1);
 
 				if (selGridInt == 1)

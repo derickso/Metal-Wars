@@ -5,6 +5,7 @@ using System.Collections;
 public abstract class Enemy : MonoBehaviour {
 
 	public GameObject explosion;
+	public GameObject explosionSound;
 	protected float armor;
 	protected int score;
 

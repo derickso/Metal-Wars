@@ -77,6 +77,7 @@ public class EnemiesShoots : MonoBehaviour {
 			iNext = 0;
 
 		//Fire the bullet
+		audio.Play ();
 		go.SetActive (true);
 		go.transform.position = transform.position;
 		go.transform.rotation = transform.rotation;

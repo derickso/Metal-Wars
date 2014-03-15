@@ -3,8 +3,6 @@ using System.Collections;
 
 public class HeavyPlane : Enemy {
 
-	//Sounds
-	public AudioClip sEnemyExplosion;
 	//Speeds
 	//public float rotateSpeed;
 	//private const float speed = 60.0f;
@@ -33,13 +31,10 @@ public class HeavyPlane : Enemy {
 		//Debug.Log("Enemy Damaged for " + damage + ". Armor now = " + armor);
 		if(armor < 1)
 		{
-			audio.clip = sEnemyExplosion;
-			audio.Play();
 			//Debug.Log ("enemy should die here");
 			//Create explosion HERE
 			GameObject expl = (GameObject)Instantiate(explosion, transform.position, Quaternion.identity);
-			//audio.Stop ();
-
+			GameObject explsound = (GameObject)Instantiate (explosionSound, transform.position, Quaternion.identity);
 			
 			//Pass to the player the score relative to this enemy
 			((Player)GameObject.FindWithTag("Player").GetComponent("Player")).addScore(score);

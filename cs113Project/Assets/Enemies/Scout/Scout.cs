@@ -4,11 +4,8 @@ using System.Collections;
 public class Scout : Enemy {
 	
 	//Sounds
-	public AudioClip sEnemyExplosion;
-	public AudioClip sLoopingSound;
-
-	private AudioSource asLoopingSound;
-	private AudioSource sExplosionSound;
+	//public AudioClip sLoopingSound;
+	
 	//Speeds
 	//public float rotateSpeed;
 	//private const float speed = 60.0f;
@@ -27,7 +24,7 @@ public class Scout : Enemy {
 		speed = 60.0f;
 		rotateSpeed = Random.Range(50,70);
 		//audio.loop = true;
-		audio.clip = sLoopingSound;
+		//audio.clip = sLoopingSound;
 		//audio.Play ();
 
 		setPath(PATH_EIGHT);
@@ -35,9 +32,9 @@ public class Scout : Enemy {
 
 	public override void receiveDamage(float damage) {
 		//public bool receiveDamage(int damage) {
-		audio.clip = sLoopingSound;
+		//audio.clip = sLoopingSound;
 		//audio.bypassEffects = true;
-		audio.Play();
+		//audio.Play();
 		armor = armor - damage;
 		//Debug.Log("Enemy Damaged for " + damage + ". Armor now = " + armor);
 		if(armor < 1)
@@ -48,6 +45,8 @@ public class Scout : Enemy {
 			GameObject expl = (GameObject)Instantiate(explosion, transform.position, Quaternion.identity);
 
 			//Debug.Log ("reached audio");
+			//Create explosion sound effect HERE
+			GameObject explsound = (GameObject)Instantiate (explosionSound, transform.position, Quaternion.identity);
 			
 			//Pass to the player the score relative to this enemy
 			((Player)GameObject.FindWithTag("Player").GetComponent("Player")).addScore(score);
@@ -59,6 +58,7 @@ public class Scout : Enemy {
 			//Debug.Log (SpawnManager.getEnemiesAliveNumber() + " enemies left.");
 			//Destroy the explosion and the game object
 			Destroy(expl,2);
+			//Destroy (explsound);
 			Destroy(gameObject);
 		}
 	}

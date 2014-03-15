@@ -40,6 +40,7 @@ public class Player : MonoBehaviour {
 	public static bool isDead;
 
 	public AudioClip sPlayerExplosion;
+	public AudioClip sEMP;
 
 	private float hSliderValue;
 	
@@ -113,10 +114,13 @@ public class Player : MonoBehaviour {
 		scoreFont.alignment = TextAnchor.MiddleRight;
 		hSliderValue = 100f;
 		audio.volume = 1;
-		audio.Play ();
+		//audio.Play ();
 
 		score = 0;
-		maxArmor = armor = 50.0f * Menu.healthModifier;
+		if (Menu.healthModifier == 0)
+			maxArmor = armor = 50.0f;
+		else
+			maxArmor = armor = 50.0f * Menu.healthModifier;
 
 		targets = GameObject.FindGameObjectsWithTag("PlayerModel");
 		foreach (GameObject Target in targets) {
@@ -358,10 +362,9 @@ public class Player : MonoBehaviour {
 		empEnabled = true;
 
 		//Fire EMP
-		if(Input.GetKey (KeyCode.E) && (numEMPs >= 0) && (empEnabled == true))
+		if(Input.GetKey (KeyCode.E) && (numEMPs > 0) && (empEnabled == true))
 		{
 			empActivated (true);
-
 			//Destroy (GameObject.FindWithTag("Enemy"));
 			//if(PlayerView.numOfEnemiesLeft == 0) numEMPs--;
 			//GameObject.FindGameObjectWithTag("Enemy").gameObject.GetComponent ("Enemy");
@@ -372,11 +375,12 @@ public class Player : MonoBehaviour {
 
 			//GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
 			//Enemy
-
+			audio.PlayOneShot (sEMP);
 			//Timer so EMP can't be held down.  EMP stops emitting after a press period
 			//And the key is allowed to be pressed again.  
 			empCountDown += Time.deltaTime;
 			if(empCountDown >= 0.05f)
+			//if(empCountDown >= 2.3f)
 			{
 				empActivated (false);
 				empCountDown = 0.0f;//Crucial to reset the counter. Otherwise this condition will
@@ -389,7 +393,7 @@ public class Player : MonoBehaviour {
 
 
 		}
-		if(Input.GetKeyDown (KeyCode.E) && (numEMPs >= 0))
+		if(Input.GetKeyDown (KeyCode.E) && (numEMPs > 0))
 		{
 			numEMPs--;
 		}
@@ -461,7 +465,7 @@ public class Player : MonoBehaviour {
 	protected void empActivated(bool activated)
 	{
 
-		if(activated == true)
+		if(activated)
 		{
 			EMPCore.enableEmission = true;
 			EMP1.enableEmission = true;
@@ -528,7 +532,7 @@ public class Player : MonoBehaviour {
 
 				//Create the Start button
 				if(GUI.Button(new Rect(menuX + 60,menuY + 50,100,40),"Yes")) {
-					Time.timeScale = 1;
+					//Time.timeScale = 1;
 					Application.LoadLevel ("Scene1");
 				}
 				if(GUI.Button(new Rect(menuX + 60,menuY + 100,100,40),"No")) {
@@ -594,7 +598,7 @@ public class Player : MonoBehaviour {
 			GUI.Box(new Rect(menuX,menuY, 220, 200),"Options");
 			
 			GUI.Label (new Rect (menuX +8,menuY + 40, 100, 20), "Player Volume");
-			hSliderValue = GUI.HorizontalSlider (new Rect (menuX + 110,menuY + 45, 100, 30), hSliderValue, 0.0f, 30.0f);
+			hSliderValue = GUI.HorizontalSlider (new Rect (menuX + 110,menuY + 45, 100, 30), hSliderValue, 0.0f, 100.0f);
 		
 			if(GUI.Button(new Rect(menuX + 60,menuY + 70,100,40),"Back")) {
 				Debug.Log("Exit Options");
@@ -605,7 +609,7 @@ public class Player : MonoBehaviour {
 
 	//Function called to cause damage to the player
 	public void receiveDamage(float damage){
-		armor = armor - damage;
+		armor -= damage;
 		//healthAmount = healthAmount - .125f;//health bar (the armor) goes down everytime this is called.  
 		//healthAmount = healthAmount - (damage * 0.125f);
 		healthAmount = armor/maxArmor;
