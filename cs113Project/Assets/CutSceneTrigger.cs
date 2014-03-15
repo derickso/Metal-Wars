@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class CutSceneTrigger : MonoBehaviour {
@@ -493,6 +493,15 @@ public class CutSceneTrigger : MonoBehaviour {
 
 	public Rect rect;// = new Rect(Screen.width, Screen.height, 1320.0f, 1320.0f);
 	//public Rect rect = new Rect(
+
+
+
+	//Yes or No for ending:
+	private bool bringIchikoToFuture;
+	private bool followGeneralsOrders;
+	private bool nextButton2;//Used from now on when decision above is made
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -1768,7 +1777,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc50 == true)
 			{
-				GUI.DrawTexture (rect, c49);
+				GUI.DrawTexture (rect, c50);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
 				//cutscenesTimeDuration -= Time.deltaTime;
@@ -2092,7 +2101,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc63 == true)
 			{
-				GUI.DrawTexture (rect, c62);
+				GUI.DrawTexture (rect, c63);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
 				//cutscenesTimeDuration -= Time.deltaTime;
@@ -2298,7 +2307,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc72 == true)
 			{
-				GUI.DrawTexture (rect, c71);
+				GUI.DrawTexture (rect, c72);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
 				//cutscenesTimeDuration -= Time.deltaTime;
@@ -2307,13 +2316,37 @@ public class CutSceneTrigger : MonoBehaviour {
 			
 			if(nextButton)//  
 			{
-				inc71 = false;
-				inc72 = true;
+				inc72 = false;
+				inc73 = true;
 				
 				nextButton = false;
 				
 				//cutscenesTimeDuration = 20.0f;//inc74
 
+				
+			}
+
+
+
+
+			if(inc73 == true)
+			{
+				GUI.DrawTexture (rect, c73);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(nextButton)//  
+			{
+				inc73 = false;
+				inc74 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 20.0f;//inc74
+				
 				Time.timeScale = 1;//Resume
 				
 			}
@@ -2327,6 +2360,126 @@ public class CutSceneTrigger : MonoBehaviour {
 
 
 			//After Briefing:
+
+
+			if(inc74 == true)
+			{
+				GUI.DrawTexture (rect, c74);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc74 = false;
+				inc75 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 8.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc75 == true)
+			{
+				GUI.DrawTexture (rect, c75);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc75 = false;
+				inc76 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 25.0f;//inc74
+				
+			}
+
+
+
+
+
+			if(inc76 == true)
+			{
+				GUI.DrawTexture (rect, c76);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc76 = false;
+				inc77 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc77 == true)
+			{
+				GUI.DrawTexture (rect, c77);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			
+			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
+			{
+				inc77 = false;
+				inc78 = true;
+				
+				nextButton = false;
+				
+				cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc78 == true)
+			{
+				GUI.DrawTexture (rect, null);
+				//nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				
+			}
+			  
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2358,6 +2511,1345 @@ public class CutSceneTrigger : MonoBehaviour {
 		{
 
 
+			//Briefing before level 4  78-128
+			if(inc78 == true)
+			{
+
+				GUI.DrawTexture (rect, c78);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+
+				Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc78 = false;
+				inc79 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc79 == true)
+			{
+				
+				GUI.DrawTexture (rect, c79);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc79 = false;
+				inc80 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc80 == true)
+			{
+				
+				GUI.DrawTexture (rect, c80);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc80 = false;
+				inc81 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc81 == true)
+			{
+				
+				GUI.DrawTexture (rect, c81);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc81 = false;
+				inc82 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc82 == true)
+			{
+				
+				GUI.DrawTexture (rect, c82);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc82 = false;
+				inc83 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc83 == true)
+			{
+				
+				GUI.DrawTexture (rect, c83);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc83 = false;
+				inc84 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+			if(inc84 == true)
+			{
+				
+				GUI.DrawTexture (rect, c84);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc84 = false;
+				inc85 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+			if(inc85 == true)
+			{
+				
+				GUI.DrawTexture (rect, c85);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc85 = false;
+				inc86 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc86 == true)
+			{
+				
+				GUI.DrawTexture (rect, c86);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc86 = false;
+				inc87 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc87 == true)
+			{
+				
+				GUI.DrawTexture (rect, c87);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc87 = false;
+				inc88 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc88 == true)
+			{
+				
+				GUI.DrawTexture (rect, c88);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc88 = false;
+				inc89 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc89 == true)
+			{
+				
+				GUI.DrawTexture (rect, c89);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc89 = false;
+				inc90 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+
+			if(inc90 == true)
+			{
+				
+				GUI.DrawTexture (rect, c90);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc90 = false;
+				inc91 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+
+			if(inc91 == true)
+			{
+				
+				GUI.DrawTexture (rect, c91);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc91 = false;
+				inc92 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc92 == true)
+			{
+				
+				GUI.DrawTexture (rect, c92);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc92 = false;
+				inc93 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc93 == true)
+			{
+				
+				GUI.DrawTexture (rect, c93);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc93 = false;
+				inc94 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc94 == true)
+			{
+				
+				GUI.DrawTexture (rect, c94);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc94 = false;
+				inc95 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc95 == true)
+			{
+				
+				GUI.DrawTexture (rect, c95);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc95 = false;
+				inc96 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+			if(inc96 == true)
+			{
+				
+				GUI.DrawTexture (rect, c96);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc96 = false;
+				inc97 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc97 == true)
+			{
+				
+				GUI.DrawTexture (rect, c97);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc97 = false;
+				inc98 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+			if(inc98 == true)
+			{
+				
+				GUI.DrawTexture (rect, c98);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc98 = false;
+				inc99 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc99 == true)
+			{
+				
+				GUI.DrawTexture (rect, c99);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc99 = false;
+				inc100 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc100 == true)
+			{
+				
+				GUI.DrawTexture (rect, c100);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc100 = false;
+				inc101 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc101 == true)
+			{
+				
+				GUI.DrawTexture (rect, c101);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc101 = false;
+				inc102 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc102 == true)
+			{
+				
+				GUI.DrawTexture (rect, c102);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc102 = false;
+				inc103 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc103 == true)
+			{
+				
+				GUI.DrawTexture (rect, c103);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc103 = false;
+				inc104 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc104 == true)
+			{
+				
+				GUI.DrawTexture (rect, c104);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc104 = false;
+				inc105 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc105 == true)
+			{
+				
+				GUI.DrawTexture (rect, c105);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc105 = false;
+				inc106 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc106 == true)
+			{
+				
+				GUI.DrawTexture (rect, c106);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc106 = false;
+				inc107 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc107 == true)
+			{
+				
+				GUI.DrawTexture (rect, c107);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc107 = false;
+				inc108 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc108 == true)
+			{
+				
+				GUI.DrawTexture (rect, c108);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc108 = false;
+				inc109 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc109 == true)
+			{
+				
+				GUI.DrawTexture (rect, c109);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc109 = false;
+				inc110 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc110 == true)
+			{
+				
+				GUI.DrawTexture (rect, c110);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc110 = false;
+				inc111 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc111 == true)
+			{
+				
+				GUI.DrawTexture (rect, c111);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc111 = false;
+				inc112 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc112 == true)
+			{
+				
+				GUI.DrawTexture (rect, c112);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc112 = false;
+				inc113 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc113 == true)
+			{
+				
+				GUI.DrawTexture (rect, c113);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc113 = false;
+				inc114 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc114 == true)
+			{
+				
+				GUI.DrawTexture (rect, c114);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc114 = false;
+				inc115 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc115 == true)
+			{
+				
+				GUI.DrawTexture (rect, c115);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc115 = false;
+				inc116 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc116 == true)
+			{
+				
+				GUI.DrawTexture (rect, c116);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc116 = false;
+				inc117 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc117 == true)
+			{
+				
+				GUI.DrawTexture (rect, c117);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc117 = false;
+				inc118 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc118 == true)
+			{
+				
+				GUI.DrawTexture (rect, c118);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc118 = false;
+				inc119 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc119 == true)
+			{
+				
+				GUI.DrawTexture (rect, c119);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc119 = false;
+				inc120 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc120 == true)
+			{
+				
+				GUI.DrawTexture (rect, c120);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc120 = false;
+				inc121 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+
+			if(inc121 == true)
+			{
+				
+				GUI.DrawTexture (rect, c121);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc121 = false;
+				inc122 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc122 == true)
+			{
+				
+				GUI.DrawTexture (rect, c122);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc122 = false;
+				inc123 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+
+			if(inc123 == true)
+			{
+				
+				GUI.DrawTexture (rect, c123);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc123 = false;
+				inc124 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+
+			if(inc124 == true)
+			{
+				
+				GUI.DrawTexture (rect, c124);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc124 = false;
+				inc125 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc125 == true)
+			{
+				
+				GUI.DrawTexture (rect, c125);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc125 = false;
+				inc126 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+
+			if(inc126 == true)
+			{
+				
+				GUI.DrawTexture (rect, c126);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc126 = false;
+				inc127 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc127 == true)
+			{
+				
+				GUI.DrawTexture (rect, c127);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc127 = false;
+				inc128 = true;
+				
+				nextButton = false;
+				
+				//cutscenesTimeDuration = 15.0f;//inc74
+				
+			}
+
+
+
+
+			if(inc128 == true)
+			{
+				
+				GUI.DrawTexture (rect, c128);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			//if(cutscenesTimeDuration <= 0.0f || nextButton)//
+			if(nextButton)
+			{
+				inc128 = false;
+				inc129 = true;
+				
+				nextButton = false;
+
+				Time.timeScale = 1;
+				
+				cutscenesTimeDuration = 15.0f;//inc129
+				
+			}
+
+
+
+
+			//Level 4 begins here
+
+			//There are no cutscenes during gameplay for level 4 wave 1
+
+
+
+
 
 		}
 		else if(SpawnManager.currentWave == 12)
@@ -2383,6 +3875,157 @@ public class CutSceneTrigger : MonoBehaviour {
 
 
 
+		}
+
+
+		//If Last Wave finally defeated
+		else if(SpawnManager.currentWave == 16)
+		{
+
+
+			if(inc129 == true)
+			{
+				
+				GUI.DrawTexture (rect, c129);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				Time.timeScale = 0;
+				
+			}
+			
+			if(nextButton)//
+			{
+				inc129 = false;
+				inc130 = true;
+				
+				nextButton = false;
+
+				
+				//cutscenesTimeDuration = 15.0f;//inc129
+				
+			}
+
+
+
+
+
+			if(inc130 == true)
+			{
+				
+				GUI.DrawTexture (rect, c130);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			if(nextButton)//
+			{
+				inc130 = false;
+				inc131 = true;
+				
+				nextButton = false;
+				
+				//Time.timeScale = 1;
+				
+				//cutscenesTimeDuration = 15.0f;//inc129
+				
+			}
+
+
+
+
+			if(inc131 == true)
+			{
+				
+				GUI.DrawTexture (rect, c131);
+				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			if(nextButton)//
+			{
+				inc131 = false;
+				inc132 = true;
+				
+				nextButton = false;
+				
+				//Time.timeScale = 1;
+				
+				//cutscenesTimeDuration = 15.0f;//inc129
+				
+			}
+
+
+
+			//Making your decision:
+
+			if(inc132 == true)
+			{
+				
+				GUI.DrawTexture (rect, c131);
+				//nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+				//private bool bringIchikoToFuture;
+				//private bool followGeneralsOrders;
+				bringIchikoToFuture = GUI.Button(new Rect((Screen.width/2),(Screen.height/2)-100,100,50),"Bring Ichiko to future with you.");
+				followGeneralsOrders = GUI.Button(new Rect((Screen.width/2),(Screen.height/2)+100,100,50),"Follow General Erickson's orders.");
+
+
+
+				//cutscenesTimeDuration -= Time.deltaTime;
+				//Time.timeScale = 0;
+				
+			}
+			
+			if(bringIchikoToFuture)//
+			{
+				inc132 = false;
+				inc143 = true;
+
+				Application.LoadLevel("SaveIchiko");
+				
+				//nextButton = false;
+				
+				//Time.timeScale = 1;
+				
+				//cutscenesTimeDuration = 15.0f;//inc129
+				
+			}
+			else if (followGeneralsOrders)
+			{
+				inc132 = false;
+				inc133 = true;
+
+				Application.LoadLevel("FollowOrders");
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+			
 		}
 
 
