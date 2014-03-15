@@ -22,6 +22,7 @@ public class Menu : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		damageModifier = 1;
+		healthModifier = 1;
 		inOptions = false;
 		selGridInt = 1;
 		hSliderValue = 100f;
@@ -72,7 +73,7 @@ public class Menu : MonoBehaviour {
 			
 			GUI.BeginGroup (new Rect (Screen.width / 2f - 125, Screen.height / 2.3f, 250, 300));
 				GUI.Box(new Rect(0,0,220,150),"Options");
-				GUI.Label (new Rect (8,40, 100, 20), "Volume Control");
+				GUI.Label (new Rect (8,40, 100, 20), "Music Volume");
 				hSliderValue = GUI.HorizontalSlider (new Rect (110,45, 100, 30), hSliderValue, 0.0f, 30.0f);
 
 				GUI.Label (new Rect (8,70, 100, 20), "Difficulty");

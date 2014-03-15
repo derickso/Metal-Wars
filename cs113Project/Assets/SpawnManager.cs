@@ -179,4 +179,8 @@ public class SpawnManager : MonoBehaviour {
 		if(numberOfEnemiesAlive==0)
 			--numberOfEnemiesAlive;
 	}
+
+	public static int getEnemiesAliveNumber() {
+		return numberOfEnemiesAlive;
+	}
 }

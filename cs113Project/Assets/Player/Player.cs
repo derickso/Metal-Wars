@@ -41,7 +41,7 @@ public class Player : MonoBehaviour {
 
 	public AudioClip sPlayerExplosion;
 
-	public float hSliderValue = 15.0f;
+	private float hSliderValue;
 	
 	int selGridInt;
 	string[] selStrings;
@@ -111,6 +111,9 @@ public class Player : MonoBehaviour {
 		scoreFont.fontSize = 24;
 		scoreFont.normal.textColor = Color.yellow;
 		scoreFont.alignment = TextAnchor.MiddleRight;
+		hSliderValue = 100f;
+		audio.volume = 1;
+		audio.Play ();
 
 		score = 0;
 		maxArmor = armor = 50.0f * Menu.healthModifier;
@@ -171,6 +174,7 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		audio.volume = hSliderValue / 100;
 
 		float transAmount = speed * Time.deltaTime;//Do not delete.  
 		//float rotateAmount = rotateSpeed * Time.deltaTime;
@@ -589,14 +593,10 @@ public class Player : MonoBehaviour {
 			
 			GUI.Box(new Rect(menuX,menuY, 220, 200),"Options");
 			
-			GUI.Label (new Rect (menuX +8,menuY + 40, 100, 20), "Volume Control");
+			GUI.Label (new Rect (menuX +8,menuY + 40, 100, 20), "Player Volume");
 			hSliderValue = GUI.HorizontalSlider (new Rect (menuX + 110,menuY + 45, 100, 30), hSliderValue, 0.0f, 30.0f);
-			
-			GUI.Label (new Rect (menuX +8,menuY + 70, 100, 20), "Difficulty");
-			selStrings = new string[] {"Easy", "Medium", "Hard"};
-			selGridInt = GUI.SelectionGrid (new Rect (menuX + 110,menuY + 73, 65, 60), selGridInt, selStrings, 1);
-			
-			if(GUI.Button(new Rect(menuX + 60,menuY + 150,100,40),"Back")) {
+		
+			if(GUI.Button(new Rect(menuX + 60,menuY + 70,100,40),"Back")) {
 				Debug.Log("Exit Options");
 				inOptions = false;
 			}
