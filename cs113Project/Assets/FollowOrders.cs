@@ -212,6 +212,7 @@ public class FollowOrders : MonoBehaviour {
 
 		if(inc133 == true)
 		{
+			GUI.DrawTexture (rect, sketch18ver2);
 			GUI.DrawTexture (rect, c133);
 			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 			
@@ -235,6 +236,7 @@ public class FollowOrders : MonoBehaviour {
 
 		if(inc134 == true)
 		{
+			GUI.DrawTexture (rect, sketch18ver2);
 			GUI.DrawTexture (rect, c134);
 			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 			
@@ -259,6 +261,7 @@ public class FollowOrders : MonoBehaviour {
 
 		if(inc135 == true)
 		{
+			GUI.DrawTexture (rect, sketch18ver3);
 			GUI.DrawTexture (rect, c135);
 			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 			
@@ -282,6 +285,7 @@ public class FollowOrders : MonoBehaviour {
 
 		if(inc136 == true)
 		{
+			GUI.DrawTexture (rect, sketch11);
 			GUI.DrawTexture (rect, c136);
 			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 			
@@ -305,6 +309,7 @@ public class FollowOrders : MonoBehaviour {
 
 		if(inc137 == true)
 		{
+			GUI.DrawTexture (rect, sketch7yr2242ver2);
 			GUI.DrawTexture (rect, c137);
 			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 			
@@ -327,6 +332,7 @@ public class FollowOrders : MonoBehaviour {
 
 		if(inc138 == true)
 		{
+			GUI.DrawTexture (rect, sketch13ver2);
 			GUI.DrawTexture (rect, c138);
 			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 			
@@ -349,6 +355,7 @@ public class FollowOrders : MonoBehaviour {
 
 		if(inc139 == true)
 		{
+			GUI.DrawTexture (rect, sketch14);
 			GUI.DrawTexture (rect, c139);
 			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 			
@@ -373,6 +380,7 @@ public class FollowOrders : MonoBehaviour {
 
 		if(inc140 == true)
 		{
+			GUI.DrawTexture (rect, sketch19ver2);
 			GUI.DrawTexture (rect, c140);
 			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 			
@@ -396,6 +404,7 @@ public class FollowOrders : MonoBehaviour {
 
 		if(inc141 == true)
 		{
+			GUI.DrawTexture (rect, sketch19ver2);
 			GUI.DrawTexture (rect, c141);
 			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 			
@@ -419,6 +428,7 @@ public class FollowOrders : MonoBehaviour {
 
 		if(inc142 == true)
 		{
+			GUI.DrawTexture (rect, sketch15ver2);
 			GUI.DrawTexture (rect, c142);
 			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Credits");
 			

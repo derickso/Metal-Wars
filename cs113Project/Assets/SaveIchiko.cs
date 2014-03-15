@@ -62,7 +62,6 @@ public class SaveIchiko : MonoBehaviour {
 	public Texture ichikoNormalHandsBackSmileCloseEye;
 
 
-
 	//Subtitles
 	public Texture c143;
 	public Texture c144;
@@ -137,6 +136,7 @@ public class SaveIchiko : MonoBehaviour {
 	public bool inichikoNewDressCloseEyever2 = false;
 	public bool inichikoNewDressSmileCloseEyeNightver2 = false;
 	public bool inichikoNormalHandsBackSmileCloseEye = false;
+	public bool inichikoNewDressSmileCloseEye = false;
 
 
 
@@ -259,6 +259,7 @@ public class SaveIchiko : MonoBehaviour {
 		inichikoNewDressCloseEyever2 = false;
 		inichikoNewDressSmileCloseEyeNightver2 = false;
 		inichikoNormalHandsBackSmileCloseEye = false;
+		inichikoNewDressSmileCloseEye = false;
 
 
 
@@ -377,7 +378,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc143 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch18ver2);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c143);
 			
@@ -404,7 +405,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc144 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch18ver2);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c144);
 			
@@ -430,7 +431,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc145 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch16ver2);
+			GUI.DrawTexture (rect, ichiko);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c145);
 			
@@ -457,7 +459,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc146 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch16ver2);
+			GUI.DrawTexture (rect, ichikoNormalHandsBackSmileCloseEye);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c146);
 			
@@ -484,7 +487,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc147 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch18ver3);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c147);
 			
@@ -511,7 +514,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc148 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch7yr2242ver3);
+			GUI.DrawTexture (rect, ichiko);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c148);
 			
@@ -538,7 +542,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc149 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch7yr2242ver3);
+			GUI.DrawTexture (rect, ichiko);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c149);
 			
@@ -565,7 +570,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc150 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch7yr2242ver3);
+			GUI.DrawTexture (rect, ichiko);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c150);
 			
@@ -591,7 +597,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc151 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch7yr2242ver3);
+			GUI.DrawTexture (rect, ichiko);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c151);
 			
@@ -617,7 +624,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc152 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch7yr2242ver3);
+			GUI.DrawTexture (rect, ichiko);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c152);
 			
@@ -644,7 +652,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc153 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch7yr2242ver3);
+			GUI.DrawTexture (rect, ichiko);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c153);
 			
@@ -671,7 +680,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc154 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch7yr2242ver3);
+			GUI.DrawTexture (rect, ichikoSmile);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c154);
 			
@@ -698,7 +708,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc155 == true)
 		{
-			
+			//GUI.DrawTexture (rect, sketch7yr2242ver3);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c155);
 			
@@ -725,7 +735,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc156 == true)
 		{
-			
+			//GUI.DrawTexture (rect, sketch7yr2242ver3);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c156);
 			
@@ -752,7 +762,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc157 == true)
 		{
-			
+			//GUI.DrawTexture (rect, sketch7yr2242ver3);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c157);
 			
@@ -779,7 +789,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc158 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch18);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c158);
 			
@@ -806,7 +816,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc159 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch18);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c159);
 			
@@ -819,7 +829,7 @@ public class SaveIchiko : MonoBehaviour {
 		if(nextButton) 
 		{
 			inc159 = false;
-			inc160 = true;
+			inc167 = true;//skip bonus mission
 			
 			
 			//
@@ -831,197 +841,14 @@ public class SaveIchiko : MonoBehaviour {
 
 
 
-		if(inc160 == true)
-		{
-			
-			//GUI.DrawTexture (rect, sketch1);
-			GUI.DrawTexture (rect, c160);
-			
-			
-			//
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
-			
-		}
-		
-		if(nextButton) 
-		{
-			inc160 = false;
-			inc161 = true;
-			
-			
-			//
-			//buttonPressed = false;
-			nextButton = false;
-			
-		}
 
-
-
-		if(inc161 == true)
-		{
-			
-			//GUI.DrawTexture (rect, sketch1);
-			GUI.DrawTexture (rect, c161);
-			
-			
-			//
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
-			
-		}
-		
-		if(nextButton) 
-		{
-			inc161 = false;
-			inc162 = true;
-			
-			
-			//
-			//buttonPressed = false;
-			nextButton = false;
-			
-		}
-
-
-
-
-		if(inc162 == true)
-		{
-			
-			//GUI.DrawTexture (rect, sketch1);
-			GUI.DrawTexture (rect, c162);
-			
-			
-			//
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
-			
-		}
-		
-		if(nextButton) 
-		{
-			inc162 = false;
-			inc163 = true;
-			
-			
-			//
-			//buttonPressed = false;
-			nextButton = false;
-			
-		}
-
-
-
-
-		if(inc163 == true)
-		{
-			
-			//GUI.DrawTexture (rect, sketch1);
-			GUI.DrawTexture (rect, c163);
-			
-			
-			//
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
-			
-		}
-		
-		if(nextButton) 
-		{
-			inc163 = false;
-			inc164 = true;
-			
-			
-			//
-			//buttonPressed = false;
-			nextButton = false;
-			
-		}
-
-
-
-
-		if(inc164 == true)
-		{
-			
-			//GUI.DrawTexture (rect, sketch1);
-			GUI.DrawTexture (rect, c164);
-			
-			
-			//
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
-			
-		}
-		
-		if(nextButton) 
-		{
-			inc164 = false;
-			inc165 = true;
-			
-			
-			//
-			//buttonPressed = false;
-			nextButton = false;
-			
-		}
-
-
-
-
-		if(inc165 == true)
-		{
-			
-			//GUI.DrawTexture (rect, sketch1);
-			GUI.DrawTexture (rect, c165);
-			
-			
-			//
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
-			
-		}
-		
-		if(nextButton) 
-		{
-			inc165 = false;
-			inc166 = true;
-			
-			
-			//
-			//buttonPressed = false;
-			nextButton = false;
-			
-		}
-
-
-
-
-		if(inc166 == true)
-		{
-			
-			//GUI.DrawTexture (rect, sketch1);
-			GUI.DrawTexture (rect, c166);
-			
-			
-			//
-			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
-			
-		}
-		
-		if(nextButton) 
-		{
-			inc166 = false;
-			inc167 = true;
-			
-			
-			//
-			//buttonPressed = false;
-			nextButton = false;
-			
-		}
 
 
 
 
 		if(inc167 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch14);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c167);
 			
@@ -1048,7 +875,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc168 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c168);
 			
@@ -1075,7 +902,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc169 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c169);
 			
@@ -1102,7 +929,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc170 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c170);
 			
@@ -1129,7 +956,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc171 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c171);
 			
@@ -1156,7 +983,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc172 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c172);
 			
@@ -1183,7 +1010,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc173 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c173);
 			
@@ -1210,7 +1037,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc174 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c174);
 			
@@ -1237,7 +1064,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc175 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c175);
 			
@@ -1264,7 +1091,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc176 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c176);
 			
@@ -1291,7 +1118,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc177 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c177);
 			
@@ -1318,7 +1145,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc178 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c178);
 			
@@ -1345,7 +1172,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc179 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c179);
 			
@@ -1372,7 +1199,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc180 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c180);
 			
@@ -1399,7 +1226,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc181 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c181);
 			
@@ -1426,7 +1253,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc182 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c182);
 			
@@ -1453,7 +1280,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc183 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c183);
 			
@@ -1480,7 +1307,7 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc184 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch19);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c184);
 			
@@ -1507,7 +1334,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc185 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch20ver2);
+			GUI.DrawTexture (rect, ichikoNewDress);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c185);
 			
@@ -1534,7 +1362,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc186 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch20ver2);
+			GUI.DrawTexture (rect, ichikoNewDress);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c186);
 			
@@ -1561,7 +1390,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc187 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch20ver2);
+			GUI.DrawTexture (rect, ichikoNewDress);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c187);
 			
@@ -1588,7 +1418,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc188 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch20night);
+			GUI.DrawTexture (rect, ichikoNewDressver2);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c188);
 			
@@ -1615,7 +1446,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc189 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch20night);
+			GUI.DrawTexture (rect, ichikoNewDressSmileCloseEyeNightver2);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c189);
 			
@@ -1642,7 +1474,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc190 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch20ver2);
+			GUI.DrawTexture (rect, ichikoNewDressSmileCloseEyeNightver2);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c190);
 			
@@ -1669,7 +1502,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc191 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch20night);
+			GUI.DrawTexture (rect, ichikoNewDressver2);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c191);
 			
@@ -1696,7 +1530,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc192 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch20night);
+			GUI.DrawTexture (rect, ichikoNewDressver2);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c192);
 			
@@ -1723,7 +1558,8 @@ public class SaveIchiko : MonoBehaviour {
 
 		if(inc193 == true)
 		{
-			
+			GUI.DrawTexture (rect, sketch20night);
+			GUI.DrawTexture (rect, ichikoNewDressCloseEyever2);
 			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c193);
 			

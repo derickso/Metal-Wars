@@ -195,6 +195,7 @@ public class Intro : MonoBehaviour {
 		if(inC3 == true)
 		{
 			//GUI.DrawTexture (rect, sketch2);
+			GUI.DrawTexture (rect, sketch18);
 			GUI.DrawTexture (rect, c3);
 			
 			
@@ -219,6 +220,7 @@ public class Intro : MonoBehaviour {
 		if(inC4 == true)
 		{
 
+			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c4);
 			
 			
@@ -242,7 +244,7 @@ public class Intro : MonoBehaviour {
 
 		if(inC5 == true)
 		{
-			
+			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c5);
 			
 			
@@ -268,7 +270,7 @@ public class Intro : MonoBehaviour {
 
 		if(inC6 == true)
 		{
-			
+			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c6);
 			
 			
@@ -294,7 +296,7 @@ public class Intro : MonoBehaviour {
 
 		if(inC7 == true)
 		{
-			
+			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c7);
 			
 			
@@ -319,7 +321,7 @@ public class Intro : MonoBehaviour {
 
 		if(inC8 == true)
 		{
-			
+			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c8);
 			
 			
@@ -345,7 +347,7 @@ public class Intro : MonoBehaviour {
 
 		if(inC9 == true)
 		{
-			
+			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c9);
 			
 			
@@ -372,7 +374,7 @@ public class Intro : MonoBehaviour {
 
 		if(inC10 == true)
 		{
-			
+			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c10);
 			
 			
@@ -400,7 +402,7 @@ public class Intro : MonoBehaviour {
 
 		if(inC11 == true)
 		{
-			
+			GUI.DrawTexture(rect, sketch18ver3);
 			GUI.DrawTexture (rect, c11);
 			
 			

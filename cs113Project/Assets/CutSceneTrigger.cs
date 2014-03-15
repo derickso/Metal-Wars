@@ -1394,6 +1394,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc31 == true)
 			{
+				GUI.DrawTexture(rect, sketch18ver4);
 				GUI.DrawTexture (rect, c31);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1417,6 +1418,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc32 == true)
 			{
+				GUI.DrawTexture(rect, sketch21);
 				GUI.DrawTexture (rect, c32);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1440,6 +1442,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc33 == true)
 			{
+				GUI.DrawTexture(rect, sketch21);
 				GUI.DrawTexture (rect, c33);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1463,6 +1466,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc34 == true)
 			{
+				GUI.DrawTexture(rect, sketch21);
 				GUI.DrawTexture (rect, c34);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1486,6 +1490,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc35 == true)
 			{
+				GUI.DrawTexture(rect, sketch21);
 				GUI.DrawTexture (rect, c35);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1508,6 +1513,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc36 == true)
 			{
+				GUI.DrawTexture(rect, sketch21);
 				GUI.DrawTexture (rect, c36);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1531,6 +1537,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc37 == true)
 			{
+				GUI.DrawTexture(rect, sketch21);
 				GUI.DrawTexture (rect, c37);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1554,6 +1561,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc38 == true)
 			{
+				GUI.DrawTexture(rect, sketch21);
 				GUI.DrawTexture (rect, c38);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1577,6 +1585,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc39 == true)
 			{
+				GUI.DrawTexture(rect, sketch3ver2);//sketch17 winter version 2
 				GUI.DrawTexture (rect, c39);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1599,6 +1608,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc40 == true)
 			{
+				GUI.DrawTexture(rect, sketch3ver2);//sketch17 winter version 2
 				GUI.DrawTexture (rect, c40);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1621,6 +1631,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc41 == true)
 			{
+				GUI.DrawTexture(rect, sketch4winter);
 				GUI.DrawTexture (rect, c41);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1644,6 +1655,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc42 == true)
 			{
+				GUI.DrawTexture(rect, sketch4winter);
 				GUI.DrawTexture (rect, c42);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1667,6 +1679,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc43 == true)
 			{
+				GUI.DrawTexture(rect, sketch4winter);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c43);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1691,6 +1705,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc44 == true)
 			{
+				GUI.DrawTexture(rect, sketch4winter);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c44);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1714,6 +1730,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc45 == true)
 			{
+				GUI.DrawTexture(rect, sketch4winter);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c45);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1737,6 +1755,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc46 == true)
 			{
+				GUI.DrawTexture(rect, sketch4winter);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c46);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1760,6 +1780,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc47 == true)
 			{
+				GUI.DrawTexture(rect, sketch4winter);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c47);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1783,6 +1805,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc48 == true)
 			{
+				GUI.DrawTexture(rect, sketch4winter);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c48);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1807,6 +1831,8 @@ public class CutSceneTrigger : MonoBehaviour {
 			
 			if(inc49 == true)
 			{
+				GUI.DrawTexture(rect, sketch4winter);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c49);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1830,6 +1856,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc50 == true)
 			{
+				GUI.DrawTexture(rect, sketch5winter);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c50);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1853,6 +1881,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc51 == true)
 			{
+				GUI.DrawTexture(rect, sketch5winter);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c51);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1877,6 +1907,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc52 == true)
 			{
+				GUI.DrawTexture(rect, sketch5winter);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c52);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1900,6 +1932,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc53 == true)
 			{
+				GUI.DrawTexture(rect, sketch5winter);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c53);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1923,6 +1957,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc54 == true)
 			{
+				GUI.DrawTexture(rect, sketch5winter);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c54);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1946,6 +1982,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc55 == true)
 			{
+				GUI.DrawTexture(rect, sketch5winter);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c55);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1968,6 +2006,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc56 == true)
 			{
+				GUI.DrawTexture (rect, sketch4winter);
 				GUI.DrawTexture (rect, c56);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1992,6 +2031,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc57 == true)
 			{
+				GUI.DrawTexture (rect, sketch4winter);
 				GUI.DrawTexture (rect, c57);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2010,29 +2050,6 @@ public class CutSceneTrigger : MonoBehaviour {
 				
 			}
 
-
-
-
-
-			if(inc57 == true)
-			{
-				GUI.DrawTexture (rect, c57);
-				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
-				
-				//cutscenesTimeDuration -= Time.deltaTime;
-				
-			}
-			
-			if(nextButton)//  
-			{
-				inc57 = false;
-				inc58 = true;
-				
-				nextButton = false;
-				
-				//cutscenesTimeDuration = 20.0f;//inc74
-				
-			}
 
 
 
@@ -2040,6 +2057,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc58 == true)
 			{
+				GUI.DrawTexture (rect, sketch6winter);
 				GUI.DrawTexture (rect, c58);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2063,6 +2081,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc59 == true)
 			{
+				GUI.DrawTexture (rect, sketch6winter);
 				GUI.DrawTexture (rect, c59);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2086,6 +2105,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc60 == true)
 			{
+				GUI.DrawTexture (rect, sketch6winter);
 				GUI.DrawTexture (rect, c60);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2109,6 +2129,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc61 == true)
 			{
+				GUI.DrawTexture (rect, sketch6winter);
 				GUI.DrawTexture (rect, c61);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2131,6 +2152,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc62 == true)
 			{
+				GUI.DrawTexture (rect, sketch6winter);
 				GUI.DrawTexture (rect, c62);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2154,6 +2176,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc63 == true)
 			{
+				GUI.DrawTexture (rect, sketch6winter);
 				GUI.DrawTexture (rect, c63);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2177,6 +2200,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc64 == true)
 			{
+				GUI.DrawTexture (rect, sketch6winter);
 				GUI.DrawTexture (rect, c64);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2200,6 +2224,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc65 == true)
 			{
+				GUI.DrawTexture (rect, sketch6winter);
 				GUI.DrawTexture (rect, c65);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2223,6 +2248,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc66 == true)
 			{
+				GUI.DrawTexture (rect, sketch6winter);
 				GUI.DrawTexture (rect, c66);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2246,6 +2272,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc67 == true)
 			{
+				GUI.DrawTexture (rect, sketch6winter);
 				GUI.DrawTexture (rect, c67);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2269,6 +2296,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc68 == true)
 			{
+				GUI.DrawTexture (rect, sketch5winter);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c68);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2292,6 +2321,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc69 == true)
 			{
+				GUI.DrawTexture (rect, sketch5winter);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c69);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2314,6 +2345,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc70 == true)
 			{
+				GUI.DrawTexture (rect, sketch5winter);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c70);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2337,6 +2370,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc71 == true)
 			{
+				GUI.DrawTexture (rect, sketch5winter);
 				GUI.DrawTexture (rect, c71);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2360,6 +2394,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc72 == true)
 			{
+				GUI.DrawTexture (rect, sketch7yr1944winter);
 				GUI.DrawTexture (rect, c72);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2384,6 +2419,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc73 == true)
 			{
+				GUI.DrawTexture (rect, sketch7yr1944winter);
 				GUI.DrawTexture (rect, c73);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2567,7 +2603,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			//Briefing before level 4  78-128
 			if(inc78 == true)
 			{
-
+				GUI.DrawTexture (rect, sketch18ver4);
 				GUI.DrawTexture (rect, c78);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2594,7 +2630,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc79 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch18ver4);
 				GUI.DrawTexture (rect, c79);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2620,7 +2656,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc80 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch18ver4);
 				GUI.DrawTexture (rect, c80);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2646,7 +2682,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc81 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch4spring);
 				GUI.DrawTexture (rect, c81);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2672,7 +2708,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc82 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch4spring);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c82);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2698,7 +2735,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc83 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch4spring);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c83);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2723,7 +2761,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc84 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch4spring);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c84);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2748,7 +2787,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc85 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch4spring);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c85);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2774,7 +2814,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc86 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch5spring);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c86);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2800,7 +2841,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc87 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch5spring);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c87);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2826,7 +2868,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc88 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch5spring);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c88);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2852,7 +2895,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc89 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch5spring);
+				GUI.DrawTexture (rect, ichikoHandsBack);
 				GUI.DrawTexture (rect, c89);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2879,7 +2923,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc90 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch5spring);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c90);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2906,7 +2951,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc91 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch5spring);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c91);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2932,7 +2978,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc92 == true)
 			{
-				
+				GUI.DrawTexture(rect, sketch21);
 				GUI.DrawTexture (rect, c92);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2958,7 +3004,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc93 == true)
 			{
-				
+				GUI.DrawTexture(rect, sketch21);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c93);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2984,7 +3031,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc94 == true)
 			{
-				
+				GUI.DrawTexture(rect, sketch21);
+				GUI.DrawTexture (rect,ichikoHandsBack);
 				GUI.DrawTexture (rect, c94);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3010,7 +3058,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc95 == true)
 			{
-				
+				GUI.DrawTexture(rect, sketch21);
+				GUI.DrawTexture (rect,ichikoHandsBack);
 				GUI.DrawTexture (rect, c95);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3035,7 +3084,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc96 == true)
 			{
-				
+				GUI.DrawTexture(rect, sketch18ver4);
+				GUI.DrawTexture (rect,ichikoSmile);
 				GUI.DrawTexture (rect, c96);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3061,7 +3111,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc97 == true)
 			{
-				
+				GUI.DrawTexture(rect, sketch18ver4);
+				GUI.DrawTexture (rect,ichikoSmile);
 				GUI.DrawTexture (rect, c97);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3086,7 +3137,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc98 == true)
 			{
-				
+				GUI.DrawTexture(rect, sketch18ver4);
+				GUI.DrawTexture (rect, ichikoCloseEye);
 				GUI.DrawTexture (rect, c98);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3112,7 +3164,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc99 == true)
 			{
-				
+				GUI.DrawTexture(rect, sketch18ver4);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c99);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3138,7 +3191,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc100 == true)
 			{
-				
+				GUI.DrawTexture(rect, sketch18ver4);
+				GUI.DrawTexture (rect, ichikoNormalHandsBackSmileCloseEye);
 				GUI.DrawTexture (rect, c100);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3164,7 +3218,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc101 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c101);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3190,7 +3244,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc102 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c102);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3216,7 +3270,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc103 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c103);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3242,7 +3296,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc104 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c104);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3268,7 +3322,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc105 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c105);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3294,7 +3348,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc106 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c106);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3320,7 +3374,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc107 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c107);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3346,7 +3400,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc108 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c108);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3372,7 +3426,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc109 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c109);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3398,7 +3452,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc110 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c110);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3424,7 +3478,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc111 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c111);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3450,7 +3504,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc112 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c112);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3476,7 +3530,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc113 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c113);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3502,7 +3556,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc114 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c114);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3528,7 +3582,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc115 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c115);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3554,7 +3608,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc116 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c116);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3580,7 +3634,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc117 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c117);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3606,7 +3660,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc118 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6spring);
 				GUI.DrawTexture (rect, c118);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3632,7 +3686,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc119 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch5summer);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c119);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3658,7 +3713,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc120 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch5summer);
+				GUI.DrawTexture (rect, ichikoSmile);
 				GUI.DrawTexture (rect, c120);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3685,7 +3741,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc121 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch5summer);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c121);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3711,7 +3768,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc122 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch5summer);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c122);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3738,7 +3796,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc123 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch5summer);
+				GUI.DrawTexture (rect, ichiko);
 				GUI.DrawTexture (rect, c123);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3765,7 +3824,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc124 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch17ver2);
 				GUI.DrawTexture (rect, c124);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3791,7 +3850,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc125 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6summer);
 				GUI.DrawTexture (rect, c125);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3818,7 +3877,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc126 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6summer);
 				GUI.DrawTexture (rect, c126);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3844,7 +3903,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc127 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch6summer);
 				GUI.DrawTexture (rect, c127);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3870,7 +3929,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc128 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch10);
 				GUI.DrawTexture (rect, c128);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3938,7 +3997,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc129 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch18ver2);
 				GUI.DrawTexture (rect, c129);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3965,7 +4024,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc130 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch18ver2);
 				GUI.DrawTexture (rect, c130);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -3992,7 +4051,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc131 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch18ver2);
 				GUI.DrawTexture (rect, c131);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -4020,7 +4079,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc132 == true)
 			{
-				
+				GUI.DrawTexture (rect, sketch18ver2);
 				GUI.DrawTexture (rect, c131);
 				//nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				//private bool bringIchikoToFuture;
