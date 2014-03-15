@@ -12,6 +12,8 @@ public class SpawnManager : MonoBehaviour {
 	public static int currentWave = 0;
 	private int objCurrentWave = 0; // Each instantiation specific current wave
 
+	public static bool isCutsceneReady = true;
+
 	//Keeps the next wave time
 	//private static float nextWaveTime = 0.0f;
 	//private const float nextWaveDelay = 90.0f;
@@ -157,7 +159,7 @@ public class SpawnManager : MonoBehaviour {
 	//in which wave it is
 	private static void updateWave () {
 		//If the wave time is over, or all the enemies from the previous wave are dead
-		if((currentWave < sNumberOfWaves)&&
+		if((currentWave < sNumberOfWaves)&&(isCutsceneReady)&&
 		   (numberOfEnemiesAlive < 0))//||(Time.time > nextWaveTime)))
 		{
 			//Next wave time
@@ -166,6 +168,8 @@ public class SpawnManager : MonoBehaviour {
 			numberOfEnemiesAlive = 0;
 			//Increment the wave number
 			++currentWave;
+
+			isCutsceneReady = false;
 		}
 
 	}
@@ -179,4 +183,5 @@ public class SpawnManager : MonoBehaviour {
 		if(numberOfEnemiesAlive==0)
 			--numberOfEnemiesAlive;
 	}
+
 }
