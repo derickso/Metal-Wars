@@ -6,6 +6,43 @@ public class Intro : MonoBehaviour {
 	//Cutscenes
 	public Texture sketch1;
 	public Texture sketch2;
+	public Texture sketch3;//sketch 17 winter
+	public Texture sketch3ver2; //sketch 17 winter version 2
+	public Texture sketch4spring;
+	public Texture sketch4summer;
+	public Texture sketch4winter;
+	public Texture sketch5spring;
+	public Texture sketch5summer;
+	public Texture sketch5winter;
+	public Texture sketch6spring;
+	public Texture sketch6summer;
+	public Texture sketch6winter;
+	public Texture sketch7yr1944winter;
+	public Texture sketch7yr1944;
+	public Texture sketch7yr2242;
+	public Texture sketch7yr2242ver2;
+	public Texture sketch7yr2242ver3;
+	public Texture sketch10;
+	public Texture sketch11;
+	public Texture sketch13;
+	public Texture sketch13ver2;
+	public Texture sketch14;
+	public Texture sketch15;
+	public Texture sketch15ver2;
+	public Texture sketch16;
+	public Texture sketch16ver2;
+	public Texture sketch17;//sketch 17 summer
+	public Texture sketch17ver2;
+	public Texture sketch18;
+	public Texture sketch18ver2;
+	public Texture sketch18ver3;
+	public Texture sketch18ver4;
+	public Texture sketch19;
+	public Texture sketch19ver2;
+	public Texture sketch20;
+	public Texture sketch20night;
+	public Texture sketch20ver2;
+	public Texture sketch21;
 
 
 	//Subtitles
