@@ -306,7 +306,7 @@ public class SaveIchiko : MonoBehaviour {
 
 
 
-		inc143 = false;
+		inc143 = true;
 		inc144 = false;
 		inc145 = false;
 		inc146 = false;
@@ -371,6 +371,1390 @@ public class SaveIchiko : MonoBehaviour {
 	void OnGUI()
 	{
 		rect = new Rect(0.0f, 0.0f, Screen.width, Screen.height);
+
+
+
+
+		if(inc143 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c143);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc143 = false;
+			inc144 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc144 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c144);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc144 = false;
+			inc145 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+		if(inc145 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c145);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc145 = false;
+			inc146 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc146 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c146);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc146 = false;
+			inc147 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc147 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c147);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc147 = false;
+			inc148 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc148 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c148);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc148 = false;
+			inc149 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc149 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c149);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc149 = false;
+			inc150 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc150 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c150);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc150 = false;
+			inc151 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+		if(inc151 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c151);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc151 = false;
+			inc152 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+		if(inc152 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c152);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc152 = false;
+			inc153 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc153 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c153);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc153 = false;
+			inc154 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc154 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c154);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc154 = false;
+			inc155 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc155 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c155);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc155 = false;
+			inc156 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc156 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c156);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc156 = false;
+			inc157 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc157 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c157);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc157 = false;
+			inc158 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc158 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c158);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc158 = false;
+			inc159 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc159 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c159);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc159 = false;
+			inc160 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc160 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c160);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc160 = false;
+			inc161 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+		if(inc161 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c161);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc161 = false;
+			inc162 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc162 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c162);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc162 = false;
+			inc163 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc163 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c163);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc163 = false;
+			inc164 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc164 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c164);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc164 = false;
+			inc165 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc165 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c165);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc165 = false;
+			inc166 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc166 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c166);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc166 = false;
+			inc167 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc167 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c167);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc167 = false;
+			inc168 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc168 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c168);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc168 = false;
+			inc169 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc169 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c169);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc169 = false;
+			inc170 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc170 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c170);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc170 = false;
+			inc171 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc171 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c171);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc171 = false;
+			inc172 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc172 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c172);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc172 = false;
+			inc173 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc173 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c173);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc173 = false;
+			inc174 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc174 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c174);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc174 = false;
+			inc175 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc175 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c175);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc175 = false;
+			inc176 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc176 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c176);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc176 = false;
+			inc177 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc177 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c177);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc177 = false;
+			inc178 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc178 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c178);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc178 = false;
+			inc179 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc179 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c179);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc179 = false;
+			inc180 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc180 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c180);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc180 = false;
+			inc181 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc181 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c181);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc181 = false;
+			inc182 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc182 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c182);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc182 = false;
+			inc183 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc183 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c183);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc183 = false;
+			inc184 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc184 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c184);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc184 = false;
+			inc185 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc185 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c185);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc185 = false;
+			inc186 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc186 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c186);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc186 = false;
+			inc187 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc187 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c187);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc187 = false;
+			inc188 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc188 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c188);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc188 = false;
+			inc189 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc189 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c189);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc189 = false;
+			inc190 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc190 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c190);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc190 = false;
+			inc191 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc191 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c191);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc191 = false;
+			inc192 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc192 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c192);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+			inc192 = false;
+			inc193 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			nextButton = false;
+			
+		}
+
+
+
+
+		if(inc193 == true)
+		{
+			
+			//GUI.DrawTexture (rect, sketch1);
+			GUI.DrawTexture (rect, c193);
+			
+			
+			//
+			nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
+			
+		}
+		
+		if(nextButton) 
+		{
+
+
+			Application.LoadLevel ("Menu");//Replace with credits later
+			inc193 = false;
+			//inc193 = true;
+			
+			
+			//
+			//buttonPressed = false;
+			//nextButton = false;
+			
+		}
+
+
+
+
+
+
+
+
 
 
 
