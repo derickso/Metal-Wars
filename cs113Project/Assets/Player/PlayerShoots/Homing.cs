@@ -23,7 +23,7 @@ public class Homing : MonoBehaviour {
 				closest = Target;
 			}
 		}*/
-		damage = 25;
+		damage = 225;
 		if (PlayerView.missileTarget) {
 			//Debug.Log ("ready to fire");
 			closest = PlayerView.missileTarget;

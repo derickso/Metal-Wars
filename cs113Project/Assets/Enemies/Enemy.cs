@@ -18,6 +18,9 @@ public abstract class Enemy : MonoBehaviour {
 	public float rotateSpeed;
 	protected float speed;
 
+	//Sounds
+	//public AudioClip sEnemyExplosion;
+
 	//Paths
 	protected const int PATH_CIRCLE = 1;
 	protected const int PATH_EIGHT 	= 2;
@@ -114,13 +117,15 @@ public abstract class Enemy : MonoBehaviour {
 		//empCountDown = 0.0f;
 
 		//If player fired the EMP Weapon
-		if(Input.GetKeyDown (KeyCode.E) && (Player.numEMPs >= 0))
+
+		if(Input.GetKeyDown (KeyCode.E) && (Player.numEMPs > 0))
 		{
 			//receiveDamage (5);
 			empCountDown += Time.deltaTime;
 
 			//if(empCountDown >= 0.05f)
 			//{
+			//Debug.Log (this + " was destroyed.");
 				receiveDamage(1000);
 				empCountDown = 0.0f;//Crucial to reset the counter. 
 				//Player.numEMPs--;
@@ -131,9 +136,10 @@ public abstract class Enemy : MonoBehaviour {
 	}
 
 	//Called when hitted, procedure to receive damage
-	public void receiveDamage(float damage) {
+	public abstract void receiveDamage(float damage);
+	/*public void receiveDamage(float damage) {
 	//public bool receiveDamage(int damage) {
-
+	
 		armor = armor - damage;
 		//Debug.Log("Enemy Damaged for " + damage + ". Armor now = " + armor);
 		if(armor < 1)
@@ -141,6 +147,8 @@ public abstract class Enemy : MonoBehaviour {
 			//Debug.Log ("enemy should die here");
 			//Create explosion HERE
 			GameObject expl = (GameObject)Instantiate(explosion, transform.position, Quaternion.identity);
+			audio.Stop ();
+			//audio.PlayOneShot (sEnemyExplosion);
 
 			//Pass to the player the score relative to this enemy
 			((Player)GameObject.FindWithTag("Player").GetComponent("Player")).addScore(score);
@@ -149,14 +157,14 @@ public abstract class Enemy : MonoBehaviour {
 			//PlayerView.numOfEnemiesLeft--;
 			//Debug.Log (PlayerView.numOfEnemiesLeft);
 			SpawnManager.decrementEnemiesAliveNumber();
-
+			//Debug.Log (SpawnManager.getEnemiesAliveNumber() + " enemies left.");
 			//Destroy the explosion and the game object
 			Destroy(expl,2);
 			Destroy(gameObject);
 		}
 
 
-	}
+	}*/
 
 
 
