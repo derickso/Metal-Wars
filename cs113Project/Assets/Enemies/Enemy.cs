@@ -32,6 +32,7 @@ public abstract class Enemy : MonoBehaviour {
 
 
 	public float empCountDown;
+	public static bool empEnabled = true;
 
 	/*
 	// Use this for initialization
@@ -119,7 +120,7 @@ public abstract class Enemy : MonoBehaviour {
 
 		//If player fired the EMP Weapon
 
-		if(Input.GetKeyDown (KeyCode.E) && (Player.numEMPs > 0))
+		if(Input.GetKeyDown (KeyCode.E) && (Player.numEMPs > 0) && (empEnabled))
 		{
 			//receiveDamage (5);
 			empCountDown += Time.deltaTime;

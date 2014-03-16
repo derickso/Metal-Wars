@@ -91,7 +91,7 @@ public class Player : MonoBehaviour {
 
 	public float empCountDown;
 
-	public bool empEnabled = true;
+	public static bool empEnabled = false;
 
 
 
@@ -359,10 +359,9 @@ public class Player : MonoBehaviour {
 		//	//transform.Translate (
 		//}
 
-		empEnabled = true;
 
 		//Fire EMP
-		if(Input.GetKey (KeyCode.E) && (numEMPs > 0) && (empEnabled == true) && (Time.timeScale != 0))
+		if(Input.GetKey (KeyCode.E) && (numEMPs > 0) && (empEnabled))
 		{
 			empActivated (true);
 			//Destroy (GameObject.FindWithTag("Enemy"));
@@ -397,6 +396,7 @@ public class Player : MonoBehaviour {
 		{
 			//numEMPs--;
 		}
+
 
 
 		//Testing player damage:

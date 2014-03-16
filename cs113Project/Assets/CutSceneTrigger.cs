@@ -828,6 +828,7 @@ public class CutSceneTrigger : MonoBehaviour {
 		else if(SpawnManager.currentWave == 1)
 		{
 
+
 			//Cutscene code just like in Intro.cs
 
 			//GUI.DrawTexture (rect, sketch1);
@@ -842,7 +843,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 				cutscenesTimeDuration -= Time.deltaTime;
 
-
+				Player.empEnabled = false;
+				Enemy.empEnabled = false;				
 				Time.timeScale = 0;
 				
 			}
@@ -958,14 +960,15 @@ public class CutSceneTrigger : MonoBehaviour {
 				//GUI.DrawTexture (rect, null);
 
 				Time.timeScale = 1;
-
+				Player.empEnabled = true;
+				Enemy.empEnabled = true;
 
 				SpawnManager.isCutsceneReady = true;
 			}
 
 
-
 		}
+
 		else if(SpawnManager.currentWave == 2)
 		{
 			//GUI.DrawTexture (rect, sketch18);
@@ -977,7 +980,8 @@ public class CutSceneTrigger : MonoBehaviour {
 				
 				cutscenesTimeDuration -= Time.deltaTime;
 
-
+				Player.empEnabled = false;
+				Enemy.empEnabled = false;
 				Time.timeScale = 0;
 				
 			}
@@ -1124,8 +1128,10 @@ public class CutSceneTrigger : MonoBehaviour {
 				GUI.DrawTexture (rect, null);
 
 
-				Time.timeScale = 1;
 
+				Time.timeScale = 1;
+				Player.empEnabled = true;
+				Enemy.empEnabled = true;			
 
 				SpawnManager.isCutsceneReady = true;
 			}
@@ -1144,7 +1150,8 @@ public class CutSceneTrigger : MonoBehaviour {
 				
 				cutscenesTimeDuration -= Time.deltaTime;
 
-
+				Player.empEnabled = false;
+				Enemy.empEnabled = false;
 				Time.timeScale = 0;
 			}
 			
@@ -1266,7 +1273,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 
 				Time.timeScale = 1;
-
+				Player.empEnabled = true;
+				Enemy.empEnabled = true;
 
 				SpawnManager.isCutsceneReady = true;
 			}
@@ -1295,7 +1303,8 @@ public class CutSceneTrigger : MonoBehaviour {
 				cutscenesTimeDuration -= Time.deltaTime;
 
 
-
+				Player.empEnabled = false;
+				Enemy.empEnabled = false;
 				Time.timeScale = 0;
 				
 			}
@@ -1381,7 +1390,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 
 				Time.timeScale = 1;
-
+				Player.empEnabled = true;
+				Enemy.empEnabled = true;	
 
 
 				SpawnManager.isCutsceneReady = true;
@@ -1420,6 +1430,8 @@ public class CutSceneTrigger : MonoBehaviour {
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
 				//cutscenesTimeDuration -= Time.deltaTime;
+				Player.empEnabled = false;
+				Enemy.empEnabled = false;	
 				Time.timeScale = 0;
 			}
 			
@@ -2573,7 +2585,8 @@ public class CutSceneTrigger : MonoBehaviour {
 				//cutscenesTimeDuration -= Time.deltaTime;
 
 				Time.timeScale = 1;
-
+				Player.empEnabled = true;
+				Enemy.empEnabled = true;	
 
 				SpawnManager.isCutsceneReady = true;
 			}
@@ -2613,7 +2626,8 @@ public class CutSceneTrigger : MonoBehaviour {
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
 				//cutscenesTimeDuration -= Time.deltaTime;
-
+				Player.empEnabled = false;
+				Enemy.empEnabled = false;	
 				Time.timeScale = 0;
 				
 			}
@@ -3952,7 +3966,8 @@ public class CutSceneTrigger : MonoBehaviour {
 				nextButton = false;
 
 				Time.timeScale = 1;
-				
+				Player.empEnabled = true;
+				Enemy.empEnabled = true;	
 				cutscenesTimeDuration = 15.0f;//inc129
 				
 			}
@@ -4007,6 +4022,8 @@ public class CutSceneTrigger : MonoBehaviour {
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
 				//cutscenesTimeDuration -= Time.deltaTime;
+				Player.empEnabled = false;
+				Enemy.empEnabled = false;	
 				Time.timeScale = 0;
 				
 			}
