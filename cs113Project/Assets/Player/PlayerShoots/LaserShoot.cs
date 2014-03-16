@@ -60,7 +60,7 @@ public class LaserShoot : MonoBehaviour {
 		laserMuzzle.enableEmission = false;
 
 		//if (Input.GetKeyDown(KeyCode.Space)) //Must press it every time to shoot
-		if (Input.GetKey(KeyCode.Space)) //Just hold down to shoot
+		if (Input.GetKey(KeyCode.Space) && (Time.timeScale != 0)) //Just hold down to shoot
 		{
 			//Enable the flashes
 			initialLaserFlash.enableEmission = true;

@@ -99,7 +99,7 @@ public class MissileShoot : MonoBehaviour {
 
 				//float rotateAmount = 25f * Time.deltaTime;
 				//if (Input.GetKeyDown(KeyCode.Q) && Player.numMissiles != 0) //Just hold down to shoot
-				if (Input.GetKeyDown(KeyCode.Q))
+		if (Input.GetKeyDown(KeyCode.Q) && (Time.timeScale != 0))
 				{	
 
 					//Heat Seeking Code:

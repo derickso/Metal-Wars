@@ -325,19 +325,19 @@ public class Player : MonoBehaviour {
 		
 		
 		//barrel roll left
-		if(Input.GetKey (KeyCode.LeftArrow))
+		if(Input.GetKey (KeyCode.LeftArrow) && (Time.timeScale != 0))
 		{
 			transform.Rotate (0, 0, (rotateAmount * 1));
 		}
 		
 		//barrel roll right
-		if(Input.GetKey (KeyCode.RightArrow))
+		if(Input.GetKey (KeyCode.RightArrow) && (Time.timeScale != 0))
 		{
 			transform.Rotate (0, 0, (-rotateAmount * 1));
 		}
 		
 		//speed up
-		if(Input.GetKey (KeyCode.W))
+		if(Input.GetKey (KeyCode.W) && (Time.timeScale != 0))
 		{
 			transform.Translate (0, 0, transAmount * 2);
 
@@ -345,7 +345,7 @@ public class Player : MonoBehaviour {
 		}
 		
 		//slow down
-		if(Input.GetKey (KeyCode.S))
+		if(Input.GetKey (KeyCode.S) && (Time.timeScale != 0))
 		{
 			transform.Translate (0, 0, (-transAmount * 0.5f) );//Does slow down
 
@@ -362,7 +362,7 @@ public class Player : MonoBehaviour {
 		empEnabled = true;
 
 		//Fire EMP
-		if(Input.GetKey (KeyCode.E) && (numEMPs > 0) && (empEnabled == true))
+		if(Input.GetKey (KeyCode.E) && (numEMPs > 0) && (empEnabled == true) && (Time.timeScale != 0))
 		{
 			empActivated (true);
 			//Destroy (GameObject.FindWithTag("Enemy"));
@@ -393,9 +393,9 @@ public class Player : MonoBehaviour {
 
 
 		}
-		if(Input.GetKeyDown (KeyCode.E) && (numEMPs > 0))
+		if(Input.GetKeyDown (KeyCode.E) && (numEMPs > 0) && (Time.timeScale == 0))
 		{
-			numEMPs--;
+			//numEMPs--;
 		}
 
 

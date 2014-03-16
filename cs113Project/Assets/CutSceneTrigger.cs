@@ -842,6 +842,8 @@ public class CutSceneTrigger : MonoBehaviour {
 
 				cutscenesTimeDuration -= Time.deltaTime;
 
+
+				Time.timeScale = 0;
 				
 			}
 			
@@ -954,6 +956,8 @@ public class CutSceneTrigger : MonoBehaviour {
 				//nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
 				
 				//GUI.DrawTexture (rect, null);
+
+				Time.timeScale = 1;
 				
 			}
 			
@@ -974,6 +978,9 @@ public class CutSceneTrigger : MonoBehaviour {
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
 				cutscenesTimeDuration -= Time.deltaTime;
+
+
+				Time.timeScale = 0;
 				
 			}
 			
@@ -1052,6 +1059,9 @@ public class CutSceneTrigger : MonoBehaviour {
 				nextButton = false;
 				
 				cutscenesTimeDuration = 20.0f;
+
+
+				//Time.timeScale = 1;
 				
 			}
 
@@ -1114,7 +1124,11 @@ public class CutSceneTrigger : MonoBehaviour {
 				//nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
 				
 				GUI.DrawTexture (rect, null);
-				
+
+
+				Time.timeScale = 1;
+
+
 			}
 
 
@@ -1134,7 +1148,9 @@ public class CutSceneTrigger : MonoBehaviour {
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
 				cutscenesTimeDuration -= Time.deltaTime;
-				
+
+
+				Time.timeScale = 0;
 			}
 			
 			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
@@ -1252,7 +1268,10 @@ public class CutSceneTrigger : MonoBehaviour {
 				//nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
 				
 				GUI.DrawTexture (rect, null);
-				
+
+
+				Time.timeScale = 1;
+
 			}
 
 
@@ -1278,6 +1297,10 @@ public class CutSceneTrigger : MonoBehaviour {
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
 				cutscenesTimeDuration -= Time.deltaTime;
+
+
+
+				Time.timeScale = 0;
 				
 			}
 			
@@ -1358,12 +1381,16 @@ public class CutSceneTrigger : MonoBehaviour {
 				nextButton = false;
 				
 				cutscenesTimeDuration = 20.0f;//inc74
+
+
+
+				Time.timeScale = 1;
 				
 			}
 
 
 
-
+			SpawnManager.isCutsceneReady = true;
 
 
 
@@ -1372,13 +1399,13 @@ public class CutSceneTrigger : MonoBehaviour {
 		{
 
 
-
+			SpawnManager.isCutsceneReady = true;
 		}
 		else if(SpawnManager.currentWave == 6)
 		{
 
 
-
+			SpawnManager.isCutsceneReady = true;
 		}
 
 
@@ -2435,7 +2462,7 @@ public class CutSceneTrigger : MonoBehaviour {
 				
 				cutscenesTimeDuration = 20.0f;//inc74
 				
-				Time.timeScale = 1;//Resume
+				//Time.timeScale = 1;//Resume
 				
 			}
 
@@ -2549,7 +2576,8 @@ public class CutSceneTrigger : MonoBehaviour {
 				//nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
 				//cutscenesTimeDuration -= Time.deltaTime;
-				
+
+				Time.timeScale = 1;
 			}
 			  
 			
@@ -2557,7 +2585,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 
 
-
+			SpawnManager.isCutsceneReady = true;
 
 
 
@@ -2578,19 +2606,19 @@ public class CutSceneTrigger : MonoBehaviour {
 		{
 
 
-
+			SpawnManager.isCutsceneReady = true;
 		}
 		else if(SpawnManager.currentWave == 9)
 		{
 
 
-
+			SpawnManager.isCutsceneReady = true;
 		}
 		else if(SpawnManager.currentWave == 10)
 		{
 
 
-
+			SpawnManager.isCutsceneReady = true;
 		}
 
 
@@ -3951,7 +3979,7 @@ public class CutSceneTrigger : MonoBehaviour {
 				
 			}
 
-
+			SpawnManager.isCutsceneReady = true;
 
 
 			//Level 4 begins here
@@ -3967,25 +3995,25 @@ public class CutSceneTrigger : MonoBehaviour {
 		{
 
 
-
+			SpawnManager.isCutsceneReady = true;
 		}
 		else if(SpawnManager.currentWave == 13)
 		{
 
 
-
+			SpawnManager.isCutsceneReady = true;
 		}
 		else if(SpawnManager.currentWave == 14)
 		{
 
 
-
+			SpawnManager.isCutsceneReady = true;
 		}
 		else if(SpawnManager.currentWave == 15)
 		{
 
 
-
+			SpawnManager.isCutsceneReady = true;
 		}
 
 
@@ -4120,7 +4148,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 
 
-
+			SpawnManager.isCutsceneReady = true;
 
 
 
