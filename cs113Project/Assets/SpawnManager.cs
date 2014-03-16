@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour {
 	public static int currentWave = 0;
 	private int objCurrentWave = 0; // Each instantiation specific current wave
 
-	public static bool isCutsceneReady = true;
+	public static bool isCutsceneReady = false;
 
 	//Keeps the next wave time
 	//private static float nextWaveTime = 0.0f;
