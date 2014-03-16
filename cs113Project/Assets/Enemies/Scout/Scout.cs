@@ -23,13 +23,10 @@ public class Scout : Enemy {
 
 		speed = 60.0f;
 		rotateSpeed = Random.Range(50,70);
-		//audio.loop = true;
-		//audio.clip = sLoopingSound;
-		//audio.Play ();
 
 		setPath(PATH_EIGHT);
 	}
-
+	
 	public override void receiveDamage(float damage) {
 		//public bool receiveDamage(int damage) {
 		//audio.clip = sLoopingSound;

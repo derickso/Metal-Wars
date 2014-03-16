@@ -114,12 +114,15 @@ public abstract class Enemy : MonoBehaviour {
 		default:
 			break;
 		}
-
+		if (Time.timeScale == 1)
+			audio.volume = 1f;
+		else if (Time.timeScale == 0)
+			audio.volume = 0f;
 		//empCountDown = 0.0f;
 
 		//If player fired the EMP Weapon
 
-		if(Input.GetKeyDown (KeyCode.E) && (Player.numEMPs > 0))
+		if(Input.GetKeyDown (KeyCode.E) && (Player.numEMPs > 0) && Time.timeScale != 0)
 		{
 			//receiveDamage (5);
 			empCountDown += Time.deltaTime;
@@ -127,8 +130,10 @@ public abstract class Enemy : MonoBehaviour {
 			//if(empCountDown >= 0.05f)
 			//{
 			//Debug.Log (this + " was destroyed.");
-				receiveDamage(1000);
-				empCountDown = 0.0f;//Crucial to reset the counter. 
+			//SpawnManager.isCutsceneReady = false;
+			Invoke ("Pause", 2.3f);
+				//receiveDamage(1000);
+				//empCountDown = 0.0f;//Crucial to reset the counter. 
 				//Player.numEMPs--;
 			//}
 
@@ -136,6 +141,13 @@ public abstract class Enemy : MonoBehaviour {
 
 	}
 
+	public void Pause () {
+		receiveDamage(1000);
+		empCountDown = 0.0f;
+		//Debug.Log ("manager is " + SpawnManager.isCutsceneReady);
+		//SpawnManager.isCutsceneReady = true;
+
+	}
 	//Called when hitted, procedure to receive damage
 	public abstract void receiveDamage(float damage);
 	/*public void receiveDamage(float damage) {

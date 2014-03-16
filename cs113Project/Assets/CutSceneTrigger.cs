@@ -2,6 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class CutSceneTrigger : MonoBehaviour {
+	public bool allowPause;
+	public bool allowPause2;
+	public bool allowPause3;
+
 
 	//Ichikos
 	public Texture ichiko;
@@ -958,6 +962,8 @@ public class CutSceneTrigger : MonoBehaviour {
 				//GUI.DrawTexture (rect, null);
 
 				Time.timeScale = 1;
+				inc16 = false;
+				allowPause = true;
 
 
 				SpawnManager.isCutsceneReady = true;
@@ -968,6 +974,10 @@ public class CutSceneTrigger : MonoBehaviour {
 		}
 		else if(SpawnManager.currentWave == 2)
 		{
+			if (allowPause) {
+				inc16 = true;
+				allowPause = false;
+			}
 			//GUI.DrawTexture (rect, sketch18);
 
 			if(inc16 == true)
@@ -1121,11 +1131,12 @@ public class CutSceneTrigger : MonoBehaviour {
 				//
 				//nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
 				
-				GUI.DrawTexture (rect, null);
+				//GUI.DrawTexture (rect, null);
 
 
 				Time.timeScale = 1;
-
+				inc22 = false;
+				allowPause2 = true;
 
 				SpawnManager.isCutsceneReady = true;
 			}
@@ -1136,7 +1147,10 @@ public class CutSceneTrigger : MonoBehaviour {
 		else if(SpawnManager.currentWave == 3)
 		{
 
-
+			if (allowPause2) {
+				inc22 = true;
+				allowPause2 = false;
+			}
 			if(inc22 == true)
 			{
 				GUI.DrawTexture (rect, c22);
@@ -1262,10 +1276,12 @@ public class CutSceneTrigger : MonoBehaviour {
 				//
 				//nextButton = GUI.Button(new Rect(75,70,100,50),"Next");
 				
-				GUI.DrawTexture (rect, null);
+				//GUI.DrawTexture (rect, null);
 
 
 				Time.timeScale = 1;
+				inc27 = false;
+				allowPause3 = true;
 
 
 				SpawnManager.isCutsceneReady = true;
@@ -1286,7 +1302,10 @@ public class CutSceneTrigger : MonoBehaviour {
 		//Level 2 Begins
 		else if(SpawnManager.currentWave == 4)
 		{
-
+			if (allowPause3) {
+				inc27 = true;
+				allowPause3 = false;
+			}
 			if(inc27 == true)
 			{
 				GUI.DrawTexture (rect, c27);
