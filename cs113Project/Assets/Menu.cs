@@ -26,8 +26,8 @@ public class Menu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		damageModifier = 1;
-		healthModifier = 1;
+		damageModifier = 1f;
+		healthModifier = 1f;
 		inOptions = false;
 		selGridInt = 1;
 		hSliderValue = 50f;

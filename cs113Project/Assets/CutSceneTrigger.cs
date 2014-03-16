@@ -823,7 +823,6 @@ public class CutSceneTrigger : MonoBehaviour {
 			//Time.timeScale = 0;//Whenever you do this, you effectively cause a bool to pause the game
 
 
-
 			
 		}
 		else if(SpawnManager.currentWave == 1)
@@ -959,7 +958,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			}
 			
 
-
+			SpawnManager.isCutsceneReady = true;
 
 
 
@@ -1120,7 +1119,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 
 
-
+			SpawnManager.isCutsceneReady = true;
 
 
 
@@ -1263,7 +1262,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			//27-30 cutscenes during level 2
 			//31-73 cutscenes between level 2 and level 3
 
-
+			SpawnManager.isCutsceneReady = true;
 
 
 
