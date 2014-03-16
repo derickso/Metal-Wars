@@ -375,7 +375,7 @@ public class Player : MonoBehaviour {
 
 			//GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
 			//Enemy
-			audio.PlayOneShot (sEMP);
+			audio.PlayOneShot (sEMP, 0.8F);
 			//Timer so EMP can't be held down.  EMP stops emitting after a press period
 			//And the key is allowed to be pressed again.  
 			empCountDown += Time.deltaTime;
