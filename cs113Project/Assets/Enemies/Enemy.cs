@@ -123,11 +123,11 @@ public abstract class Enemy : MonoBehaviour {
 
 		//If player fired the EMP Weapon
 
-<<<<<<< HEAD
+
 		if(Input.GetKeyDown (KeyCode.E) && (Player.numEMPs > 0) && (empEnabled))
-=======
-		if(Input.GetKeyDown (KeyCode.E) && (Player.numEMPs > 0) && Time.timeScale != 0)
->>>>>>> FETCH_HEAD
+
+		//if(Input.GetKeyDown (KeyCode.E) && (Player.numEMPs > 0) && Time.timeScale != 0)
+
 		{
 			//receiveDamage (5);
 			empCountDown += Time.deltaTime;
@@ -136,7 +136,7 @@ public abstract class Enemy : MonoBehaviour {
 			//{
 			//Debug.Log (this + " was destroyed.");
 			//SpawnManager.isCutsceneReady = false;
-			Invoke ("Pause", 2.3f);
+			Invoke ("Pause", 1.3f);
 				//receiveDamage(1000);
 				//empCountDown = 0.0f;//Crucial to reset the counter. 
 				//Player.numEMPs--;

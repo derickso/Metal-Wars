@@ -380,7 +380,7 @@ public class Player : MonoBehaviour {
 			//Timer so EMP can't be held down.  EMP stops emitting after a press period
 			//And the key is allowed to be pressed again.  
 			empCountDown += Time.deltaTime;
-			if(empCountDown >= 0.05f)
+			if(empCountDown >= 1.05f)
 			//if(empCountDown >= 2.3f)
 			{
 				empActivated (false);

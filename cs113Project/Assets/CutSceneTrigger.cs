@@ -838,7 +838,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			//GUI.DrawTexture (rect, sketch1);
 			if(inc12 == true)
 			{
-
+				GUI.DrawTexture (rect, sketch18);
 				//GUI.DrawTexture (rect, sketch1);
 				GUI.DrawTexture (rect, c12);
 				
@@ -873,7 +873,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			if(inc13 == true)
 			{
 				
-
+				GUI.DrawTexture (rect, sketch18);
 				//GUI.DrawTexture (rect, sketch1);
 				GUI.DrawTexture (rect, c13);
 
@@ -906,6 +906,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc14 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c14);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 
@@ -929,6 +930,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc15 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c15);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 
@@ -964,14 +966,14 @@ public class CutSceneTrigger : MonoBehaviour {
 				//GUI.DrawTexture (rect, null);
 
 				Time.timeScale = 1;
-<<<<<<< HEAD
+
 				Player.empEnabled = true;
 				Enemy.empEnabled = true;
-=======
+
 				inc16 = false;
 				allowPause = true;
 
->>>>>>> FETCH_HEAD
+
 
 				SpawnManager.isCutsceneReady = true;
 			}
@@ -989,6 +991,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc16 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c16);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1015,6 +1018,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc17 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c17);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1037,6 +1041,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc18 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c18);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1060,6 +1065,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc19 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c19);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1069,6 +1075,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			
 			if(cutscenesTimeDuration <= 0.0f || nextButton)//  
 			{
+				GUI.DrawTexture (rect, sketch18);
 				inc19 = false;
 				inc20 = true;
 				
@@ -1086,6 +1093,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc20 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c20);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1109,6 +1117,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc21 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c21);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1142,16 +1151,16 @@ public class CutSceneTrigger : MonoBehaviour {
 				//GUI.DrawTexture (rect, null);
 
 
-<<<<<<< HEAD
+
 
 				Time.timeScale = 1;
 				Player.empEnabled = true;
 				Enemy.empEnabled = true;			
-=======
+
 				Time.timeScale = 1;
 				inc22 = false;
 				allowPause2 = true;
->>>>>>> FETCH_HEAD
+
 
 				SpawnManager.isCutsceneReady = true;
 			}
@@ -1168,6 +1177,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			}
 			if(inc22 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c22);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1193,6 +1203,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc23 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c23);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1216,6 +1227,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc24 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c24);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1238,6 +1250,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc25 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c25);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1261,6 +1274,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc26 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c26);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1296,14 +1310,14 @@ public class CutSceneTrigger : MonoBehaviour {
 
 
 				Time.timeScale = 1;
-<<<<<<< HEAD
+
 				Player.empEnabled = true;
 				Enemy.empEnabled = true;
-=======
+
 				inc27 = false;
 				allowPause3 = true;
 
->>>>>>> FETCH_HEAD
+
 
 				SpawnManager.isCutsceneReady = true;
 			}
@@ -1329,6 +1343,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			}
 			if(inc27 == true)
 			{
+				GUI.DrawTexture (rect, sketch18ver4);
 				GUI.DrawTexture (rect, c27);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1357,6 +1372,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc28 == true)
 			{
+				GUI.DrawTexture (rect, sketch18ver4);
 				GUI.DrawTexture (rect, c28);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1380,6 +1396,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc29 == true)
 			{
+				GUI.DrawTexture (rect, sketch18ver4);
 				GUI.DrawTexture (rect, c29);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -1403,6 +1420,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc30 == true)
 			{
+				GUI.DrawTexture (rect, sketch18ver4);
 				GUI.DrawTexture (rect, c30);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2518,6 +2536,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc74 == true)
 			{
+				GUI.DrawTexture (rect, sketch18);
 				GUI.DrawTexture (rect, c74);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2541,6 +2560,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc75 == true)
 			{
+				GUI.DrawTexture (rect, sketch18ver4);
 				GUI.DrawTexture (rect, c75);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2565,6 +2585,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc76 == true)
 			{
+				GUI.DrawTexture (rect, sketch18ver4);
 				GUI.DrawTexture (rect, c76);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -2588,6 +2609,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			if(inc77 == true)
 			{
+				GUI.DrawTexture (rect, sketch18ver4);
 				GUI.DrawTexture (rect, c77);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				
@@ -4138,8 +4160,8 @@ public class CutSceneTrigger : MonoBehaviour {
 				//nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 170,100,50),"Next");
 				//private bool bringIchikoToFuture;
 				//private bool followGeneralsOrders;
-				bringIchikoToFuture = GUI.Button(new Rect((Screen.width/2),(Screen.height/2)-100,100,50),"Bring Ichiko to future with you.");
-				followGeneralsOrders = GUI.Button(new Rect((Screen.width/2),(Screen.height/2)+100,100,50),"Follow General Erickson's orders.");
+				bringIchikoToFuture = GUI.Button(new Rect((Screen.width/2)-200,(Screen.height/2)-100,400,50),"Bring Ichiko to future with you.");
+				followGeneralsOrders = GUI.Button(new Rect((Screen.width/2)-200,(Screen.height/2)+50,400,50),"Follow General Erickson's orders.");
 
 
 
