@@ -135,7 +135,7 @@ public class Player : MonoBehaviour {
 		isTurning = false;
 		numEMPs = 5;
 		//numLives = 3;
-		Time.timeScale = 1;
+		//Time.timeScale = 1;
 		healthAmount = 1.0f;
 		//Things to set up how the beginning of the scene should be, goes HERE.  
 		//What to do right at the beginning of the scene.  
@@ -177,8 +177,10 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		audio.volume = hSliderValue / 100;
+		if (Time.timeScale == 1)
+			audio.volume = hSliderValue / 100;
+		else if (Time.timeScale == 0)
+			audio.volume = 0f;
 
 		float transAmount = speed * Time.deltaTime;//Do not delete.  
 		//float rotateAmount = rotateSpeed * Time.deltaTime;
@@ -392,9 +394,9 @@ public class Player : MonoBehaviour {
 
 
 		}
-		if(Input.GetKeyDown (KeyCode.E) && (numEMPs > 0) && (Time.timeScale == 0))
+		if(Input.GetKeyDown (KeyCode.E) && (numEMPs > 0) && (Time.timeScale != 0))
 		{
-			//numEMPs--;
+			numEMPs--;
 		}
 
 
@@ -416,7 +418,9 @@ public class Player : MonoBehaviour {
 		//If the player hits the keyCode.P, it will change the pause state of the game
 		if(Input.GetKeyDown (KeyCode.P))
 		{
+			//Time.timeScale = 0;
 			ChangePause();
+			//Debug.Log ("PPRESSED P, TIMESCALE IS NOW " + Time.timeScale);
 		}
 	}
 
@@ -577,16 +581,16 @@ public class Player : MonoBehaviour {
 			
 			//Create the Start button
 			if(GUI.Button(new Rect(menuX + 60,menuY + 30,100,40),"Resume")) {
-				Debug.Log("Resume");
+				//Debug.Log("Resume");
 				ChangePause();
 			}
 			if(GUI.Button(new Rect(menuX + 60,menuY + 80,100,40),"Options")) {
 				inOptions = true;
-				Debug.Log ("Options");
+				//Debug.Log ("Options");
 				//OnGUI();
 			}
 			if(GUI.Button(new Rect(menuX + 60,menuY + 130,100,40),"Main Menu")) {
-				Debug.Log("Quit to Main Menu");
+				//Debug.Log("Quit to Main Menu");
 				Application.LoadLevel("Menu");
 			}
 		}
