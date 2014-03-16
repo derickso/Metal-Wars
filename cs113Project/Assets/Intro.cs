@@ -116,7 +116,7 @@ public class Intro : MonoBehaviour {
 		//
 		//buttonPressed = false;
 		nextButton = false;
-		audio.volume = 0.05f;
+		audio.volume = 0.1f;
 		
 		//Don't know if need this
 		inC2 = false;
@@ -130,7 +130,7 @@ public class Intro : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Menu.musicVolume <= 0.05)
+		if (Menu.musicVolume <= 0.1f)
 			audio.volume = Menu.musicVolume;
 	}
 	

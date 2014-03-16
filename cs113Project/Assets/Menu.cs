@@ -45,9 +45,10 @@ public class Menu : MonoBehaviour {
 
 	void OnGUI () {
 		GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), menuWallpaper);
-		GUI.BeginGroup (new Rect (Screen.width / 2f - 200, Screen.height/10f - 10, 400, 350));
-			GUI.DrawTexture (new Rect(0, 0, 400, 250), menuLogo);
-			GUI.DrawTexture (new Rect(0, 215, 1350, 80), menuLogoText);
+		//GUI.BeginGroup (new Rect (Screen.width / 2f - 200, 30, 400, 350));
+		GUI.BeginGroup (new Rect (Screen.width / 3, 30, Screen.width / 2.5f, Screen.height / 2));
+			GUI.DrawTexture (new Rect(-10, 0, Screen.width / 3f, Screen.height / 4.5f), menuLogo);
+			GUI.DrawTexture (new Rect(Screen.width / 25f, Screen.height / 4.5f - 10, Screen.width / 1.2f, 60), menuLogoText);
 		GUI.EndGroup ();
 
 		if (!inOptions)
@@ -58,7 +59,7 @@ public class Menu : MonoBehaviour {
 				
 				//Create the Start button
 				if(GUI.Button(new Rect(75,70,100,50),"Start")) {
-					Debug.Log("StartButton pressed.");
+					//Debug.Log("StartButton pressed.");
 					//Application.LoadLevel("Scene1");
 					Application.LoadLevel("Intro");
 				}
@@ -70,7 +71,7 @@ public class Menu : MonoBehaviour {
 				
 				//Create the Credits button
 				if(GUI.Button(new Rect(75,190,100,50),"Credits")) {
-					Debug.Log("CreditsButton pressed.");
+					//Debug.Log("CreditsButton pressed.");
 				}
 			GUI.EndGroup();
 		}
