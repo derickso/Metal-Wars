@@ -27,6 +27,7 @@ public class Player : MonoBehaviour {
 	private float angleToBackBounds = 0;
 	private bool outOfBounds = false;
 	Quaternion defaultRot;
+	Quaternion defaultIconRot;
 
 	private int score;
 	private float armor, maxArmor;
@@ -125,11 +126,7 @@ public class Player : MonoBehaviour {
 		else
 			maxArmor = armor = 50.0f * Menu.healthModifier;
 
-		GameObject[] targets = GameObject.FindGameObjectsWithTag("PlayerModel");
-		foreach (GameObject Target in targets) {
-			//Target.transform.rotation = transform.rotation;
-			//Debug.Log (Target.transform.rotation);
-		}
+
 		baseTransform = transform.rotation;
 
 
@@ -144,6 +141,9 @@ public class Player : MonoBehaviour {
 		//If attached, it is object instead of scene.  
 
 		//player = transform;  //Pointing saves space!!!!!  //eg) Input playerInputs; playerInputs = Input;  ....YOU GET THE IDEA!!!! 
+
+		GameObject temp = GameObject.FindGameObjectWithTag("Icon");
+		defaultIconRot = temp.transform.rotation;
 
 		//Move object into scene
 		//player.position = new Vector3(0, 5, 0);
@@ -584,6 +584,9 @@ public class Player : MonoBehaviour {
 					}
 					speed = 50f;
 					armor = 100f;
+					GameObject temp = GameObject.FindGameObjectWithTag("Icon");
+					temp.renderer.enabled = true;
+					temp.transform.rotation = defaultIconRot;
 					Time.timeScale = 1;
 					isDead = false;
 					lowHealthDamage1.enableEmission = false;
