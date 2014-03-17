@@ -28,6 +28,7 @@ public class Player : MonoBehaviour {
 	private bool outOfBounds = false;
 	Quaternion defaultRot;
 	Quaternion defaultIconRot;
+	public static Vector3 defaultPos;
 
 	private int score;
 	private float armor, maxArmor;
@@ -152,6 +153,7 @@ public class Player : MonoBehaviour {
 		//Move object into scene
 		//player.position = new Vector3(0, 5, 0);
 		transform.position = new Vector3(0,15,0);
+		defaultPos = new Vector3 (0, 15, 0);
 		transform.Rotate(0,0,0);
 		transform.localScale.Scale(new Vector3(1,1,1));
 
@@ -577,7 +579,7 @@ public class Player : MonoBehaviour {
 					isRestart = false;
 					healthAmount = 1.0f;
 					//playerObject.renderer.enabled = true;
-					transform.position = new Vector3(0,15,0);
+					transform.position = defaultPos;
 					transform.rotation = defaultRot;
 					transform.localScale.Scale(new Vector3(1,1,1));
 					GameObject[] targets = GameObject.FindGameObjectsWithTag("PlayerModel");
