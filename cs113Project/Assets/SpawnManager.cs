@@ -121,13 +121,13 @@ public class SpawnManager : MonoBehaviour {
 		updateWave();
 		if(objCurrentWave==3 && currentWave==4) {
 			player.transform.position = new Vector3(3788.0f, 75.0f, 25440.0f);
-			Player.defaultPos = transform.position;
+			Player.defaultPos = new Vector3(3788.0f, 75.0f, 25440.0f);
 		} else if(objCurrentWave==6 && currentWave==7) {
 			player.transform.position = new Vector3(-18425.0f, 697.0f, 26084.0f);
-			Player.defaultPos = transform.position;
+			Player.defaultPos = new Vector3(-18425.0f, 697.0f, 26084.0f);
 		} else if(objCurrentWave==10 && currentWave==11) {
 			player.transform.position = new Vector3(-16000.0f, 200.0f, 4213.0f);
-			Player.defaultPos = transform.position;
+			Player.defaultPos = new Vector3(-16000.0f, 200.0f, 4213.0f);
 		}
 		//updates the especific wave
 		updateObjWave();
