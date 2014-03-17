@@ -385,7 +385,7 @@ public class Player : MonoBehaviour {
 
 
 		}
-		if(Input.GetKeyDown (KeyCode.E) && (numEMPs > 0) && (Time.timeScale != 0))
+		if(Input.GetKeyDown (KeyCode.E) && (numEMPs > 0) && (Time.timeScale != 0) && Menu.healthModifier != 2f)
 		{
 			numEMPs--;
 		}
