@@ -1497,6 +1497,9 @@ public class CutSceneTrigger : MonoBehaviour {
 			
 			if(inc31 == true)
 			{
+				SpawnManager.playerSpawned = false;
+
+
 				GUI.DrawTexture(rect, sketch18ver4);
 				GUI.DrawTexture (rect, c31);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
@@ -2663,6 +2666,10 @@ public class CutSceneTrigger : MonoBehaviour {
 				Time.timeScale = 1;
 				Player.empEnabled = true;
 				Enemy.empEnabled = true;	
+
+
+
+				SpawnManager.playerSpawned = true;
 				
 				SpawnManager.isCutsceneReady = true;
 			}
@@ -2701,6 +2708,10 @@ public class CutSceneTrigger : MonoBehaviour {
 			//Briefing before level 4  78-128
 			if(inc78 == true)
 			{
+
+				SpawnManager.playerSpawned = false;
+
+
 				GUI.DrawTexture (rect, sketch18ver4);
 				GUI.DrawTexture (rect, c78);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
