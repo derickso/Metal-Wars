@@ -18,6 +18,9 @@ public class Menu : MonoBehaviour {
 
 	private AudioClip sMenuTheme;
 
+	public GUISkin menuSkin;
+
+	GUIContent[] customGUI = new GUIContent[2];
 	string[] selStrings;
 
 	public static float musicVolume;
@@ -33,8 +36,9 @@ public class Menu : MonoBehaviour {
 		hSliderValue = 50f;
 		audio.Play ();
 
+		customGUI[0] = new GUIContent ("Frost", "Player health: 2x \nPlayer damage: 2x \n# of EMPs: Unlimited");
+		customGUI [1] = new GUIContent ("Normal", "Player health: 1x \nPlayer damage: 1x \n# of EMPs: 5");
 		selStrings = new string[] {"Frost", "Normal"};
-		descriptions = new string[]{ "Description 1", "Description 2", "Description 3", "Description 4" };
 	}
 	
 	// Update is called once per frame
@@ -44,6 +48,7 @@ public class Menu : MonoBehaviour {
 	}
 
 	void OnGUI () {
+		GUI.skin = menuSkin;
 		GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), menuWallpaper);
 		//GUI.BeginGroup (new Rect (Screen.width / 2f - 200, 30, 400, 350));
 		//GUI.BeginGroup (new Rect (Screen.width / 3, 30, Screen.width / 2.5f, Screen.height / 2));
@@ -89,7 +94,7 @@ public class Menu : MonoBehaviour {
 
 				GUI.Label (new Rect (8,70, 100, 20), "Difficulty");
 			//GUI.skin.button.onHover.textColor = Color.cyan;
-				selGridInt = GUI.SelectionGrid (new Rect (110,73, 65, 60), selGridInt, selStrings, 1);
+				selGridInt = GUI.SelectionGrid (new Rect (110,73, 65, 60), selGridInt, customGUI, 1);
 
 				if (selGridInt == 0)
 				{
@@ -106,6 +111,11 @@ public class Menu : MonoBehaviour {
 					inOptions = false;
 				}
 			GUI.EndGroup();
+		}
+		if (GUI.tooltip != "") {
+			
+			GUI.Box(new Rect (Screen.width / 2f - 200, Screen.height / 2.3f + 210, 370, 70), GUI.tooltip);
+			
 		}
 	}
 }
