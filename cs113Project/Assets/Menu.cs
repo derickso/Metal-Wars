@@ -46,9 +46,10 @@ public class Menu : MonoBehaviour {
 	void OnGUI () {
 		GUI.DrawTexture (new Rect(0, 0, Screen.width, Screen.height), menuWallpaper);
 		//GUI.BeginGroup (new Rect (Screen.width / 2f - 200, 30, 400, 350));
-		GUI.BeginGroup (new Rect (Screen.width / 3, 30, Screen.width / 2.5f, Screen.height / 2));
-			GUI.DrawTexture (new Rect(-10, 0, Screen.width / 3f, Screen.height / 4.5f), menuLogo);
-			GUI.DrawTexture (new Rect(Screen.width / 25f, Screen.height / 4.5f - 10, Screen.width / 1.2f, 60), menuLogoText);
+		//GUI.BeginGroup (new Rect (Screen.width / 3, 30, Screen.width / 2.5f, Screen.height / 2));
+		GUI.BeginGroup (new Rect (Screen.width / 3.5f, 30, Screen.width, Screen.height / 2));
+			GUI.DrawTexture (new Rect(-10, 0, Screen.width / 2f, Screen.height / 3.5f), menuLogo);
+			//GUI.DrawTexture (new Rect(Screen.width / 25f, Screen.height / 4.5f - 10, Screen.width / 1.2f, 60), menuLogoText);
 		GUI.EndGroup ();
 
 		if (!inOptions)
