@@ -179,10 +179,14 @@ public class Player : MonoBehaviour {
 		else if (Time.timeScale == 0 && !isPaused)
 			audio.volume = 0f;
 
+		if (isDead) {
+			GameObject temp = GameObject.FindGameObjectWithTag("Icon");
+			temp.renderer.enabled = false;
+		}
+
 		float transAmount = speed * Time.deltaTime;//Do not delete.  
 		//float rotateAmount = rotateSpeed * Time.deltaTime;
 		transform.Translate(0,0,transAmount);//Do not delete.  
-
 
 
 		if (healthAmount <= 0)
@@ -306,6 +310,11 @@ public class Player : MonoBehaviour {
 		if(Input.GetKey (KeyCode.A))
 		{
 			transform.Rotate (0, -rotateAmount, 0);
+			GameObject temp = GameObject.FindGameObjectWithTag("Icon");
+			if (Input.GetKey (KeyCode.A) && (Input.GetKey (KeyCode.RightArrow) || Input.GetKey (KeyCode.LeftArrow)))
+				temp.transform.Rotate(0, rotateAmount+0.8f, 0);
+			else
+				temp.transform.Rotate(0, rotateAmount, 0);
 			//foreach (GameObject Target in targets) {
 			//	Target.transform.Rotate (0f, .5f, 0f);
 			//}
@@ -313,10 +322,16 @@ public class Player : MonoBehaviour {
 		if(Input.GetKey (KeyCode.D))
 		{
 			transform.Rotate (0, rotateAmount, 0);
+			GameObject temp = GameObject.FindGameObjectWithTag("Icon");
+			if (Input.GetKey (KeyCode.D) && (Input.GetKey (KeyCode.RightArrow) || Input.GetKey (KeyCode.LeftArrow)))
+				temp.transform.Rotate(0, -rotateAmount-0.8f, 0);
+			else
+			    temp.transform.Rotate(0, -rotateAmount, 0);
 			//foreach (GameObject Target in targets) {
 			//	Target.transform.Rotate (0f, -.5f, 0f);
 			//}
 		}
+
 
 		//barrel roll left
 		if(Input.GetKey (KeyCode.LeftArrow) && (Time.timeScale != 0))
