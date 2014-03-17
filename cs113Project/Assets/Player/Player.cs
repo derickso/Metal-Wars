@@ -135,7 +135,7 @@ public class Player : MonoBehaviour {
 		numEMPs = 5;
 		numLives = 3;
 		//Time.timeScale = 1;
-		healthAmount = 3.0f;
+		healthAmount = 1.0f;
 		//Things to set up how the beginning of the scene should be, goes HERE.  
 		//What to do right at the beginning of the scene.  
 		//If attached, it is object instead of scene.  
@@ -571,7 +571,7 @@ public class Player : MonoBehaviour {
 				if(GUI.Button(new Rect(menuX + 60,menuY + 50,100,40),"Yes")) {
 					isGameOver = false;
 					isRestart = false;
-					healthAmount = 3.0f;
+					healthAmount = 1.0f;
 					//playerObject.renderer.enabled = true;
 					transform.position = new Vector3(0,15,0);
 					transform.rotation = defaultRot;
