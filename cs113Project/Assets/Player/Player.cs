@@ -133,7 +133,7 @@ public class Player : MonoBehaviour {
 		numEMPs = 5;
 		//numLives = 3;
 		//Time.timeScale = 1;
-		healthAmount = 3.0f;
+		healthAmount = 5.0f;
 		//Things to set up how the beginning of the scene should be, goes HERE.  
 		//What to do right at the beginning of the scene.  
 		//If attached, it is object instead of scene.  
