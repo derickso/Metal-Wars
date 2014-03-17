@@ -53,7 +53,7 @@ public class Player : MonoBehaviour {
 	public Texture2D livesIcon;
 	public Texture2D thirdCrosshair;
 	public static double numEMPs;
-	public static double numLives = 3;
+	public static double numLives = 1;
 	public static float healthAmount;
 	public GUIStyle scoreFont;
 	public Font digitalFont;
@@ -133,7 +133,7 @@ public class Player : MonoBehaviour {
 		numEMPs = 5;
 		//numLives = 3;
 		//Time.timeScale = 1;
-		healthAmount = 1.0f;
+		healthAmount = 3.0f;
 		//Things to set up how the beginning of the scene should be, goes HERE.  
 		//What to do right at the beginning of the scene.  
 		//If attached, it is object instead of scene.  
