@@ -36,7 +36,6 @@ public class Player : MonoBehaviour {
 	private bool isPaused;
 	private bool inOptions;
 	private bool isGameOver;
-	private bool isTurning;
 	public static bool isDead;
 
 	public AudioClip sPlayerExplosion;
@@ -132,7 +131,6 @@ public class Player : MonoBehaviour {
 
 		isGameOver = false;
 		isDead = false;
-		isTurning = false;
 		numEMPs = 5;
 		//numLives = 3;
 		//Time.timeScale = 1;
@@ -177,9 +175,9 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.timeScale == 1)
+		if (Time.timeScale == 1 || isPaused)
 			audio.volume = hSliderValue / 100;
-		else if (Time.timeScale == 0)
+		else if (Time.timeScale == 0 && !isPaused)
 			audio.volume = 0f;
 
 		float transAmount = speed * Time.deltaTime;//Do not delete.  
@@ -308,7 +306,6 @@ public class Player : MonoBehaviour {
 		//yaw
 		if(Input.GetKey (KeyCode.A))
 		{
-			isTurning = true;
 			transform.Rotate (0, -rotateAmount, 0);
 			//foreach (GameObject Target in targets) {
 			//	Target.transform.Rotate (0f, .5f, 0f);
@@ -316,16 +313,12 @@ public class Player : MonoBehaviour {
 		}
 		if(Input.GetKey (KeyCode.D))
 		{
-			isTurning = true;
 			transform.Rotate (0, rotateAmount, 0);
 			//foreach (GameObject Target in targets) {
 			//	Target.transform.Rotate (0f, -.5f, 0f);
 			//}
 		}
-		
-		isTurning = false;
-		
-		
+
 		//barrel roll left
 		if(Input.GetKey (KeyCode.LeftArrow) && (Time.timeScale != 0))
 		{
@@ -349,7 +342,7 @@ public class Player : MonoBehaviour {
 		//slow down
 		if(Input.GetKey (KeyCode.S) && (Time.timeScale != 0))
 		{
-			transform.Translate (0, 0, (-transAmount * 0.5f) );//Does slow down
+			transform.Translate (0, 0, (-transAmount * 0.65f) );//Does slow down
 
 			slowSpeedMode();
 		}
@@ -544,33 +537,35 @@ public class Player : MonoBehaviour {
 				}
 			}
 		}
-		//draw the number of lives
-		GUI.Label(new Rect (healthBarPos.x, healthBarPos.y - 35, healthBarSize.x, 10), score.ToString(), scoreFont);
-		GUI.Label(new Rect (healthBarPos.x, healthBarPos.y - 21, 100, 20), "Lives");
-		for (int i = 0; i < numLives; i++)
+		if (SpawnManager.isCutsceneReady)
 		{
-			GUI.DrawTexture (new Rect (healthBarPos.x + 35 + i*17, healthBarPos.y - 25, 15, 28), livesIcon, ScaleMode.ScaleToFit);
-		}
-		
-		GUI.BeginGroup(new Rect(healthBarPos.x, healthBarPos.y, healthBarSize.x, healthBarSize.y));
-			GUI.Box(new Rect(0,0, healthBarSize.x, healthBarSize.y), emptyTex);
-		
-			//draw the filled-in part:
-			GUI.BeginGroup(new Rect(0,0, healthBarSize.x * healthAmount, healthBarSize.y));
-				GUI.DrawTexture(new Rect(0,0, healthBarSize.x * healthAmount, healthBarSize.y), fullTex);
-				GUI.Label(new Rect (0,0, 100, 20), "Armor");
+			//draw the number of lives
+			GUI.Label(new Rect (healthBarPos.x, healthBarPos.y - 35, healthBarSize.x, 10), score.ToString(), scoreFont);
+			GUI.Label(new Rect (healthBarPos.x, healthBarPos.y - 21, 100, 20), "Lives");
+			for (int i = 0; i < numLives; i++)
+			{
+				GUI.DrawTexture (new Rect (healthBarPos.x + 35 + i*17, healthBarPos.y - 25, 15, 28), livesIcon, ScaleMode.ScaleToFit);
+			}
+			
+			GUI.BeginGroup(new Rect(healthBarPos.x, healthBarPos.y, healthBarSize.x, healthBarSize.y));
+				GUI.Box(new Rect(0,0, healthBarSize.x, healthBarSize.y), emptyTex);
+			
+				//draw the filled-in part:
+				GUI.BeginGroup(new Rect(0,0, healthBarSize.x * healthAmount, healthBarSize.y));
+					GUI.DrawTexture(new Rect(0,0, healthBarSize.x * healthAmount, healthBarSize.y), fullTex);
+					GUI.Label(new Rect (0,0, 100, 20), "Armor");
+				GUI.EndGroup();
 			GUI.EndGroup();
-		GUI.EndGroup();
 
 
-		int empWidth = 15;
-		//GUI.BeginGroup(new Rect(healthBarPos.x, healthBarPos.y + 34, healthBarSize.x, healthBarSize.y));
-		for (int i = 0; i < numEMPs; i++)
-		{
-			GUI.DrawTexture (new Rect (healthBarPos.x + i*20, 55, empWidth, 28), empIcon, ScaleMode.ScaleToFit);
+			int empWidth = 15;
+			//GUI.BeginGroup(new Rect(healthBarPos.x, healthBarPos.y + 34, healthBarSize.x, healthBarSize.y));
+			for (int i = 0; i < numEMPs; i++)
+			{
+				GUI.DrawTexture (new Rect (healthBarPos.x + i*20, 55, empWidth, 28), empIcon, ScaleMode.ScaleToFit);
+			}
+			//GUI.EndGroup();
 		}
-		//GUI.EndGroup();
-
 
 		if(isPaused && !inOptions)
 		{
@@ -601,11 +596,11 @@ public class Player : MonoBehaviour {
 			
 			GUI.Box(new Rect(menuX,menuY, 220, 200),"Options");
 			
-			GUI.Label (new Rect (menuX +8,menuY + 40, 100, 20), "Player Volume");
+			GUI.Label (new Rect (menuX +8,menuY + 40, 100, 20), "Engine Volume");
 			hSliderValue = GUI.HorizontalSlider (new Rect (menuX + 110,menuY + 45, 100, 30), hSliderValue, 0.0f, 100.0f);
 		
 			if(GUI.Button(new Rect(menuX + 60,menuY + 70,100,40),"Back")) {
-				Debug.Log("Exit Options");
+				//Debug.Log("Exit Options");
 				inOptions = false;
 			}
 		}

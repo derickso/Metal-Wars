@@ -4,6 +4,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - hitEffect: {fileID: 100000, guid: d200e157c75f44045a3cb1f3de1e0197, type: 2}
+  - soundEffect: {fileID: 100000, guid: 1189fb8c1270c1c40b45100841ab5c96, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

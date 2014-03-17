@@ -136,7 +136,7 @@ public abstract class Enemy : MonoBehaviour {
 			//{
 			//Debug.Log (this + " was destroyed.");
 			//SpawnManager.isCutsceneReady = false;
-			Invoke ("Pause", 1.3f);
+			Invoke ("Pause", 2.3f);
 				//receiveDamage(1000);
 				//empCountDown = 0.0f;//Crucial to reset the counter. 
 				//Player.numEMPs--;
