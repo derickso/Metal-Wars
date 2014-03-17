@@ -39,7 +39,6 @@ public class Player : MonoBehaviour {
 	public static bool isDead;
 
 	public AudioClip sPlayerExplosion;
-	public AudioClip sEMP;
 
 	private float hSliderValue;
 	
@@ -131,7 +130,7 @@ public class Player : MonoBehaviour {
 
 		isGameOver = false;
 		isDead = false;
-		numEMPs = 50;
+		numEMPs = 5;
 		//numLives = 3;
 		//Time.timeScale = 1;
 		healthAmount = 1.0f;
@@ -369,7 +368,6 @@ public class Player : MonoBehaviour {
 
 			//GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
 			//Enemy
-			audio.PlayOneShot (sEMP, 0.8F);
 			//Timer so EMP can't be held down.  EMP stops emitting after a press period
 			//And the key is allowed to be pressed again.  
 			empCountDown += Time.deltaTime;
