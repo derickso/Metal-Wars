@@ -3,8 +3,8 @@ using System.Collections;
 
 public class CutSceneTrigger : MonoBehaviour {
 
-	private GameObject player;
-	private int level;
+	//private GameObject player;
+	//private int level;
 
 	public bool allowPause;
 	public bool allowPause2;
@@ -550,9 +550,9 @@ public class CutSceneTrigger : MonoBehaviour {
 	void Start () {
 	
 
-		player = GameObject.FindGameObjectWithTag("Player");
+		//player = GameObject.FindGameObjectWithTag("Player");
 		//player = GameObject.FindWithTag("Player");
-		level = 0;
+		//level = 0;
 
 		inichiko = false;
 		inichikohair2 = false;
@@ -833,7 +833,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			//GUI.DrawTexture (rect, sketch1);
 			//Time.timeScale = 0;//Whenever you do this, you effectively cause a bool to pause the game
 
-			level = 1;
+			//level = 1;
 			SpawnManager.isCutsceneReady = true;
 			
 		}
@@ -1347,10 +1347,10 @@ public class CutSceneTrigger : MonoBehaviour {
 		else if(SpawnManager.currentWave == 4)
 		{
 
-			if(level == 1){
+			/*if(level == 1){
 				player.transform.position = new Vector3(3788.0f, 75.0f, 25440.0f);
 				level = 2;
-			}
+			}*/
 
 			if (allowPause3) {
 
@@ -1488,10 +1488,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 			//Time.timeScale = 0;//pause
 
-			if(level == 2){
-				player.transform.position = new Vector3(-18425.0f, 697.0f, 26084.0f);
-				level = 3;
-			}
+
 
 			if(inc31 == true)
 			{
@@ -2691,10 +2688,10 @@ public class CutSceneTrigger : MonoBehaviour {
 		else if(SpawnManager.currentWave == 11)
 		{
 
-			if(level == 3){
+			/*if(level == 3){
 				player.transform.position = new Vector3(-18494.0f, 18.0f, 4213.0f);
 				level = 4;
-			}
+			}*/
 
 			//Briefing before level 4  78-128
 			if(inc78 == true)

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class SpawnManager : MonoBehaviour {
 
+	private GameObject player;
+
 	private const float POSITION_RANGE = 100.0f;
 
 	//Keeps the current wave number
@@ -48,6 +50,8 @@ public class SpawnManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
+		player = GameObject.FindGameObjectWithTag("Player");
+
 		sNumberOfWaves = numberOfWaves;
 		currentWave = 0;
 		//nextWaveTime = 0.0f;
@@ -111,6 +115,13 @@ public class SpawnManager : MonoBehaviour {
 
 		//Updates the general wave
 		updateWave();
+		if(objCurrentWave==3 && currentWave==4)
+			player.transform.position = new Vector3(3788.0f, 75.0f, 25440.0f);
+		else if(objCurrentWave==6 && currentWave==7)
+			player.transform.position = new Vector3(-18425.0f, 697.0f, 26084.0f);
+		else if(objCurrentWave==10 && currentWave==11)
+			player.transform.position = new Vector3(-18494.0f, 18.0f, 4213.0f);
+
 		//updates the especific wave
 		updateObjWave();
 
@@ -172,6 +183,8 @@ public class SpawnManager : MonoBehaviour {
 			++currentWave;
 
 			isCutsceneReady = false;
+
+			Debug.Log("Wave "+currentWave);
 		}
 
 	}

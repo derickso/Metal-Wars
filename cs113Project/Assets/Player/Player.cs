@@ -131,7 +131,7 @@ public class Player : MonoBehaviour {
 
 		isGameOver = false;
 		isDead = false;
-		numEMPs = 5;
+		numEMPs = 50;
 		//numLives = 3;
 		//Time.timeScale = 1;
 		healthAmount = 1.0f;
