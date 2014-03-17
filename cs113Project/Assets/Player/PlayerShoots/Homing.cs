@@ -9,7 +9,8 @@ public class Homing : MonoBehaviour {
 	private Vector3 lastPos;	// used to calculate the velocity vector
 	private bool readyToGo;
 	public GameObject hitEffect;
-	public int damage;
+	public GameObject missileHitSound;
+	public float damage;
 
 	void Start () {
 		/*
@@ -23,7 +24,10 @@ public class Homing : MonoBehaviour {
 				closest = Target;
 			}
 		}*/
-		damage = 225;
+		if (Menu.healthModifier == 0)
+			damage = 30f;
+		else
+		    damage = 30f * Menu.healthModifier;
 		if (PlayerView.missileTarget) {
 			//Debug.Log ("ready to fire");
 			closest = PlayerView.missileTarget;
@@ -65,6 +69,8 @@ public class Homing : MonoBehaviour {
 				UnityEngine.GameObject.Destroy (gameObject);
 				//Debug.Log ("hooey");
 				Enemy enemy = (Enemy)closest.gameObject.GetComponent("Enemy");
+				GameObject hitSound = (GameObject)Instantiate (missileHitSound, transform.position, Quaternion.identity);
+				Destroy (hitSound, 1f);
 				enemy.receiveDamage(damage);
 				//UnityEngine.GameObject.Destroy (transform);
 

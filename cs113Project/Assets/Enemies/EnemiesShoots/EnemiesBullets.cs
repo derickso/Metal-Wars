@@ -9,7 +9,7 @@ public class EnemiesBullets : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//speed = 100;
-		damage = 1.0f;
+		damage = 3.0f;
 	}
 	
 	// Update is called once per frame

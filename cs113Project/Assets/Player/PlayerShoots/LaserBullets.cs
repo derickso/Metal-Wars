@@ -5,6 +5,7 @@ public class LaserBullets : MonoBehaviour {
 
 	//hit effect that will be showed once it hits an enemy
 	public GameObject hitEffect;
+	public GameObject soundEffect;
 
 	//public int speed;
 	public float damage;
@@ -14,9 +15,11 @@ public class LaserBullets : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//speed = 1000;
-		damage = 49f * Menu.damageModifier;
+		if (Menu.healthModifier != 0)
+			damage = 5f * Menu.healthModifier;
+		else
+			damage = 5f;
 
-		damage = 5;//Take it off when have menu.damageModifier working
 		//rigidbody.velocity = transform.forward * speed;
 		//Debug.Log ("Time is: " + Time.time);
 		spawnTime = Time.time;
@@ -70,7 +73,9 @@ public class LaserBullets : MonoBehaviour {
 	//creating the hitEffect and setting the gameObject to false.
 	void hit(){
 		GameObject hit = (GameObject)Instantiate(hitEffect, transform.position, Quaternion.identity);
+		GameObject hitSound = (GameObject)Instantiate (soundEffect, transform.position, Quaternion.identity);
 		Destroy(hit,0.4f);
+		Destroy (hitSound,1f);
 		gameObject.SetActive(false);
 	}
 }

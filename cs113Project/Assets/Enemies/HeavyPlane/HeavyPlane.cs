@@ -46,6 +46,7 @@ public class HeavyPlane : Enemy {
 			//Debug.Log (SpawnManager.getEnemiesAliveNumber() + " enemies left.");
 			//Destroy the explosion and the game object
 			Destroy(expl,2);
+			Destroy (explsound, 2);
 			Destroy(gameObject);
 		}
 	}

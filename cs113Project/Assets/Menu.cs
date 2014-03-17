@@ -90,15 +90,15 @@ public class Menu : MonoBehaviour {
 			//GUI.skin.button.onHover.textColor = Color.cyan;
 				selGridInt = GUI.SelectionGrid (new Rect (110,73, 65, 60), selGridInt, selStrings, 1);
 
-				if (selGridInt == 1)
-				{
-					damageModifier = 1f;
-					healthModifier = 1f;
-				}
-				else if (selGridInt == 0) 
+				if (selGridInt == 0)
 				{
 					damageModifier = .25f;
 					healthModifier = 2f;
+				}
+				else if (selGridInt == 1) 
+				{
+					damageModifier = 1f;
+					healthModifier = 1f;
 				}
 				
 				if(GUI.Button(new Rect(60,150,100,40),"Back")) {
