@@ -1359,7 +1359,9 @@ public class CutSceneTrigger : MonoBehaviour {
 			}
 			if(inc27 == true)
 			{
-				
+				SpawnManager.playerSpawned = false;
+
+
 				GUI.DrawTexture (rect, sketch18ver4);
 				GUI.DrawTexture (rect, c27);
 				nextButton = GUI.Button(new Rect(Screen.width - 170,Screen.height - 200,100,50),"Next");
@@ -1459,7 +1461,10 @@ public class CutSceneTrigger : MonoBehaviour {
 				Time.timeScale = 1;
 				Player.empEnabled = true;
 				Enemy.empEnabled = true;	
-				
+
+
+				SpawnManager.playerSpawned = true;
+
 				
 				SpawnManager.isCutsceneReady = true;
 			}

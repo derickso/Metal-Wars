@@ -5,6 +5,8 @@ public class SpawnManager : MonoBehaviour {
 
 	private GameObject player;
 
+	public static bool playerSpawned = true;
+
 	private const float POSITION_RANGE = 100.0f;
 
 	//Keeps the current wave number
@@ -59,6 +61,8 @@ public class SpawnManager : MonoBehaviour {
 
 		createEnemiesArgos();
 		initEnemiesArgos();
+
+		playerSpawned = true;
 
 		Debug.Log("Initialized");
 	}
@@ -132,8 +136,11 @@ public class SpawnManager : MonoBehaviour {
 		//If it is not updated to the last wave, it spawns enemmies and increments its wave
 		if(objCurrentWave < currentWave)
 		{
-			spawnEnemies();
-			++objCurrentWave;
+			if(playerSpawned == true)
+			{
+				spawnEnemies();
+				++objCurrentWave;
+			}
 		}
 	}
 
