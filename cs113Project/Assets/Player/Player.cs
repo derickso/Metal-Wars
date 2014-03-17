@@ -26,6 +26,8 @@ public class Player : MonoBehaviour {
 
 	private float angleToBackBounds = 0;
 	private bool outOfBounds = false;
+	Quaternion defaultRot;
+	Quaternion defaultIconRot;
 
 	private int score;
 	private float armor, maxArmor;
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour {
 	private bool inOptions;
 	private bool isGameOver;
 	public static bool isDead;
+	private bool isRestart;
 
 	public AudioClip sPlayerExplosion;
 
@@ -44,6 +47,7 @@ public class Player : MonoBehaviour {
 	
 	int selGridInt;
 	string[] selStrings;
+	GameObject[] models;
 
 	public Vector2 healthBarPos = new Vector2(20,40);	
 	public Vector2 healthBarSize = new Vector2(90,20);
@@ -53,7 +57,7 @@ public class Player : MonoBehaviour {
 	public Texture2D livesIcon;
 	public Texture2D thirdCrosshair;
 	public static double numEMPs;
-	public static double numLives = 1;
+	public static double numLives;
 	public static float healthAmount;
 	public GUIStyle scoreFont;
 	public Font digitalFont;
@@ -113,6 +117,8 @@ public class Player : MonoBehaviour {
 		hSliderValue = 100f;
 		audio.volume = 1;
 		//audio.Play ();
+		defaultRot = transform.rotation;
+		isRestart = true;
 
 		score = 0;
 		if (Menu.healthModifier == 0)
@@ -120,25 +126,28 @@ public class Player : MonoBehaviour {
 		else
 			maxArmor = armor = 50.0f * Menu.healthModifier;
 
-		targets = GameObject.FindGameObjectsWithTag("PlayerModel");
-		foreach (GameObject Target in targets) {
-			//Target.transform.rotation = transform.rotation;
-			//Debug.Log (Target.transform.rotation);
-		}
+
 		baseTransform = transform.rotation;
 
 
 		isGameOver = false;
 		isDead = false;
 		numEMPs = 5;
-		//numLives = 3;
+		numLives = 3;
 		//Time.timeScale = 1;
+<<<<<<< HEAD
 		healthAmount = 5.0f;
+=======
+		healthAmount = 1.0f;
+>>>>>>> FETCH_HEAD
 		//Things to set up how the beginning of the scene should be, goes HERE.  
 		//What to do right at the beginning of the scene.  
 		//If attached, it is object instead of scene.  
 
 		//player = transform;  //Pointing saves space!!!!!  //eg) Input playerInputs; playerInputs = Input;  ....YOU GET THE IDEA!!!! 
+
+		GameObject temp = GameObject.FindGameObjectWithTag("Icon");
+		defaultIconRot = temp.transform.rotation;
 
 		//Move object into scene
 		//player.position = new Vector3(0, 5, 0);
@@ -169,7 +178,12 @@ public class Player : MonoBehaviour {
 
 
 		empCountDown = 0.0f;
-		
+		models = GameObject.FindGameObjectsWithTag("PlayerModel");
+
+
+		//foreach (GameObject Target in models) {
+		//	Target.renderer.enabled = false;
+		//}
 	}
 	
 	// Update is called once per frame
@@ -188,6 +202,8 @@ public class Player : MonoBehaviour {
 		//float rotateAmount = rotateSpeed * Time.deltaTime;
 		transform.Translate(0,0,transAmount);//Do not delete.  
 
+		if (armor > 1)
+			playerExplosion.enableEmission = false;
 
 		if (healthAmount <= 0)
 		{
@@ -208,8 +224,18 @@ public class Player : MonoBehaviour {
 			foreach (GameObject Target in targets) {
 				Target.renderer.enabled = false;
 			}
+			//Debug.Log ("Reaching");
 			Invoke("Explode", 1.4f);
 		}
+		/*else if (healthAmount > 0)
+		{
+			defaultThrust1.Play ();
+			defaultThrust2.Play ();
+			thruster1.Play ();
+			thruster2.Play ();
+			engineHeat1.Play ();
+			engineHeat2.Play ();
+		}*/
 		//if (numLives <= 0)
 		//{
 		//	isGameOver = true;
@@ -226,11 +252,16 @@ public class Player : MonoBehaviour {
 	}
 
 	public void Explode() {
-		if (!isGameOver)
-			numLives--;
-		//StartCoroutine(Lose());
-		Time.timeScale = 0;
-		isGameOver = true;
+		if (healthAmount <= 0)
+		{
+			if (!isGameOver && isRestart)
+				numLives--;
+			//StartCoroutine(Lose());
+			if (isRestart) {
+				isGameOver = true;
+				Time.timeScale = 0;
+			}
+		}
 	}
 
 	//Procedure to make the player go back to the map bounds
@@ -519,10 +550,11 @@ public class Player : MonoBehaviour {
 
 		if (isGameOver)
 		{
-			GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-			playerObject.renderer.enabled = false;
-			this.renderer.enabled = false;
-			Time.timeScale = 0;
+			//Debug.Log ("GameOver? " + isGameOver);
+			//GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+			//playerObject.renderer.enabled = false;
+			//this.renderer.enabled = false;
+			//Time.timeScale = 0;
 			menuX = Screen.width/2.5f;
 			menuY = Screen.height/2.5f;
 		
@@ -535,15 +567,47 @@ public class Player : MonoBehaviour {
 					Application.LoadLevel ("Menu");
 				}
 			}
-			else
+			else if (numLives > 0)
 			{
 				GUI.Box(new Rect(menuX,menuY,220,150),"You died! :(");
 				GUI.Label(new Rect(menuX+58,menuY+30,220,150),"Restart mission?");
-
 				//Create the Start button
 				if(GUI.Button(new Rect(menuX + 60,menuY + 50,100,40),"Yes")) {
-					//Time.timeScale = 1;
-					Application.LoadLevel ("Scene1");
+					isGameOver = false;
+					isRestart = false;
+					healthAmount = 1.0f;
+					//playerObject.renderer.enabled = true;
+					transform.position = new Vector3(0,15,0);
+					transform.rotation = defaultRot;
+					transform.localScale.Scale(new Vector3(1,1,1));
+					GameObject[] targets = GameObject.FindGameObjectsWithTag("PlayerModel");
+					for (int i = 0; i < models.Length; i++) {
+						targets[i].transform.position = models[i].transform.position;
+						targets[i].transform.rotation = models[i].transform.rotation;
+						models[i].renderer.enabled = true;
+					}
+					speed = 50f;
+					armor = 100f;
+					GameObject temp = GameObject.FindGameObjectWithTag("Icon");
+					temp.renderer.enabled = true;
+					temp.transform.rotation = defaultIconRot;
+					Time.timeScale = 1;
+					isDead = false;
+					lowHealthDamage1.enableEmission = false;
+					lowHealthDamage2.enableEmission = false;
+					defaultThrust1.Play ();
+					defaultThrust2.Play ();
+					thruster1.Play ();
+					thruster2.Play ();
+					engineHeat1.Play ();
+					engineHeat2.Play ();
+					normalSpeedMode();
+					audio.Play ();
+					isRestart = true;
+					//Debug.Log ("CLICKED BUTTON isgameover: " + isGameOver);
+					//Debug.Log ("healthamount " + healthAmount);
+					//Debug.Log ("speed: " + speed);
+					//Application.LoadLevel ("Scene1");
 				}
 				if(GUI.Button(new Rect(menuX + 60,menuY + 100,100,40),"No")) {
 					Application.LoadLevel ("Menu");
