@@ -137,8 +137,6 @@ public class Player : MonoBehaviour {
 		numLives = 3;
 		//Time.timeScale = 1;
 
-		healthAmount = 5.0f;
-
 		healthAmount = 1.0f;
 
 		//Things to set up how the beginning of the scene should be, goes HERE.  
@@ -589,7 +587,10 @@ public class Player : MonoBehaviour {
 						models[i].renderer.enabled = true;
 					}
 					speed = 50f;
-					armor = 100f;
+					if (Menu.healthModifier == 0)
+						maxArmor = armor = 50.0f;
+					else
+						maxArmor = armor = 50.0f * Menu.healthModifier;
 					GameObject temp = GameObject.FindGameObjectWithTag("Icon");
 					temp.renderer.enabled = true;
 					temp.transform.rotation = defaultIconRot;
