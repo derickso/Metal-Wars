@@ -142,7 +142,7 @@ public class Intro : MonoBehaviour {
 		
 		if(inC1 == true)
 		{
-			GUI.DrawTexture (rect, sketch1);
+			//GUI.DrawTexture (rect, sketch1);
 			GUI.DrawTexture (rect, c1);
 			
 			
