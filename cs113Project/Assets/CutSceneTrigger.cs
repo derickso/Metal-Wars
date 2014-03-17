@@ -1359,7 +1359,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			}
 			if(inc27 == true)
 			{
-				SpawnManager.playerSpawned = false;
+				//SpawnManager.playerSpawned = false;
 
 
 				GUI.DrawTexture (rect, sketch18ver4);
@@ -1463,7 +1463,7 @@ public class CutSceneTrigger : MonoBehaviour {
 				Enemy.empEnabled = true;	
 
 
-				SpawnManager.playerSpawned = true;
+				//SpawnManager.playerSpawned = true;
 
 				
 				SpawnManager.isCutsceneReady = true;
@@ -1497,7 +1497,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			
 			if(inc31 == true)
 			{
-				SpawnManager.playerSpawned = false;
+				//SpawnManager.playerSpawned = false;
 
 
 				GUI.DrawTexture(rect, sketch18ver4);
@@ -2669,7 +2669,7 @@ public class CutSceneTrigger : MonoBehaviour {
 
 
 
-				SpawnManager.playerSpawned = true;
+				//SpawnManager.playerSpawned = true;
 				
 				SpawnManager.isCutsceneReady = true;
 			}
@@ -2709,7 +2709,7 @@ public class CutSceneTrigger : MonoBehaviour {
 			if(inc78 == true)
 			{
 
-				SpawnManager.playerSpawned = false;
+				//SpawnManager.playerSpawned = false;
 
 
 				GUI.DrawTexture (rect, sketch18ver4);
