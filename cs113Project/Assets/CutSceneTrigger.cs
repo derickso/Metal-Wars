@@ -543,7 +543,16 @@ public class CutSceneTrigger : MonoBehaviour {
 	private bool bringIchikoToFuture;
 	private bool followGeneralsOrders;
 	private bool nextButton2;//Used from now on when decision above is made
-	
+
+
+
+	public ParticleSystem atomicExplosion1;
+	public ParticleSystem atomicExplosion2;
+	public ParticleSystem atomicExplosion3;
+	public ParticleSystem atomicExplosion4;
+	public ParticleSystem atomicExplosion5;
+
+
 	
 	
 	// Use this for initialization
@@ -804,7 +813,11 @@ public class CutSceneTrigger : MonoBehaviour {
 		
 		//curTime = Time.time;
 		
-		
+		atomicExplosion1.enableEmission = false;
+		atomicExplosion2.enableEmission = false;
+		atomicExplosion3.enableEmission = false;
+		atomicExplosion4.enableEmission = false;
+		atomicExplosion5.enableEmission = false;
 		
 	}
 	
@@ -4089,14 +4102,23 @@ public class CutSceneTrigger : MonoBehaviour {
 		}
 		else if(SpawnManager.currentWave == 14)
 		{
-			
-			
+			atomicExplosion1.enableEmission = true;
+			atomicExplosion2.enableEmission = true;
+			atomicExplosion3.enableEmission = true;
+			atomicExplosion4.enableEmission = true;
+
 			SpawnManager.isCutsceneReady = true;
 		}
 		else if(SpawnManager.currentWave == 15)
 		{
 			
-			
+
+			atomicExplosion1.enableEmission = true;
+			atomicExplosion2.enableEmission = true;
+			atomicExplosion3.enableEmission = true;
+			atomicExplosion4.enableEmission = true;
+			atomicExplosion5.enableEmission = true;	
+
 			SpawnManager.isCutsceneReady = true;
 		}
 		
