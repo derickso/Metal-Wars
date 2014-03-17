@@ -55,6 +55,8 @@ public class SpawnManager : MonoBehaviour {
 
 		createEnemiesArgos();
 		initEnemiesArgos();
+
+		Debug.Log("Initialized");
 	}
 
 	//Initializes the enemies argos with their sizes
